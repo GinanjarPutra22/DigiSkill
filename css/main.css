@@ -1,0 +1,46 @@
+.container-hero h1 {
+  color: #0d6efd;
+}
+
+.container-card {
+  background-color: white;
+}
+
+.container-card .bg-icon {
+  background-color: #ffda6a;
+}
+
+.container-card:hover {
+  background-color: #3d8bfd;
+}
+
+.container-card:hover .bg-icon {
+  background-color: white;
+}
+
+.container-card:hover h4,
+.container-card:hover p {
+  color: white;
+}
+
+.card-value-2 {
+  background-color: #fff;
+}
+
+.card-value-2 .bg-icon {
+  background-color: #0d6efd;
+}
+
+.card-value-2:hover {
+  background-color: #3d8bfd;
+}
+
+.card-value-2:hover .bg-icon {
+  background-color: white;
+}
+
+.card-value-2:hover h4,
+.card-value-2:hover p {
+  color: white;
+}
+/*# sourceMappingURL=main.css.map */

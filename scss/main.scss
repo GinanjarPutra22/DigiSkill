@@ -1,0 +1,42 @@
+$primary: #0d6efd;
+$secondary: #9ec5fe;
+
+.container-hero {
+  h1 {
+    color: $primary;
+  }
+}
+
+.container-card {
+  background-color: white;
+  .bg-icon {
+    background-color: #ffda6a;
+  }
+  &:hover {
+    background-color: #3d8bfd;
+    .bg-icon {
+      background-color: white;
+    }
+    h4,
+    p {
+      color: white;
+    }
+  }
+}
+
+.card-value-2 {
+  background-color: #fff;
+  .bg-icon {
+    background-color: $primary;
+  }
+  &:hover {
+    background-color: #3d8bfd;
+    .bg-icon {
+      background-color: white;
+    }
+    h4,
+    p {
+      color: white;
+    }
+  }
+}
