@@ -1,7 +1,10 @@
 @import "colors";
+@import "fonts";
+
 .container-hero {
   h1 {
-    color: $primary;
+    color: $yellow;
+    font-weight: map-get($font-weight, "bold-700");
   }
 }
 .value-1 {
