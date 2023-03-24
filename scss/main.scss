@@ -170,3 +170,14 @@ span {
   }
 }
 //---------------------------End Style Product---------------------------
+
+//---------------------------Start Style Review---------------------------
+.container-review {
+  // height: 884px;
+  background-color: $secondary;
+  h2 {
+    font-size: 34px;
+    font-weight: map-get($font-weight, bold-700);
+  }
+}
+//---------------------------End Style Review---------------------------

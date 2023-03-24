@@ -175,4 +175,13 @@ span {
   color: #212529;
   background-color: #9ec5fe;
 }
+
+.container-review {
+  background-color: #9ec5fe;
+}
+
+.container-review h2 {
+  font-size: 34px;
+  font-weight: 700;
+}
 /*# sourceMappingURL=main.css.map */
