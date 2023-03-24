@@ -1,29 +1,57 @@
 @import "colors";
 @import "fonts";
 
-.btn-primary {
+.btn {
   font-size: 18px;
   font-weight: map-get($font-weight, "semibold-600");
 }
+span {
+  color: $primary;
+}
 
-// Start Style Hero
+.navbar {
+  .navbar-brand {
+    font-size: 20px;
+    font-weight: map-get($font-weight, "bold-700");
+  }
+  btn {
+    font-size: 16px;
+    font-weight: map-get($font-weight, "semibold-600");
+  }
+  ul {
+    li {
+      a {
+        font-weight: map-get($font-weight, "semibold-600");
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+//---------------------------Start Style Hero---------------------------
 
 .container-hero {
   h1 {
     color: $black-text;
     font-size: 40px;
     font-weight: map-get($font-weight, "bold-700");
-    span {
-      color: $primary;
-    }
   }
   p {
     font-weight: map-get($font-weight, "reguler-400");
     color: $black-text;
   }
 }
+//---------------------------End Style Hero---------------------------
+
+//---------------------------Style velue 1---------------------------
 .value-1 {
   background-color: $secondary;
+  h1 {
+    font-size: 34px;
+    font-weight: map-get($font-weight, "bold-700");
+  }
 }
 
 .container-card {
@@ -42,7 +70,7 @@
     }
   }
 }
-
+//---------------------------End Style velue 1---------------------------
 .card-value-2 {
   background-color: #fff;
   box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.25);
