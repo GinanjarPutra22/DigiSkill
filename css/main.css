@@ -33,7 +33,7 @@ span {
 }
 
 .container-hero p {
-  font-weight: 400;
+  font-weight: 500;
   color: #212529;
 }
 
@@ -99,5 +99,10 @@ span {
 .value-2 .card-value-2:hover h4,
 .value-2 .card-value-2:hover p {
   color: #fff;
+}
+
+.container-product h1 {
+  font-size: 34px;
+  font-weight: 700;
 }
 /*# sourceMappingURL=main.css.map */

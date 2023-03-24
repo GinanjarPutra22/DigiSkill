@@ -39,7 +39,7 @@ span {
     font-weight: map-get($font-weight, "bold-700");
   }
   p {
-    font-weight: map-get($font-weight, "reguler-400");
+    font-weight: map-get($font-weight, "medium-500");
     color: $black-text;
   }
 }
@@ -103,3 +103,11 @@ span {
     }
   }
 }
+//---------------------------Start Style Product---------------------------
+.container-product {
+  h1 {
+    font-size: 34px;
+    font-weight: map-get($font-weight, "bold-700");
+  }
+}
+//---------------------------End Style Product---------------------------
