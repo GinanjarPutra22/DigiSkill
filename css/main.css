@@ -67,32 +67,37 @@ span {
   color: white;
 }
 
-.card-value-2 {
+.value-2 h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.value-2 .card-value-2 {
   background-color: #fff;
   -webkit-box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.25);
           box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
 }
 
-.card-value-2 .heading-card {
-  font-size: 20px;
-  font-weight: 500;
+.value-2 .card-value-2 .heading-card {
+  font-size: 18px;
+  font-weight: 700;
 }
 
-.card-value-2 .bg-icon {
+.value-2 .card-value-2 .bg-icon {
   background-color: #0d6efd;
 }
 
-.card-value-2:hover {
+.value-2 .card-value-2:hover {
   background-color: #0d6efd;
 }
 
-.card-value-2:hover .bg-icon {
+.value-2 .card-value-2:hover .bg-icon {
   background-color: #fff;
 }
 
-.card-value-2:hover h4,
-.card-value-2:hover p {
+.value-2 .card-value-2:hover h4,
+.value-2 .card-value-2:hover p {
   color: #fff;
 }
 /*# sourceMappingURL=main.css.map */

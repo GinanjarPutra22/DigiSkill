@@ -71,27 +71,35 @@ span {
   }
 }
 //---------------------------End Style velue 1---------------------------
-.card-value-2 {
-  background-color: #fff;
-  box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
 
-  .heading-card {
-    font-size: 20px;
-    font-weight: 500;
+//--------------------------- Value Proprotition 2//---------------------------
+.value-2 {
+  h1 {
+    font-size: 34px;
+    font-weight: map-get($font-weight, "bold-700");
   }
+  .card-value-2 {
+    background-color: $white;
+    box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
 
-  .bg-icon {
-    background-color: $primary;
-  }
-  &:hover {
-    background-color: $primary;
-    .bg-icon {
-      background-color: $white;
+    .heading-card {
+      font-size: 18px;
+      font-weight: map-get($font-weight, "bold-700");
     }
-    h4,
-    p {
-      color: $white;
+
+    .bg-icon {
+      background-color: $primary;
+    }
+    &:hover {
+      background-color: $primary;
+      .bg-icon {
+        background-color: $white;
+      }
+      h4,
+      p {
+        color: $white;
+      }
     }
   }
 }
