@@ -1,10 +1,25 @@
 @import "colors";
 @import "fonts";
 
+.btn-primary {
+  font-size: 18px;
+  font-weight: map-get($font-weight, "semibold-600");
+}
+
+// Start Style Hero
+
 .container-hero {
   h1 {
-    color: $yellow;
+    color: $black-text;
+    font-size: 40px;
     font-weight: map-get($font-weight, "bold-700");
+    span {
+      color: $primary;
+    }
+  }
+  p {
+    font-weight: map-get($font-weight, "reguler-400");
+    color: $black-text;
   }
 }
 .value-1 {
@@ -12,12 +27,12 @@
 }
 
 .container-card {
-  background-color: white;
+  background-color: $white;
   .bg-icon {
-    background-color: #ffda6a;
+    background-color: $yellow;
   }
   &:hover {
-    background-color: #3d8bfd;
+    background-color: $primary;
     .bg-icon {
       background-color: white;
     }
@@ -42,13 +57,13 @@
     background-color: $primary;
   }
   &:hover {
-    background-color: #3d8bfd;
+    background-color: $primary;
     .bg-icon {
-      background-color: white;
+      background-color: $white;
     }
     h4,
     p {
-      color: white;
+      color: $white;
     }
   }
 }

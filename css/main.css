@@ -1,7 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+.btn-primary {
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .container-hero h1 {
-  color: #ffda6a;
+  color: #212529;
+  font-size: 40px;
   font-weight: 700;
+}
+
+.container-hero h1 span {
+  color: #0d6efd;
+}
+
+.container-hero p {
+  font-weight: 400;
+  color: #212529;
 }
 
 .value-1 {
@@ -9,7 +24,7 @@
 }
 
 .container-card {
-  background-color: white;
+  background-color: #fff;
 }
 
 .container-card .bg-icon {
@@ -17,7 +32,7 @@
 }
 
 .container-card:hover {
-  background-color: #3d8bfd;
+  background-color: #0d6efd;
 }
 
 .container-card:hover .bg-icon {
@@ -46,15 +61,15 @@
 }
 
 .card-value-2:hover {
-  background-color: #3d8bfd;
+  background-color: #0d6efd;
 }
 
 .card-value-2:hover .bg-icon {
-  background-color: white;
+  background-color: #fff;
 }
 
 .card-value-2:hover h4,
 .card-value-2:hover p {
-  color: white;
+  color: #fff;
 }
 /*# sourceMappingURL=main.css.map */
