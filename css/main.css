@@ -184,4 +184,14 @@ span {
   font-size: 34px;
   font-weight: 700;
 }
+
+.container-review .card {
+  border: none;
+  background-color: #0d6efd;
+}
+
+.container-review .card .rate {
+  font-size: 30px;
+  color: #ffda6a;
+}
 /*# sourceMappingURL=main.css.map */
