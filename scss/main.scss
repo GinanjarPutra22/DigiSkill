@@ -179,5 +179,15 @@ span {
     font-size: 34px;
     font-weight: map-get($font-weight, bold-700);
   }
+
+  .card {
+    border: none;
+    background-color: $primary;
+
+    .rate {
+      font-size: 30px;
+      color: $yellow;
+    }
+  }
 }
 //---------------------------End Style Review---------------------------
