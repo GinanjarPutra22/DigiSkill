@@ -194,4 +194,42 @@ span {
   font-size: 30px;
   color: #ffda6a;
 }
+
+.container-cta h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+footer .navbar-brand {
+  font-size: 18px;
+  color: #fff;
+}
+
+footer .navbar-brand:hover {
+  color: #f8f9fa;
+}
+
+footer h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+footer li {
+  list-style: none;
+  color: #fff;
+}
+
+footer a {
+  text-decoration: none;
+  color: #f8f9fa;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+footer i {
+  font-size: 24px;
+}
 /*# sourceMappingURL=main.css.map */
