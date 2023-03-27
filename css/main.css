@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 footer .navbar-brand {
   font-size: 18px;
   color: #fff;
@@ -32,12 +33,25 @@ footer i {
   font-size: 24px;
 }
 
-.container-login-regis {
-  background-color: red;
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .container-login-regis .right-side {
   background-color: #9ec5fe;
+}
+
+.container-regis {
+  background-color: palegreen;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 body {
