@@ -1,4 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+footer .navbar-brand {
+  font-size: 18px;
+  color: #fff;
+}
+
+footer .navbar-brand:hover {
+  color: #f8f9fa;
+}
+
+footer h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+footer li {
+  list-style: none;
+  color: #fff;
+}
+
+footer a {
+  text-decoration: none;
+  color: #f8f9fa;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+footer i {
+  font-size: 24px;
+}
+
+.container-login-regis {
+  background-color: red;
+}
+
+.container-login-regis .right-side {
+  background-color: #9ec5fe;
+}
+
 body {
   background-color: #f8f9fa;
 }
@@ -20,6 +61,10 @@ span {
 .navbar btn {
   font-size: 16px;
   font-weight: 600;
+}
+
+.navbar .dropdown-item {
+  font-weight: 500;
 }
 
 .navbar ul li a {
@@ -185,6 +230,10 @@ span {
   font-weight: 700;
 }
 
+.container-review p {
+  color: #f8f9fa;
+}
+
 .container-review .card {
   border: none;
   background-color: #0d6efd;
@@ -198,38 +247,5 @@ span {
 .container-cta h1 {
   font-size: 34px;
   font-weight: 700;
-}
-
-footer .navbar-brand {
-  font-size: 18px;
-  color: #fff;
-}
-
-footer .navbar-brand:hover {
-  color: #f8f9fa;
-}
-
-footer h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-}
-
-footer li {
-  list-style: none;
-  color: #fff;
-}
-
-footer a {
-  text-decoration: none;
-  color: #f8f9fa;
-}
-
-footer a:hover {
-  color: #fff;
-}
-
-footer i {
-  font-size: 24px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,24 @@
+@import "colors";
+@import "fonts";
+h1 {
+  font-size: 28px;
+  font-weight: map-get($font-weight, bold-700);
+  color: $primary;
+}
+h5 {
+  font-size: 18px;
+  font-weight: map-get($font-weight, semibold-600);
+}
+.container-login-regis {
+  // background-color: yellow;
+  .right-side {
+    background-color: $secondary;
+  }
+}
+
+.container-regis {
+  background-color: palegreen;
+  padding-left: 50px;
+  padding-right: 50px;
+  // margin-right: 100px;
+}
