@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+.navbar .navbar-brand {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.navbar btn {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.navbar .dropdown-item {
+  font-weight: 500;
+}
+
+.navbar ul li a {
+  font-weight: 600;
+}
+
+.navbar ul li a:hover {
+  color: #0d6efd;
+}
+
 footer .navbar-brand {
   font-size: 18px;
   color: #fff;
@@ -49,7 +71,7 @@ h5 {
 }
 
 .container-regis {
-  background-color: palegreen;
+  background-color: aqua;
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -64,28 +86,6 @@ body {
 }
 
 span {
-  color: #0d6efd;
-}
-
-.navbar .navbar-brand {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.navbar btn {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.navbar .dropdown-item {
-  font-weight: 500;
-}
-
-.navbar ul li a {
-  font-weight: 600;
-}
-
-.navbar ul li a:hover {
   color: #0d6efd;
 }
 

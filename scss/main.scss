@@ -1,5 +1,6 @@
 @import "colors";
 @import "fonts";
+@import "navbar";
 @import "footer";
 @import "login-regis";
 
@@ -12,31 +13,6 @@ body {
 }
 span {
   color: $primary;
-}
-
-.navbar {
-  .navbar-brand {
-    font-size: 20px;
-    font-weight: map-get($font-weight, "bold-700");
-  }
-  btn {
-    font-size: 16px;
-    font-weight: map-get($font-weight, "semibold-600");
-  }
-  .dropdown-item {
-    font-weight: map-get($font-weight, medium-500);
-  }
-  ul {
-    li {
-      
-      a {
-        font-weight: map-get($font-weight, "semibold-600");
-        &:hover {
-          color: $primary;
-        }
-      }
-    }
-  }
 }
 
 //---------------------------Start Style Hero---------------------------

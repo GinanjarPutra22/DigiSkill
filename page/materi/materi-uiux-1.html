@@ -11,45 +11,59 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        
+
+    <link rel="stylesheet" href="../../css/materi.css">
+    <!-- <link rel="stylesheet" href="../../css/main.css"> -->
     <title>DigiSkill-Materi-UI/UX</title>
-    <style>
-        body {
-            background: #fff;
-        }
 
-        .accordion-button {
-            background: #1c69db;
-            color: white;
-            text-align: center;
-        }
-
-        .accordion-body {
-            background: #E9ECEF;
-        }
-        
-        .btn {
-        background-color: #9EC5FE;
-        border: none;
-        color: black;
-        padding: 10px 28px;
-        text-align: left;
-        font-size: 16px;
-        margin: 2px 2px;
-        transition: 0.3s;
-        }
-
-        .btn:hover {
-        background-color: #1c69db;
-        color: white;
-        }
-
-    </style>
 </head>
-<body>
-    <!--end bootstrap CSS-->
 
+<body>
+    <!-- Start Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                DigiSkill
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item me-4">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown me-4">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Course
+                        </a>
+                        <ul class="dropdown-menu me-4">
+                            <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
+                            <li><a class="dropdown-item" href="#">Front-End-Development</a></li>
+                            <li><a class="dropdown-item" href="#">Back-End-Development</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <button class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">Masuk</button>
+                    <button class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</button>
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
     <!--accordion-->
+
     <div class="container"> <br><br>
         <div class="row">
             <div class="col-lg-3">
@@ -57,186 +71,172 @@
                     <div class="accordion-item mb-3">
                         <h1 class="accordion-header">
                             <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne">Materi Video Kelas UI/UX Design</button></h2>
-                            <div class="accordion-collapse collapse show" id="collapseOne"
-                                data-bs-tongle="#accordionSection">
-                                <div class="accordion-body">
-                                 <div class="d-grid gap-3">
+                                data-bs-target="#collapseOne">Materi Video Kelas UI/UX Design</button>
+                        </h1>
+                        <div class="accordion-collapse collapse show" id="collapseOne"
+                            data-bs-tongle="#accordionSection">
+                            <div class="accordion-body">
+                                <div class="d-grid gap-3">
 
-                                        <a href="materi-uiux-2.html" class="btn btn-primary disabled mb-2">
-                                              <i class='bx bx-play-circle'></i>
-                                             1. Pengenalan UI/UX
-                                         </a>
-                                           <a href="materi-uiux-1.html" class="btn btn-primary  mb-2">
-                                              <i class='bx bx-play-circle'></i>
-                                             1. Pengenalan UI/UX
-                                         </a>
-                                            <a href="materi-uiux-2.html" class="btn btn-primary  mb-2">
-                                              <i class='bx bx-play-circle'></i>
-                                             2. Basic Tools (Figma)
-                                         </a>
-                                            <a href="materi-uiux-3.html" class="btn btn-primary  mb-2">
-                                              <i class='bx bx-play-circle'></i>
-                                             3. Pengenalan UI/UX
-                                         </a>
-                                            <a href="materi-uiux-3.html" class="btn btn-primary  mb-2">
-                                              <i class='bx bx-play-circle'></i>
-                                             4. Pengenalan UI/UX
-                                         </a>
-                                            <a href="materi-uiux-3.html" class="btn btn-primary  mb-2">
-                                              <i class='bx bx-play-circle'></i>
-                                             5. Pengenalan UI/UX
-                                         </a>
-                                            <a href="materi-uiux-3.html" class="btn btn-primary  mb-2">
-                                              <i class='bx bx-play-circle'></i>
-                                             6. Pengenalan UI/UX
-                                         </a>
-                            
-                                    </div>
+                                    <a href="materi-uiux-1.html" class="btn btn-primary disabled mb-1">
+
+                                        1. Pengenalan UI/UX
+                                    </a>
+
+                                    <a href="materi-uiux-2.html" class="btn btn-primary  mb-1">
+
+                                        2. Basic Tools (Figma)
+                                    </a>
+                                    <a href="materi-uiux-3.html" class="btn btn-primary  mb-1">
+
+                                        3. Pengenalan UI/UX
+                                    </a>
+                                    <a href="materi-uiux-3.html" class="btn btn-primary  mb-1">
+
+                                        4. Pengenalan UI/UX
+                                    </a>
+                                    <a href="materi-uiux-3.html" class="btn btn-primary  mb-1">
+
+                                        5. Pengenalan UI/UX
+                                    </a>
+                                    <a href="materi-uiux-3.html" class="btn btn-primary  mb-1">
+
+                                        6. Pengenalan UI/UX
+                                    </a>
+
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-9">
                 <div class="collapse show" id="collapse1">
-                    <div class="card card-body">
-                        <iframe width="930px" height="450px" src="https://www.youtube.com/embed/cBGBXjzWVi0">
-                        </iframe>
-                      
-                    <div class="1. Pengenalan UI/UX py-3"></div>
-                    <div class="d-grid gap-5 d-md-flex justify-content-arround">
-                    <h2 class="fs-7">1. Pengenalan UI/UX</h2>
+                    <div class="card card-body ">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/cBGBXjzWVi0" class="" allowfullscreen>
+                            </iframe>
+                        </div>
+
+
+                        <div class="1. Pengenalan UI/UX py-3"></div>
+                        <div class="d-grid gap-5 d-md-flex justify-content-arround">
+                            <h2 class="fs-7">1. Pengenalan UI/UX</h2>
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-end">
+                            <a href="materi-uiux-2.html" class="btn btn-primary">Next</a>
+                        </div>
+
+                        <p>Apa itu UI/UX?</p>
+                        <p></p>
+                        <p>Bidang UI/UX sangat diminati oleh dunia industri belakangan ini. UI/UX dapat membantu
+                            menciptakan website atau aplikasi yang memenuhi kebutuhan user dan meminimalisir
+                            ketidaknyamanan user dalam menggunakan suatu website ataupun aplikasi mobile.</p>
+                        <p></p>
+                        <p>Dengan arahan website, kali ini kita akan belajar dan mengenal apa itu UI/UX dengan melihat
+                            video yang sudah disiapkan.</p>
                     </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-end">
-                        <a href="#collapse2" class="btn btn-primary">Next</a>
                 </div>
 
-                    <p>Apa itu UI/UX?</p>
-                      <p></p>
-                      <p>Bidang UI/UX sangat diminati oleh dunia industri belakangan ini. UI/UX dapat membantu menciptakan website atau aplikasi yang memenuhi kebutuhan user dan meminimalisir ketidaknyamanan user dalam menggunakan suatu website ataupun aplikasi mobile.</p>
-                      <p></p>
-                      <p>Dengan arahan website, kali ini kita akan belajar dan mengenal apa itu UI/UX dengan melihat video yang sudah disiapkan.</p>
-                    </div>
-                  </div>
 
-                  
-                  <div class="collapse" id="collapse2">
-                    <div class="card card-body">
-                        <iframe width="930px" height="450px" src="https://www.youtube.com/embed/PJIKqnftfPw">
-                        </iframe>
-                      
-                    <div class="2. Basic Tools py-3"></div>
-                    <div class="d-grid gap-5 d-md-flex justify-content-arround">
-                    <h3 class="fs-7">2. Basic Tools (Figma)</h3>
-                    </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-end">
-                        <a href="#collapse1" class="btn btn-primary me-md-2" type="button">Previous</a>
-                        <a href="#collapse3" class="btn btn-primary" type="button">Next</a>
-                    
-                    </div>
-                    <p>Apa saja basic tools yang ada pada Figma?</p>
-                      <p></p>
-                      <p>Figma adalah aplikasi desain berbasis cloud dan alat prototyping untuk project digital. Figma dapat membantu para penggunanya berkolaborasi dalam suatu project atau pekerjaan dengan banyak pengguna secara real-time dan di mana saja.</p>
-                      <p></p>
-                      <p>Figma juga merupakan aplikasi desain UI dan UX yang dapat kamu gunakan untuk membuat situs web, aplikasi, atau komponen antarmuka pengguna.</p>
-                      <p></p>
-                      <p>Dengan arahan website, kali ini kita akan belajar mengenai basic tools pada Figma dengan melihat video yang sudah disiapkan.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="collapse" id="collapse3">
-                    <div class="card card-body">
-                        <iframe width="930px" height="450px" src="https://www.youtube.com/embed/zGPQI6XcPkM">
-                        </iframe>
-                      
-                    <div class="3. Component py-3"></div>
-                    <div class="d-grid gap-5 d-md-flex justify-content-arround">
-                    <h3 class="fs-7">3. Component (Figma)</h3>
-                    </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-end">
-                        <a href="#collapse2" class="btn btn-primary me-md-2" type="button">Previous</a>
-                        <a href="#collapse4" class="btn btn-primary" type="button">Next</a>
-                    
-                    </div>
-                    <p>Apa itu Component Figma?</p>
-                      <p></p>
-                      <p>Salah satu fitur penting di figma , yaitu Component. Dengan component kita bisa mengatur banyak elemen sekaligus di seluruh projek kita. Kita juga bisa membuat design system yang 'hidup' dengan fitur component ini.</p>
-                      <p></p>
-                      <p>Dengan arahan website, kali ini kita akan belajar mengenai apa itu component, bagaimana cara membuat component, dan fungsi dari component pada Figma dengan melihat video yang sudah disiapkan.</p>
-                    </div>
-                  </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+                    crossorigin="anonymous"></script>
+            </div>
+        </div>
+    </div>
 
-                  <div class="collapse" id="collapse4">
-                    <div class="card card-body">
-                        <iframe width="930px" height="450px" src="https://www.youtube.com/embed/41_zU4pheWg">
-                        </iframe>
-                      
-                    <div class="4. Layouting py-3"></div>
-                    <div class="d-grid gap-5 d-md-flex justify-content-arround">
-                    <h3 class="fs-7">4. Layouting (Figma)</h3></div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-end">
-                        <a href="#collapse3" class="btn btn-primary me-md-2" type="button">Previous</a>
-                        <a href="#collapse5" class="btn btn-primary" type="button">Next</a>
-                    
-                    </div>
-                    <p>Apa itu Layouting Figma?</p>
-                      <p></p>
-                      <p>Layout merupakan desain tata letak, sedangkan arti dari layout adalah suatu susunan, rancangan, atau tata letak ruang dari sebuah elemen yang sengaja didesain untuk bisa ditempatkan dalam suatu bidang yang sebelumnya telah direncanakan sistemnya terlebih dahulu.</p>
-                      <p></p>
-                      <p>Desain layout merupakan cabang mendasar dari desain grafis yang menyangkut pengaturan teks dan visual. Layout mengacu pada pengaturan elemen visual dalam kotak untuk menyampaikan pesan tertentu. Fungsi dan tujuan dari layout adalah untuk menyajikan berbagai elemen seperti teks dan gambar yang mampu berkomunikasi, sehingga mempermudah seseorang untuk memahami dan bisa memperoleh informasi dari elemen tersebut.</p>
-                      <p></p>
-                      <p>Dengan arahan website, kali ini kita akan belajar mengenai Layouting (Wireframe) pada Figma dengan melihat video yang sudah disiapkan.</p>
-                    </div>
-                  </div>
+    <!-- Start Footer -->
+    <footer class="footer bg-primary mt-5">
+        <div class="container pt-5">
+            <div class="row mb-3 d-flex align-items-center">
+                <a class="navbar-brand fs-4 fw-semibold d-flex align-items-center me-3" href="#">
+                    <img src="../../Assets/logo-white.svg" class="d-inline-block align-text-top  h-75 ">
+                    DigiSkill
+                </a>
+            </div>
+            <div class="row row-content justify-content-between justify-content-md-start">
+                <div class="col-lg-3 col-md-6 mb-sm-4">
+                    <h3>Hubungi Kami</h3>
+                    <div class="row d-flex mt-3">
+                        <a href=" 
+                            https://goo.gl/maps/V9TZsWie5Ug1UdAR9" terget="_blank" class="d-flex align-items-start">
+                            <i class='bx bx-map me-2'></i>
+                            <p>
+                                Jl. Ketintang, Kel. Ketintang, Kec. Gayungsari, Kota Surabaya
+                            </p>
+                        </a>
+                        <a href=" 
+                            #" class="d-flex align-items-start">
+                            <i class='bx bx-envelope me-2'></i>
 
-                  <div class="collapse" id="collapse5">
-                    <div class="card card-body">
-                        <iframe width="930px" height="450px" src="https://www.youtube.com/embed/l-6vRjEknC0 ">
-                        </iframe>
-                      
-                    <div class="5. Prototype py-3"></div>
-                    <div class="d-grid gap-5 d-md-flex justify-content-arround">
-                    <h3 class="fs-7">5. Prototype (Figma)</h3>
+                            <p>
+                                digiskill@gmail.com
+                            </p>
+                        </a>
+
+                        <a href=" 
+                            #" class="d-flex align-items-start">
+                            <i class='bx bx-phone me-2'></i>
+
+                            <p>
+                                +62 858 0489 8461
+                            </p>
+                        </a>
+                    </div>
                 </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-end">
-                    <a href="#collapse4" class="btn btn-primary me-md-2" type="button">Previous</a>
-                    <a href="#collapse6" class="btn btn-primary" type="button">Next</a>
-                    
+                <div class="col-lg-2 offset-lg-1  col-md-6 mt-4 mt-sm-0 mb-sm-4">
+                    <h3>Informasi</h3>
+                    <div class="row d-flex mt-3">
+                        <a href="#" class="mb-1">Home</a>
+                        <a href="#" class="mb-1">About Us</a>
                     </div>
-                    <p>Apa itu Prototype Figma?</p>
-                      <p></p>
-                      <p>Prototype merupakan tahapan yang ditujukan untuk mentransformasi sifat-sifat abstrak dari sebuah ide menjadi lebih berwujud. Prototype sangat penting dalam desain aplikasi atau desain website karena dengan prototype kita dapat menguji jalannya aplikasi sebelum aplikasi itu di-develop oleh programmer.</p>
-                      <p></p>
-                      <p>Dengan arahan website, kali ini kita akan belajar mengenai Prototype menggunakan tools Figma dengan melihat video yang sudah disiapkan.</p>
-                    </div>
-                  </div>
 
-                  <div class="collapse" id="collapse6">
-                    <div class="card card-body">
-                        <iframe width="930px" height="450px" src="https://www.youtube.com/embed/N3n4BTiWCPc">
-                        </iframe>
-                      
-                    <div class="6. Proses UI/UX Design py-3"></div>
-                    <div class="d-grid gap-5 d-md-flex justify-content-arround">
-                    <h3 class="fs-7">6. Proses UI/UX Design</h3>
                 </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-end">
-                    <a href="#collapse5" class="btn btn-primary me-md-2" type="button">Previous</a>
-                    
+                <div class="col-lg-2 offset-lg-1   col-md-6 mt-4 mt-sm-0 mb-sm-4">
+                    <h3>Course</h3>
+                    <div class="row d-flex mt-3">
+                        <a href="#" class="mb-1">UI/UX Design</a>
+                        <a href="#" class="mb-1">Front End Developer</a>
+                        <a href="#" class="mb-1">Back End Developer</a>
                     </div>
-                    <p>Bagaimana Proses Design UI/UX?</p>
-                      <p></p>
-                      <p>Proses dari pembuatan UI/UX baik mobile app maupun website dimulai dari riset UX untuk mengetahui kebutuhan calon pengguna. Kemudian dilanjutkan dengan menyusun information architecture (IA). Kegiatan yang dilakukan adalah menyusun bagian-bagian situs dan aplikasi. Ada juga langkah menyusun wireframe, yaitu sketsa produk secara visual.</p>
-                      <p></p>
-                      <p>Dengan arahan website, kali ini kita akan belajar mengenai proses UI/UX (mobile app/website) pada Figma dengan melihat video yang sudah disiapkan.</p>
+
+                </div>
+                <div class="col-lg-2 offset-lg-1   col-md-6 mt-4 mt-sm-0">
+                    <h3>Ikuti Kami</h3>
+                    <div class="sosmed mt-3 d-flex">
+                        <a href=" #" class="me-2">
+                            <i class='bx bxl-google'></i>
+                        </a>
+                        <a href="# " class="me-2">
+                            <i class='bx bxl-youtube'></i>
+                        </a>
+                        <a href="#" class="me-2">
+                            <i class='bx bxl-linkedin'></i>
+                        </a>
+                        <a href="#" class="me-2">
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+                        <a href="#" class="me-2">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+
                     </div>
-                  </div>
+                </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-            crossorigin="anonymous"></script>
+            </div>
+            <div class="row text-center mt-2">
+                <div class="col-12">
+                    <p class="text-white">
+                        &copy;Copyright 2022 all right reserved | Kelompok 5 Pemerogaman Web - PTI-B 2021
+                    </p>
+                </div>
+            </div>
+        </div>
 
+    </footer>
+    <!-- End Footer -->
 </body>
+
 </html>
-    <!--end accordion-->
+<!--end accordion-->
