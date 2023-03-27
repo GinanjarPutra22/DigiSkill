@@ -1,0 +1,34 @@
+@import "colors";
+@import "fonts";
+@import "navbar";
+@import "footer";
+
+span {
+  color: $primary;
+}
+
+body {
+  // Sidebar
+  .sidebar {
+    background-color: $secondary;
+    h5 {
+      font-size: 18px;
+      font-weight: map-get($font-weight, bold-700);
+    }
+    a {
+      color: $black-text;
+      font-size: 18px;
+      text-decoration: none;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  background-color: $light;
+  h6 {
+    color: $primary;
+  }
+  h4 {
+    font-weight: map-get($font-weight, bold-700);
+  }
+}
