@@ -6,7 +6,7 @@ $(document).ready(() => {
 
 var swiper = new Swiper(".mySwiperTesti", {
   spaceBetween: 20,
-  loop: true,
+  slidesPerView: 2,
   pagination: {
     el: ".swiper-pagination",
     dynamicBullets: true,
