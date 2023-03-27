@@ -28,6 +28,7 @@ span {
   }
   ul {
     li {
+      
       a {
         font-weight: map-get($font-weight, "semibold-600");
         &:hover {
