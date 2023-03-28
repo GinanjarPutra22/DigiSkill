@@ -12,17 +12,20 @@
   <!-- Icon Title -->
   <link rel="icon" href="../Assets/logo-icon.svg" type="image/x-icon" />
 
+  <!-- icon -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
   <link rel="stylesheet" href="../../css/detail.css">
   <title>Detail UI/UX</title>
 
 </head>
 
 <body>
-  <div class="container">
+  <div class="container mb-5">
     <!-- ------Start Hero UIUX------- -->
-    <div class="row d-flex align-items-center py-4">
+    <div class="row d-flex align-items-center py-4 bg-danger">
       <div class="col-lg-6">
-        <h2 class="text"> Menjadi <span style="color: dodgerblue;"> UI/UX Designer</h2></span>
+        <h2 class="text"> Menjadi <span> UI/UX Designer</h2></span>
         <h2> Di era Digital</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur. Massa <br> nisl tellus faucibus pellentesque leo. A <br> non quis quam
@@ -44,7 +47,7 @@
 
 
     <!-- ------Start Row Main Detail Kelas------- -->
-    <div class="mt-5">
+    <div class="my-5">
       <div class="row grid gap-3 ">
 
         <!-- Start Sidebar Detail Program UIUX -->
@@ -154,7 +157,7 @@
                   <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <ul style="font-size: small;">
+                      <ul>
                         <li> Tentang Program </li>
                         <li> Mentor Kelas </li>
                         <li> Kurikulum Program </li>
@@ -174,7 +177,7 @@
                   <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <ul style="font-size: small;">
+                      <ul>
                         <li> Tentang Program </li>
                         <li> Mentor Kelas </li>
                         <li> Kurikulum Program </li>
@@ -194,7 +197,7 @@
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <ul style="font-size: small;">
+                      <ul>
                         <li> Tentang Program </li>
                         <li> Mentor Kelas </li>
                         <li> Kurikulum Program </li>
@@ -206,7 +209,7 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
                       data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                       Figma and Testing
                     </button>
@@ -214,7 +217,7 @@
                   <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <ul style="font-size: small;">
+                      <ul>
                         <li> Tentang Program </li>
                         <li> Mentor Kelas </li>
                         <li> Kurikulum Program </li>
@@ -230,34 +233,130 @@
             <!-- End Kurikulum Program -->
 
             <!-- Start Tools UIUX -->
-            <div class="tools-uiux">
-              <h6 style="color: dodgerblue;"> Tools </h6>
+            <div class="tools-uiux mb-5">
+              <h6> Tools </h6>
               <h4> Belajar UI/UX Dengan Tools Gratis </h4>
               <p> Pada sesi pembelajaran pelatihan menggunakan software yang gratis dan mudah digunakan secara
                 bersama-sama.
               </p>
-              <div class="d-flex align-items-center">
-                <img src="https://cdn.freebiesupply.com/logos/large/2x/figma-1-logo-png-transparent.png" alt="figma-pic"
-                  class="img w-100">
-                <p class="p-3"> Figma </p>
+              <div class="d-flex align-items-center align-self-center">
+                <div class="d-flex align-items-center me-5">
+                  <img src="../../Assets/figma.svg" alt="figma-pic" class="img h-100">
+                  <p class=""> Figma </p>
+                </div>
 
-                <img class="ms-5"
-                  src="https://theme.zdassets.com/theme_assets/10109667/fe21497ffc51d4c83e0f28545349c532bd9925fd.png"
-                  alt="maze-pic" style="width: 80px; height: 40px;">
-                <p class="p-3"> Maze </p>
+                <div class="d-flex align-items-center me-5">
+                  <img class="img h-100" src="../../Assets/maze.svg" alt="maze-pic">
+                  <p class=""> Maze </p>
+                </div>
 
-                <img class="ms-5" src="https://cdn-icons-png.flaticon.com/512/5968/5968528.png" alt="gform-pic"
-                  style="width: 50px; height: 50px;">
-                <p class="p-2"> Google Form </p>
+                <div class="d-flex align-items-center me-5">
+                  <img class="img h-100" src="../../Assets/google-forms.svg" alt="gform-pic">
+                  <p class=""> Google Form </p>
+                </div>
               </div>
-              <!-- End Tools UIUX -->
+
+
             </div>
+            <!-- End Tools UIUX -->
             <!-- End Main Content -->
           </div>
         </div>
         <!-- ------End Row Main Detail Kelas------- -->
       </div>
     </div>
+  </div>
+
+  <!-- Start Footer -->
+  <footer class="footer bg-primary mt-5">
+    <div class="container pt-5">
+      <div class="row mb-3 d-flex align-items-center">
+        <a class="navbar-brand fs-4 fw-semibold d-flex align-items-center me-3" href="#">
+          <img src="../../Assets/logo-white.svg" class="d-inline-block align-text-top  h-75 ">
+          DigiSkill
+        </a>
+      </div>
+      <div class="row row-content justify-content-between justify-content-md-start">
+        <div class="col-lg-3 col-md-6 mb-sm-4">
+          <h3>Hubungi Kami</h3>
+          <div class="row d-flex mt-3">
+            <a href=" 
+                        https://goo.gl/maps/V9TZsWie5Ug1UdAR9" terget="_blank" class="d-flex align-items-start">
+              <i class='bx bx-map me-2'></i>
+              <p>
+                Jl. Ketintang, Kel. Ketintang, Kec. Gayungsari, Kota Surabaya
+              </p>
+            </a>
+            <a href=" 
+                        #" class="d-flex align-items-start">
+              <i class='bx bx-envelope me-2'></i>
+
+              <p>
+                digiskill@gmail.com
+              </p>
+            </a>
+
+            <a href=" 
+                        #" class="d-flex align-items-start">
+              <i class='bx bx-phone me-2'></i>
+
+              <p>
+                +62 858 0489 8461
+              </p>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 offset-lg-1  col-md-6 mt-4 mt-sm-0 mb-sm-4">
+          <h3>Informasi</h3>
+          <div class="row d-flex mt-3">
+            <a href="#" class="mb-1">Home</a>
+            <a href="#" class="mb-1">About Us</a>
+          </div>
+
+        </div>
+        <div class="col-lg-2 offset-lg-1   col-md-6 mt-4 mt-sm-0 mb-sm-4">
+          <h3>Course</h3>
+          <div class="row d-flex mt-3">
+            <a href="#" class="mb-1">UI/UX Design</a>
+            <a href="#" class="mb-1">Front End Developer</a>
+            <a href="#" class="mb-1">Back End Developer</a>
+          </div>
+
+        </div>
+        <div class="col-lg-2 offset-lg-1   col-md-6 mt-4 mt-sm-0">
+          <h3>Ikuti Kami</h3>
+          <div class="sosmed mt-3 d-flex">
+            <a href=" #" class="me-2">
+              <i class='bx bxl-google'></i>
+            </a>
+            <a href="# " class="me-2">
+              <i class='bx bxl-youtube'></i>
+            </a>
+            <a href="#" class="me-2">
+              <i class='bx bxl-linkedin'></i>
+            </a>
+            <a href="#" class="me-2">
+              <i class='bx bxl-facebook'></i>
+            </a>
+            <a href="#" class="me-2">
+              <i class='bx bxl-instagram'></i>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="row text-center mt-2">
+        <div class="col-12">
+          <p class="text-white">
+            &copy;Copyright 2022 all right reserved | Kelompok 5 Pemerogaman Web - PTI-B 2021
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- End Footer -->
 
 
 
@@ -313,15 +412,16 @@
 
 
 
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
+  <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->

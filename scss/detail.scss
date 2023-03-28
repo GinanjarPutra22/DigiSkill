@@ -32,3 +32,13 @@ body {
     font-weight: map-get($font-weight, bold-700);
   }
 }
+
+.accordion {
+  .accordion-button {
+    background-color: red;
+    font-weight: map-get($font-weight, bold-700);
+  }
+  li {
+    font-size: 18px;
+  }
+}
