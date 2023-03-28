@@ -88,4 +88,13 @@ body h6 {
 body h4 {
   font-weight: 700;
 }
+
+.accordion .accordion-button {
+  background-color: red;
+  font-weight: 700;
+}
+
+.accordion li {
+  font-size: 18px;
+}
 /*# sourceMappingURL=detail.css.map */
