@@ -9,6 +9,9 @@ var swiper = new Swiper(".mySwiperTesti", {
     delay: 1200,
   },
   breakpoints: {
+    600: {
+      slidesPerView: 1,
+    },
     768: {
       slidesPerView: 2,
     },
