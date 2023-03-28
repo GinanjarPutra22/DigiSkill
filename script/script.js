@@ -1,12 +1,6 @@
-$(document).ready(() => {
-  $(document).scroll(() => {
-    $(".navbar").toggleClass("scrolled", $(this).scrollTop() > $(".navbar").height());
-  });
-});
-
 var swiper = new Swiper(".mySwiperTesti", {
   spaceBetween: 20,
-  slidesPerView: 2,
+  slidesPerView: 5,
   pagination: {
     el: ".swiper-pagination",
     dynamicBullets: true,
