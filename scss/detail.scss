@@ -9,6 +9,12 @@ span {
 
 body {
   // Sidebar
+  .hero {
+    h2 {
+      font-size: 40px;
+      font-weight: map-get($font-weight, bold-700);
+    }
+  }
   .sidebar {
     background-color: $secondary;
     h5 {
@@ -31,11 +37,18 @@ body {
   h4 {
     font-weight: map-get($font-weight, bold-700);
   }
+  .mentor-kelas {
+    .d-flex {
+      img {
+        height: 38px;
+      }
+    }
+  }
 }
 
 .accordion {
   .accordion-button {
-    background-color: red;
+    background-color: $light;
     font-weight: map-get($font-weight, bold-700);
   }
   li {

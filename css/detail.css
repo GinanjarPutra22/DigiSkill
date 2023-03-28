@@ -62,6 +62,11 @@ body {
   background-color: #f8f9fa;
 }
 
+body .hero h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
 body .sidebar {
   background-color: #9ec5fe;
 }
@@ -89,8 +94,12 @@ body h4 {
   font-weight: 700;
 }
 
+body .mentor-kelas .d-flex img {
+  height: 38px;
+}
+
 .accordion .accordion-button {
-  background-color: red;
+  background-color: #f8f9fa;
   font-weight: 700;
 }
 
