@@ -252,6 +252,10 @@ h1 {
   color: #f8f9fa;
 }
 
+.container-review .name {
+  font-weight: 600;
+}
+
 .container-review .card {
   border: none;
   background-color: #0d6efd;

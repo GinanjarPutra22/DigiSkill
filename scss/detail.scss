@@ -2,34 +2,39 @@
 @import "fonts";
 @import "navbar";
 @import "footer";
+// navbar
+
+.navbar {
+  .navbar-brand {
+    font-size: 20px;
+    font-weight: map-get($font-weight, "bold-700");
+  }
+  btn {
+    font-size: 16px;
+    font-weight: map-get($font-weight, "semibold-600");
+  }
+  .dropdown-item {
+    font-weight: map-get($font-weight, medium-500);
+  }
+  ul {
+    li {
+      a {
+        font-weight: map-get($font-weight, "semibold-600");
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+// end navbar
 
 span {
   color: $primary;
 }
 
 body {
-  // Sidebar
-  .hero {
-    h2 {
-      font-size: 40px;
-      font-weight: map-get($font-weight, bold-700);
-    }
-  }
-  .sidebar {
-    background-color: $secondary;
-    h5 {
-      font-size: 18px;
-      font-weight: map-get($font-weight, bold-700);
-    }
-    a {
-      color: $black-text;
-      font-size: 18px;
-      text-decoration: none;
-      &:hover {
-        color: $primary;
-      }
-    }
-  }
   background-color: $light;
   h6 {
     color: $primary;
@@ -37,21 +42,95 @@ body {
   h4 {
     font-weight: map-get($font-weight, bold-700);
   }
-  .mentor-kelas {
-    .d-flex {
-      img {
-        height: 38px;
-      }
+}
+// Hero--------------
+.hero {
+  h2 {
+    font-size: 40px;
+    font-weight: map-get($font-weight, bold-700);
+  }
+}
+
+// Sidebar--------------
+.sidebar {
+  background-color: $secondary;
+  h5 {
+    font-size: 18px;
+    font-weight: map-get($font-weight, bold-700);
+  }
+  a {
+    color: $black-text;
+    font-size: 18px;
+    text-decoration: none;
+    &:hover {
+      color: $primary;
     }
   }
 }
 
-.accordion {
-  .accordion-button {
-    background-color: $light;
-    font-weight: map-get($font-weight, bold-700);
-  }
-  li {
-    font-size: 18px;
+.mentor-kelas {
+  .d-flex {
+    img {
+      height: 38px;
+    }
   }
 }
+
+.text {
+  font-weight: map-get($font-weight, medium-500);
+}
+
+//---------------------------Start Style Kurikulum---------------------------
+.kurikulum-program {
+  .accordion {
+    .accordion-button {
+      background-color: $light;
+      font-weight: map-get($font-weight, semibold-600);
+    }
+    li {
+      font-size: 16px;
+    }
+  }
+}
+//---------------------------End Style Kurikulum---------------------------
+
+//---------------------------Start Style Review---------------------------
+.testimoni {
+  // height: 884px;
+  // background-color: $l;
+  .bxs-quote-right {
+    color: $white;
+  }
+
+  h2 {
+    font-size: 34px;
+    font-weight: map-get($font-weight, bold-700);
+  }
+  p {
+    color: $light;
+  }
+
+  .user {
+    .name {
+      color: $white;
+      font-weight: map-get($font-weight, bold-700);
+    }
+    .status {
+      font-weight: map-get($font-weight, reguler-400);
+      color: $white;
+      line-height: 16px;
+    }
+  }
+
+  .card {
+    border: none;
+    background-color: $primary;
+
+    .rate {
+      font-size: 18px;
+      color: $yellow;
+      margin-bottom: 8px;
+    }
+  }
+}
+//---------------------------End Style Review---------------------------

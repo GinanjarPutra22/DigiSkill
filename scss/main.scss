@@ -172,7 +172,9 @@ h1 {
   p {
     color: $light;
   }
-
+  .name {
+    font-weight: map-get($font-weight, semibold-600);
+  }
   .card {
     border: none;
     background-color: $primary;
