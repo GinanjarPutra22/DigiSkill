@@ -21,6 +21,41 @@
   color: #0d6efd;
 }
 
+.testimoni .bxs-quote-right {
+  color: #fff;
+}
+
+.testimoni h2 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.testimoni p {
+  color: #f8f9fa;
+}
+
+.testimoni .user .name {
+  color: #fff;
+  font-weight: 700;
+}
+
+.testimoni .user .status {
+  font-weight: 400;
+  color: #fff;
+  line-height: 16px;
+}
+
+.testimoni .card {
+  border: none;
+  background-color: #0d6efd;
+}
+
+.testimoni .card .rate {
+  font-size: 18px;
+  color: #ffda6a;
+  margin-bottom: 8px;
+}
+
 footer .navbar-brand {
   font-size: 18px;
   color: #fff;
@@ -131,40 +166,5 @@ body h4 {
 
 .kurikulum-program .accordion li {
   font-size: 16px;
-}
-
-.testimoni .bxs-quote-right {
-  color: #fff;
-}
-
-.testimoni h2 {
-  font-size: 34px;
-  font-weight: 700;
-}
-
-.testimoni p {
-  color: #f8f9fa;
-}
-
-.testimoni .user .name {
-  color: #fff;
-  font-weight: 700;
-}
-
-.testimoni .user .status {
-  font-weight: 400;
-  color: #fff;
-  line-height: 16px;
-}
-
-.testimoni .card {
-  border: none;
-  background-color: #0d6efd;
-}
-
-.testimoni .card .rate {
-  font-size: 18px;
-  color: #ffda6a;
-  margin-bottom: 8px;
 }
 /*# sourceMappingURL=detail.css.map */
