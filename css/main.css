@@ -5,6 +5,10 @@
   font-weight: 700;
 }
 
+.navbar .navbar-brand a {
+  color: #212529;
+}
+
 .navbar btn {
   font-size: 16px;
   font-weight: 600;
@@ -16,10 +20,15 @@
 
 .navbar ul li a {
   font-weight: 600;
+  color: #686868;
+}
+
+.navbar ul li a .active {
+  color: red;
 }
 
 .navbar ul li a:hover {
-  color: #0d6efd;
+  color: #9ec5fe;
 }
 
 footer .navbar-brand {
@@ -272,6 +281,10 @@ h1 {
 .container-review .card .rate {
   font-size: 18px;
   color: #ffda6a;
+}
+
+.container-review .detail i {
+  color: #fff;
 }
 
 .container-cta h1 {
