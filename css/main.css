@@ -104,6 +104,10 @@ h1 {
   color: #212529;
 }
 
+.container-value-fluid {
+  padding: 100px 0px;
+}
+
 .value-1 {
   background-color: #9ec5fe;
 }
@@ -132,6 +136,10 @@ h1 {
 .container-card:hover h4,
 .container-card:hover p {
   color: white;
+}
+
+.container-value-2 {
+  padding: 100px 0px;
 }
 
 .value-2 h1 {

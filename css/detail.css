@@ -155,6 +155,10 @@ body h4 {
   height: 38px;
 }
 
+.mentor-kelas .desk {
+  text-align: justify;
+}
+
 .text {
   font-weight: 500;
 }
