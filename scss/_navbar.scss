@@ -18,9 +18,6 @@
       a {
         font-weight: map-get($font-weight, "semibold-600");
         color: rgb(104, 104, 104);
-        .active {
-          color: red;
-        }
         &:hover {
           color: $secondary;
         }

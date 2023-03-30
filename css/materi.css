@@ -22,10 +22,6 @@
   color: #686868;
 }
 
-.navbar ul li a .active {
-  color: red;
-}
-
 .navbar ul li a:hover {
   color: #9ec5fe;
 }

@@ -1,18 +1,48 @@
 @import "colors";
 @import "fonts";
-h1 {
-  font-size: 28px;
-  font-weight: map-get($font-weight, bold-700);
-  color: $primary;
+
+.left-side {
+  a {
+    text-decoration: none;
+    color: $black-text;
+    p {
+      color: $black-text;
+      font-weight: map-get($font-weight, bold-700);
+    }
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: map-get($font-weight, bold-700);
+    color: $black-text;
+  }
+  h5 {
+    font-size: 18px;
+    font-weight: map-get($font-weight, semibold-600);
+  }
 }
-h5 {
-  font-size: 18px;
-  font-weight: map-get($font-weight, semibold-600);
+
+.right-side {
+  label {
+    font-weight: map-get($font-weight, semibold-600);
+  }
+
+  p {
+    font-weight: map-get($font-weight, medium-500);
+    a {
+      text-decoration: none;
+    }
+  }
 }
+
 .container-login-regis {
   // background-color: yellow;
   .right-side {
     background-color: $secondary;
+  }
+
+  h5 {
+    color: $black-text;
   }
 }
 
