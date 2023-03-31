@@ -80,6 +80,10 @@ body .container-fluid h2 {
   font-weight: 700;
 }
 
+body .about {
+  margin-bottom: 100px;
+}
+
 body .about img {
   width: 10em;
 }
