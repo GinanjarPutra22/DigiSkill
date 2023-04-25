@@ -31,7 +31,7 @@
   <!-- Start Navbar -->
   <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
     <div class="container">
-      <a class="navbar-brand" href="../../index.html">
+      <a class="navbar-brand" href="../../index.php">
         <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
           class="d-inline-block align-text-top">
         DigiSkill
@@ -43,23 +43,23 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item me-4">
-            <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="../../index.php">Home</a>
           </li>
           <li class="nav-item dropdown me-4">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Course
             </a>
             <ul class="dropdown-menu me-4">
-              <li><a class="dropdown-item" href="detail-ui-ux.html">UI/UX Design</a></li>
+              <li><a class="dropdown-item" href="detail-ui-ux.php">UI/UX Design</a></li>
               <li><a class="dropdown-item" href="#">Front-End-Development</a></li>
-              <li><a class="dropdown-item" href="detail-back-end.html">Back-End-Development</a></li>
+              <li><a class="dropdown-item" href="detail-back-end.php">Back-End-Development</a></li>
             </ul>
           </li>
           <!-- <li class="nav-item me-4">
                     <a class="nav-link" href="#">Blog</a>
                 </li> -->
           <li class="nav-item me-4">
-            <a class="nav-link" href="../about-us.html">About Us</a>
+            <a class="nav-link" href="../about-us.php">About Us</a>
           </li>
           <button class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">Masuk</button>
           <button class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</button>
@@ -152,7 +152,7 @@
                     <div class="text-center">
                       <h3>Memilih Kelas Front-End</h3>
                     <img src="../../Assets/done-logo.svg" alt="done-logo" class="img img-fluid rounded p-5">
-                    <a href="../profile/kelas-saya.html">
+                    <a href="../profile/kelas-saya.php">
                       <button type="submit" class="btn btn-primary btn-lg col-10 mb-2">
                         Selanjutnya
                       </button>
@@ -605,7 +605,7 @@
   <footer class="footer bg-primary mt-5">
     <div class="container pt-5">
       <div class="row mb-3 d-flex align-items-center">
-        <a class="navbar-brand fs-4 fw-semibold d-flex align-items-center me-3" href="/index.html">
+        <a class="navbar-brand fs-4 fw-semibold d-flex align-items-center me-3" href="/index.php">
           <img src="../../Assets/logo-white.svg" class="d-inline-block align-text-top  h-75 ">
           DigiSkill
         </a>

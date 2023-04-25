@@ -34,7 +34,7 @@
     <!-- Start Navbar -->
     <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
       <div class="container">
-        <a class="navbar-brand" href="../../index.html">
+        <a class="navbar-brand" href="../../index.php">
           <img
             src="../../Assets/Logo-DigiSkill.svg"
             alt="Logo"
@@ -64,7 +64,7 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="../../index.html"
+                href="../../index.php"
                 >Home</a
               >
             </li>
@@ -80,19 +80,19 @@
               </a>
               <ul class="dropdown-menu me-4">
                 <li>
-                  <a class="dropdown-item" href="../detail/detail-ui-ux.html"
+                  <a class="dropdown-item" href="../detail/detail-ui-ux.php"
                     >UI/UX Design</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item"
-                    href="../detail/detail-front-end.html"
+                    href="../detail/detail-front-end.php"
                     >Front-End-Development</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="../detail/detail-back-end.html"
+                  <a class="dropdown-item" href="../detail/detail-back-end.php"
                     >Back-End-Development</a
                   >
                 </li>
@@ -102,7 +102,7 @@
                     <a class="nav-link" href="#">Blog</a>
                 </li> -->
             <li class="nav-item me-4">
-              <a class="nav-link" href="../about-us.html">About Us</a>
+              <a class="nav-link" href="../about-us.php">About Us</a>
             </li>
             <li class="nav-item dropdown me-4">
               <a
@@ -122,7 +122,7 @@
               </a>
               <ul class="dropdown-menu me-4">
                 <li>
-                  <a class="dropdown-item" href="../detail/detail-ui-ux.html"
+                  <a class="dropdown-item" href="../detail/detail-ui-ux.php"
                     >My profile</a
                   >
                 </li>
@@ -130,7 +130,7 @@
                 <li>
                   <a
                     class="dropdown-item"
-                    href="../detail/detail-front-end.html"
+                    href="../detail/detail-front-end.php"
                     >Logout</a
                   >
                 </li>
@@ -155,10 +155,10 @@
                   <h5 class="text-center">Ginanjar</h5>
                   <hr />
                   <div style="font-size: smaller" class="ms-3">
-                    <a href="kelas-saya.html">
+                    <a href="kelas-saya.php">
                       <p>Kelas Saya</p>
                     </a>
-                    <a href="profile.html">
+                    <a href="profile.php">
                       <p>Setting Akun</p>
                     </a>
                   </div>
@@ -203,7 +203,7 @@
                       class="product-btn mt-5 d-flex justify-content-between align-items-center"
                     >
                       <div class="info-video">6 Video</div>
-                      <a href="../materi/ui-ux/materi-uiux-1.html"
+                      <a href="../materi/ui-ux/materi-uiux-1.php"
                         ><button type="button" class="btn btn-primary btn-sm">
                           Lihat Kelas
                         </button>
@@ -225,7 +225,7 @@
         <div class="row mb-3 d-flex align-items-center">
           <a
             class="navbar-brand fs-4 fw-semibold d-flex align-items-center me-3"
-            href="/index.html"
+            href="/index.php"
           >
             <img
               src="../../Assets/logo-white.svg"

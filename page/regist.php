@@ -62,7 +62,7 @@
             <div class="container">
               <form action="...">
                 <div class="mb-0 mt-3 d-flex justify-content-end">
-                  <a href="../index.html">
+                  <a href="../index.php">
                     <img src="../Assets/x-circle.svg" alt="" class="h-100" />
                   </a>
                 </div>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="mt-3">
                   <p class="text-center">
-                    Anda Sudah Memiliki Akun? <a href="login.html">Masuk</a>
+                    Anda Sudah Memiliki Akun? <a href="login.php">Masuk</a>
                   </p>
                 </div>
               </form>

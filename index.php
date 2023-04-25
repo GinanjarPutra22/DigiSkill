@@ -27,7 +27,6 @@
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-  <link rel="stylesheet" href="navbar.html" />
 </head>
 
 <body style="height: 2000px">
@@ -53,13 +52,13 @@
             </a>
             <ul class="dropdown-menu me-4">
               <li>
-                <a class="dropdown-item" href="page/detail/detail-ui-ux.html">UI/UX Design</a>
+                <a class="dropdown-item" href="page/detail/detail-ui-ux.php">UI/UX Design</a>
               </li>
               <li>
-                <a class="dropdown-item" href="page/detail/detail-front-end.html">Front-End-Development</a>
+                <a class="dropdown-item" href="page/detail/detail-front-end.php">Front-End-Development</a>
               </li>
               <li>
-                <a class="dropdown-item" href="page/detail/detail-back-end.html">Back-End-Development</a>
+                <a class="dropdown-item" href="page/detail/detail-back-end.php">Back-End-Development</a>
               </li>
             </ul>
           </li>
@@ -67,12 +66,12 @@
                         <a class="nav-link" href="#">Blog</a>
                     </li> -->
           <li class="nav-item me-4">
-            <a class="nav-link" href="page/about-us.html">About Us</a>
+            <a class="nav-link" href="page/about-us.php">About Us</a>
           </li>
-          <a href="page/login.html" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
+          <a href="page/login.php" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
             Masuk
           </a>
-          <a href="page/regist.html" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
+          <a href="page/regist.php" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
         </ul>
       </div>
     </div>
@@ -252,7 +251,7 @@
             <div href="#" class="badge px-3 py-2">UI/UX Desin</div>
             <div class="product-btn mt-5 d-flex justify-content-between align-items-center">
               <div class="info-video">6 Video</div>
-              <a href="page/detail/detail-ui-ux.html"><button type="button" class="btn btn-primary btn-sm">
+              <a href="page/detail/detail-ui-ux.php"><button type="button" class="btn btn-primary btn-sm">
                   Detail Kelas
                 </button>
               </a>
@@ -285,7 +284,7 @@
             <div href="#" class="badge px-3 py-2">Front-End-Development</div>
             <div class="product-btn mt-5 d-flex justify-content-between align-items-center">
               <div class="info-video">4 Video</div>
-              <a href="page/detail/detail-front-end.html"><button type="button" class="btn btn-primary btn-sm">
+              <a href="page/detail/detail-front-end.php"><button type="button" class="btn btn-primary btn-sm">
                   Detail Kelas
                 </button>
               </a>
@@ -319,7 +318,7 @@
             <div href="#" class="badge px-3 py-2">Back-End-Development</div>
             <div class="product-btn mt-5 d-flex justify-content-between align-items-center">
               <div class="info-video">5 Video</div>
-              <a href="page/detail/detail-back-end.html"><button type="button" class="btn btn-primary btn-sm">
+              <a href="page/detail/detail-back-end.php"><button type="button" class="btn btn-primary btn-sm">
                   Detail Kelas
                 </button>
               </a>

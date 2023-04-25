@@ -12,16 +12,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
 
+  <link rel="stylesheet" href="../../css/materi.css" />
   <link rel="stylesheet" href="../../../css/materi.css" />
   <!-- <link rel="stylesheet" href="../../css/main.css"> -->
-  <title>DigiSkill-Materi-Frontend</title>
 </head>
 
 <body>
   <!-- Start Navbar -->
   <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
     <div class="container">
-      <a class="navbar-brand" href="../../index.html">
+      <a class="navbar-brand" href="../../index.php">
         <img src="/Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
         DigiSkill
       </a>
@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item me-4">
-            <a class="nav-link active" aria-current="page" href="../../../index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="../../../index.php">Home</a>
           </li>
           <li class="nav-item dropdown me-4">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,13 +40,13 @@
             </a>
             <ul class="dropdown-menu me-4">
               <li>
-                <a class="dropdown-item" href="/page/detail/detail-ui-ux.html">UI/UX Design</a>
+                <a class="dropdown-item" href="/page/detail/detail-ui-ux.php">UI/UX Design</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/page/detail/detail-front-end.html">Front-End-Development</a>
+                <a class="dropdown-item" href="/page/detail/detail-front-end.php">Front-End-Development</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/page/detail/detail-back-end.html">Back-End-Development</a>
+                <a class="dropdown-item" href="/page/detail/detail-back-end.php">Back-End-Development</a>
               </li>
             </ul>
           </li>
@@ -54,7 +54,7 @@
                 <a class="nav-link" href="#">Blog</a>
             </li> -->
           <li class="nav-item me-4">
-            <a class="nav-link" href="../about-us.html">About Us</a>
+            <a class="nav-link" href="../about-us.php">About Us</a>
           </li>
           <li class="nav-item dropdown me-4">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,7 +63,7 @@
             </a>
             <ul class="dropdown-menu me-4">
               <li>
-                <a class="dropdown-item" href="../../../page/profile/kelas-saya.html">My profile</a>
+                <a class="dropdown-item" href="../../../page/profile/kelas-saya.php">My profile</a>
               </li>
               <hr />
               <li>
@@ -94,17 +94,17 @@
             <div class="accordion-collapse collapse show" id="collapseOne" data-bs-tongle="#accordionSection">
               <div class="accordion-body">
                 <div class="d-grid gap-3">
-                  <a href="materi-frontend-1.html" class="btn btn-primary mb-1">
+                  <a href="materi-frontend-1.php" class="btn btn-primary mb-1">
                     1. HTML
                   </a>
 
-                  <a href="materi-frontend-2.html" class="btn btn-primary mb-1">
+                  <a href="materi-frontend-2.php" class="btn btn-primary mb-1">
                     2. CSS
                   </a>
-                  <a href="materi-frontend-3.html" class="btn btn-primary mb-1">
+                  <a href="materi-frontend-3.php" class="btn btn-primary disabled mb-1">
                     3. Bootstrap
                   </a>
-                  <a href="materi-frontend-4.html" class="btn btn-primary disabled mb-1">
+                  <a href="materi-frontend-4.php" class="btn btn-primary mb-1">
                     4. Java Script
                   </a>
                 </div>
@@ -117,29 +117,36 @@
         <div class="collapse show" id="collapse1">
           <div class="card card-body">
             <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/SDROba_M42g" class="" allowfullscreen>
+              <iframe src="https://www.youtube.com/embed/LkR-9Z1sle8" class="" allowfullscreen>
               </iframe>
             </div>
 
-            <div class="4. Java Script py-3"></div>
+            <div class="3. Bootstrap py-3"></div>
             <div class="d-grid gap-5 d-md-flex justify-content-arround">
-              <h2 class="fs-7">4. Java Script</h2>
+              <h2 class="fs-7">3. Bootstrap</h2>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-end">
+              <a href="materi-frontend-4.php" class="btn btn-primary">Next</a>
             </div>
 
-            <p>Apa itu Java Script?</p>
+            <p>Apa itu Bootstrap?</p>
             <p></p>
             <p>
-              JavaScript adalah bahasa pemrograman yang digunakan dalam
-              pengembangan website agar lebih dinamis dan interaktif. Kalau
-              sebelumnya kamu hanya mengenal HTML dan CSS, nah sekarang kamu
-              jadi tahu bahwa JavaScript dapat meningkatkan fungsionalitas
-              pada halaman web. Bahkan dengan JavaScript ini kamu bisa membuat
-              aplikasi, tools, atau bahkan game pada web.
+              Bootstrap adalah framework HTML, CSS, dan JavaScript yang
+              berfungsi untuk mendesain website responsive dengan cepat dan
+              mudah.
             </p>
             <p></p>
             <p>
-              Dengan arahan website, kali ini kita akan belajar mengenai Java
-              Script pada Front-End Development dengan melihat video yang
+              Kemudahan yang ditawarkan oleh Bootstrap adalah Anda tak perlu
+              coding komponen website dari nol. Framework ini tersusun dari
+              kumpulan file CSS dan JavaScript berbentuk class yang tinggal
+              pakai.
+            </p>
+            <p></p>
+            <p>
+              Dengan arahan website, kali ini kita akan belajar mengenai
+              Bootstrap pada Front-End Development dengan melihat video yang
               sudah disiapkan.
             </p>
           </div>

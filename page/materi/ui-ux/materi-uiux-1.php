@@ -14,14 +14,14 @@
 
   <link rel="stylesheet" href="../../../css/materi.css" />
   <!-- <link rel="stylesheet" href="../../css/main.css"> -->
-  <title>DigiSkill-Materi-Frontend</title>
+  <title>DigiSkill-Materi-UI/UX</title>
 </head>
 
 <body>
   <!-- Start Navbar -->
   <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
     <div class="container">
-      <a class="navbar-brand" href="../../index.html">
+      <a class="navbar-brand" href="../../index.php">
         <img src="/Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
         DigiSkill
       </a>
@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item me-4">
-            <a class="nav-link active" aria-current="page" href="../../../index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="../../../index.php">Home</a>
           </li>
           <li class="nav-item dropdown me-4">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,21 +40,21 @@
             </a>
             <ul class="dropdown-menu me-4">
               <li>
-                <a class="dropdown-item" href="/page/detail/detail-ui-ux.html">UI/UX Design</a>
+                <a class="dropdown-item" href="/page/detail/detail-ui-ux.php">UI/UX Design</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/page/detail/detail-front-end.html">Front-End-Development</a>
+                <a class="dropdown-item" href="/page/detail/detail-front-end.php">Front-End-Development</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/page/detail/detail-back-end.html">Back-End-Development</a>
+                <a class="dropdown-item" href="/page/detail/detail-back-end.php">Back-End-Development</a>
               </li>
             </ul>
           </li>
           <!-- <li class="nav-item me-4">
-                <a class="nav-link" href="#">Blog</a>
-            </li> -->
+                  <a class="nav-link" href="#">Blog</a>
+              </li> -->
           <li class="nav-item me-4">
-            <a class="nav-link" href="../about-us.html">About Us</a>
+            <a class="nav-link" href="/page/about-us.php">About Us</a>
           </li>
           <li class="nav-item dropdown me-4">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,7 +63,7 @@
             </a>
             <ul class="dropdown-menu me-4">
               <li>
-                <a class="dropdown-item" href="../../../page/profile/kelas-saya.html">My profile</a>
+                <a class="dropdown-item" href="../../../page/profile/kelas-saya.php">My profile</a>
               </li>
               <hr />
               <li>
@@ -77,6 +77,8 @@
   </nav>
   <!-- End Navbar -->
 
+
+
   <!--accordion-->
 
   <div class="container">
@@ -88,24 +90,30 @@
             <h1 class="accordion-header">
               <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
                 data-bs-target="#collapseOne">
-                Materi Video Kelas Front-End Development
+                Materi Video Kelas UI/UX Design
               </button>
             </h1>
             <div class="accordion-collapse collapse show" id="collapseOne" data-bs-tongle="#accordionSection">
               <div class="accordion-body">
                 <div class="d-grid gap-3">
-                  <a href="materi-frontend-1.html" class="btn btn-primary disabled mb-1">
-                    1. HTML
+                  <a href="materi-uiux-1.php" class="btn btn-primary disabled mb-1">
+                    1. Pengenalan UI/UX
                   </a>
 
-                  <a href="materi-frontend-2.html" class="btn btn-primary mb-1">
-                    2. CSS
+                  <a href="materi-uiux-2.php" class="btn btn-primary mb-1">
+                    2. Basic Tools (Figma)
                   </a>
-                  <a href="materi-frontend-3.html" class="btn btn-primary mb-1">
-                    3. Bootstrap
+                  <a href="materi-uiux-3.php" class="btn btn-primary mb-1">
+                    3. Component (Figma)
                   </a>
-                  <a href="materi-frontend-4.html" class="btn btn-primary mb-1">
-                    4. Java Script
+                  <a href="materi-uiux4.php" class="btn btn-primary mb-1">
+                    4. Layouting (Figma)
+                  </a>
+                  <a href="materi-uiux-5.php" class="btn btn-primary mb-1">
+                    5. Prototype (Figma)
+                  </a>
+                  <a href="materi-uiux-6.php" class="btn btn-primary mb-1">
+                    6. Proses UI/UX design
                   </a>
                 </div>
               </div>
@@ -117,30 +125,30 @@
         <div class="collapse show" id="collapse1">
           <div class="card card-body">
             <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/hMDJyb7VkYw" class="" allowfullscreen>
+              <iframe src="https://www.youtube.com/embed/cBGBXjzWVi0" class="" allowfullscreen>
               </iframe>
             </div>
 
-            <div class="1. HTML py-3"></div>
+            <div class="1. Pengenalan UI/UX py-3"></div>
             <div class="d-grid gap-5 d-md-flex justify-content-arround">
-              <h2 class="fs-7">1. HTML</h2>
+              <h2 class="fs-7">1. Pengenalan UI/UX</h2>
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-end">
-              <a href="materi-frontend-2.html" class="btn btn-primary">Next</a>
+              <a href="materi-uiux-2.php" class="btn btn-primary">Next</a>
             </div>
 
-            <p>Apa itu HTML?</p>
+            <p>Apa itu UI/UX?</p>
             <p></p>
             <p>
-              HTML adalah bahasa standar pemrograman yang digunakan untuk
-              membuat halaman website, yang diakses melalui internet.
-              Singkatan dari "Hypertext Markup Language" atau "bahasa markup".
+              Bidang UI/UX sangat diminati oleh dunia industri belakangan ini.
+              UI/UX dapat membantu menciptakan website atau aplikasi yang
+              memenuhi kebutuhan user dan meminimalisir ketidaknyamanan user
+              dalam menggunakan suatu website ataupun aplikasi mobile.
             </p>
             <p></p>
             <p>
-              Dengan arahan website, kali ini kita akan belajar mengenai HTML
-              pada Front-End Development dengan melihat video yang sudah
-              disiapkan.
+              Dengan arahan website, kali ini kita akan belajar dan mengenal
+              apa itu UI/UX dengan melihat video yang sudah disiapkan.
             </p>
           </div>
         </div>
