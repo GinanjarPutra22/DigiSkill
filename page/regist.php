@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+require '../db/function.php';
+
+if(isset($_POST["register"] ) ) {
+  if( registrasi($_POST) > 0 ) {
+      echo"<script>
+            alert('user baru berhasil ditambahkan');    
+      </script>";
+  }else {
+    echo mysqli_error($conn);
+  }
+}
+?>
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -60,7 +75,7 @@
             class="col-md-5 justify-content-center right-side py-lg-2 px-lg-5 rounded mb-sm-3 mt-lg-2"
           >
             <div class="container">
-              <form action="...">
+              <form action="" method="post">
                 <div class="mb-0 mt-3 d-flex justify-content-end">
                   <a href="../index.php">
                     <img src="../Assets/x-circle.svg" alt="" class="h-100" />
@@ -86,7 +101,7 @@
                     class="form-control"
                     id="username"
                     placeholder="Masukan Username"
-                    name="email"
+                    name="username"
                   />
                 </div>
                 <div class="mb-0 mt-2">
@@ -106,12 +121,12 @@
                     class="form-control"
                     id="pwd"
                     placeholder="Masukan Password"
-                    name="pswd"
+                    name="password"
                   />
                 </div>
-                <div class="mb-0 mt-5">
-                  <button type="button" class="btn btn-primary btn-lg col-12">
-                    Masuk
+                <div class="mb-0 mt-4">
+                  <button type="submit" class="btn btn-primary btn-lg col-12" name="register">
+                    Daftar
                   </button>
                 </div>
                 <div class="mt-3">

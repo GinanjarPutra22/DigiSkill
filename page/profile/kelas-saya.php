@@ -169,6 +169,14 @@
           <!-- End Sidebar Detail Program BE -->
 
           <!-- Start Main Content -->
+          <?php
+              require '../../db/koneksi.php';
+
+              $data = mysqli_query($conn,"SELECT * FROM data_kelas");
+          ?>
+          <?php while ($row = mysqli_fetch_assoc($data)) : ?>
+
+          <?php endwhile;?>
           <div class="col-lg-8 container-product">
             <div class="row mt-5">
               <div class="col-lg-5 col-md-6 mb-4">

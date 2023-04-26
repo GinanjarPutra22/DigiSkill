@@ -1,5 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+
+require '../db/function.php';
+
+if (isset($_POST["masuk"] ) ) {
+
+  $username = $_POST["username"];
+  $email = $_POST["email"];
+  $password = $_POST["password"];
+
+  $result = mysqli_query($conn,"SELECT * FROM login WHERE username='$username'");
+
+  
+
+  if (mysqli_num_rows($result) === 1){
+    $row= mysqli_fetch_assoc($result);
+    header("location: ../index.php");
+  }
+
+}
+?>
+
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -60,7 +83,7 @@
             class="col-md-5 justify-content-center right-side py-lg-2 px-lg-5 rounded mb-sm-3 mt-lg-2"
           >
             <div class="container">
-              <form action="...">
+              <form action="" method="post">
                 <div class="mb-0 mt-3 d-flex justify-content-end">
                   <a href="../index.php">
                     <img src="../Assets/x-circle.svg" alt="" class="h-100" />
@@ -76,7 +99,7 @@
                     class="form-control"
                     id="username"
                     placeholder="Masukan Username"
-                    name="email"
+                    name="username"
                   />
                 </div>
                 <div class="mb-3 mt-3">
@@ -90,17 +113,17 @@
                   />
                 </div>
                 <div class="mb-3 mt-3">
-                  <label for="pwd" class="form-label">Password</label>
+                  <label for="pswd" class="form-label">Password</label>
                   <input
                     type="password"
                     class="form-control"
-                    id="pwd"
+                    id="pswd"
                     placeholder="Masukan Password"
-                    name="pswd"
+                    name="password"
                   />
                 </div>
                 <div class="mb-3 mt-5">
-                  <button type="button" class="btn btn-primary btn-lg col-12">
+                  <button type="submit" class="btn btn-primary btn-lg col-12" name="masuk">
                     Masuk
                   </button>
                 </div>
