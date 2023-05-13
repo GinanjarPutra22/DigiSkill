@@ -24,6 +24,8 @@ if (isset($_POST["masuk"])) {
     if (password_verify($password, $row["password"])) {
       //set session
       $_SESSION["login"] = true; // menyimpan data sesssion login untuk semua halaman
+      $_SESSION["id_login"] = $row["id_login"];
+
       header("location: ../index.php");
       exit;
     }

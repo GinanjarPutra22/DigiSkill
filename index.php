@@ -2,7 +2,7 @@
 session_start();
 require 'db/function.php';
 
-$navbar = query("SELECT * FROM kelas");
+$kelas = query("SELECT * FROM kelas");
 $penilaian = query("SELECT * FROM data_kelas");
 
 ?>
@@ -58,10 +58,10 @@ $penilaian = query("SELECT * FROM data_kelas");
             </a>
             <ul class="dropdown-menu me-4">
               <?php
-              foreach ($navbar as $row) :
+              foreach ($kelas as $row) :
               ?>
                 <li>
-                  <a class="dropdown-item" href="page/detail/detail.php"><?= $row['nama_kelas'] ?></a>
+                  <a class="dropdown-item" href="page/detail/detail.php?id<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
                 </li>
               <?php endforeach ?>
             </ul>
@@ -77,7 +77,7 @@ $penilaian = query("SELECT * FROM data_kelas");
               </a>
               <ul class="dropdown-menu me-4">
                 <li>
-                  <a class="dropdown-item" href="../profile/profile.php">My profile</a>
+                  <a class="dropdown-item" href="page/profile/profile.php">My profile</a>
                 </li>
                 <hr />
                 <li>
@@ -250,108 +250,42 @@ $penilaian = query("SELECT * FROM data_kelas");
     </div>
 
     <div class="row mt-5">
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card">
-          <div class="img-box">
-            <img src="Assets/product-1.svg" alt="" class="img-fluid" />
-            <div class="bg-img px-4">
-              <div class="info">
-                <p class="member m-0">1.232 Siswa Terdaftar</p>
-                <div class="rate">
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
+      <?php foreach ($kelas as $row) : ?>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="img-box">
+              <img src="Assets/product-1.svg" alt="" class="img-fluid" />
+              <div class="bg-img px-4">
+                <div class="info">
+                  <p class="member m-0">1.232 Siswa Terdaftar</p>
+                  <div class="rate">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="product-caption mt-4">
-            <h3 class="product-name">
-              Belajar UI/UX Design dengan Figma untuk pengembangan design
-              website
-            </h3>
-            <div href="#" class="badge px-3 py-2">UI/UX Desin</div>
-            <div class="product-btn mt-5 d-flex justify-content-between align-items-center">
-              <div class="info-video">6 Video</div>
-              <a href="page/detail/detail-ui-ux.php"><button type="button" class="btn btn-primary btn-sm">
-                  Detail Kelas
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="card">
-          <div class="img-box">
-            <img src="Assets/product-2.svg" alt="" class="img-fluid" />
-            <div class="bg-img px-4">
-              <div class="info">
-                <p class="member m-0">1.232 Siswa Terdaftar</p>
-                <div class="rate">
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                </div>
+            <div class="product-caption mt-4">
+              <h3 class="product-name">
+                Belajar UI/UX Design dengan Figma untuk pengembangan design
+                website
+              </h3>
+              <div href="#" class="badge px-3 py-2"> <?= $row["nama_kelas"] ?></div>
+              <div class="product-btn mt-5 d-flex justify-content-between align-items-center">
+                <div class="info-video">6 Video</div>
+                <a href="page/detail/detail.php?id=<?= $row["id_kelas"] ?>"><button type="button" class="btn btn-primary btn-sm">
+                    Detail Kelas
+                  </button>
+                </a>
               </div>
             </div>
           </div>
-
-          <div class="product-caption mt-4">
-            <h3 class="product-name">
-              Belajar membangun website yang dinamis dengan HTML, CSS dan JS
-            </h3>
-            <div href="#" class="badge px-3 py-2">Front-End-Development</div>
-            <div class="product-btn mt-5 d-flex justify-content-between align-items-center">
-              <div class="info-video">4 Video</div>
-              <a href="page/detail/detail-front-end.php"><button type="button" class="btn btn-primary btn-sm">
-                  Detail Kelas
-                </button>
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 mb-5">
-        <div class="card">
-          <div class="img-box">
-            <img src="Assets/product-3.svg" alt="" class="img-fluid" />
-            <div class="bg-img px-4">
-              <div class="info">
-                <p class="member m-0">1.140 Siswa Terdaftar</p>
-                <div class="rate">
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                  <i class="bx bxs-star"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-caption mt-4">
-            <h3 class="product-name">
-              Belajar menggunkan PHP, framwork Laravel serta Github untuk
-              kolaborasi
-            </h3>
-            <div href="#" class="badge px-3 py-2">Back-End-Development</div>
-            <div class="product-btn mt-5 d-flex justify-content-between align-items-center">
-              <div class="info-video">5 Video</div>
-              <a href="page/detail/detail-back-end.php"><button type="button" class="btn btn-primary btn-sm">
-                  Detail Kelas
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php endforeach ?>
     </div>
   </div>
   <!-- End Card Produk -->
