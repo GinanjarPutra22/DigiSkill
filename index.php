@@ -1,3 +1,11 @@
+<?php
+session_start();
+require 'db/function.php';
+
+$navbar = query("SELECT * FROM kelas");
+$penilaian = query("SELECT * FROM data_kelas");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DigiSkill</title>
   <!-- Link Boostrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
   <!-- Icon Title -->
   <link rel="icon" href="Assets/logo-icon.svg" type="image/x-icon" />
@@ -37,8 +44,7 @@
         <img src="Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
         DigiSkill
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -51,27 +57,41 @@
               Course
             </a>
             <ul class="dropdown-menu me-4">
-              <li>
-                <a class="dropdown-item" href="page/detail/detail-ui-ux.php">UI/UX Design</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="page/detail/detail-front-end.php">Front-End-Development</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="page/detail/detail-back-end.php">Back-End-Development</a>
-              </li>
+              <?php
+              foreach ($navbar as $row) :
+              ?>
+                <li>
+                  <a class="dropdown-item" href="page/detail/detail.php"><?= $row['nama_kelas'] ?></a>
+                </li>
+              <?php endforeach ?>
             </ul>
           </li>
-          <!-- <li class="nav-item me-4">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li> -->
           <li class="nav-item me-4">
             <a class="nav-link" href="page/about-us.php">About Us</a>
           </li>
-          <a href="page/login.php" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
-            Masuk
-          </a>
-          <a href="page/regist.php" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
+          <?php
+          if (isset($_SESSION["login"])) { ?>
+            <li class="nav-item dropdown me-4">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+              </a>
+              <ul class="dropdown-menu me-4">
+                <li>
+                  <a class="dropdown-item" href="../profile/profile.php">My profile</a>
+                </li>
+                <hr />
+                <li>
+                  <a class="dropdown-item" href="page/logout.php">Logout</a>
+                </li>
+              </ul>
+            </li>
+          <?php } else { ?>
+            <a href="page/login.php" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
+              Masuk
+            </a>
+            <a href="page/regist.php" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
+          <?php } ?>
+
         </ul>
       </div>
     </div>
@@ -97,7 +117,12 @@
             Dapatkan pekerjaan impianmu untuk masa depanmu, bersama kami anda
             akan mendapatkan pelatihan secara gratis dan terbaik.
           </p>
-          <div class="btn btn-primary mt-1 btn-lg px-3">Belajar Sekarang</div>
+          <?php if (isset($_SESSION["login"])) { ?>
+            <a href="#kelas_terbaik" class="btn btn-primary mt-1 btn-lg px-3">Belajar Sekarang</a>
+          <?php } else { ?>
+            <a href="page/login.php" class="btn btn-primary mt-1 btn-lg px-3">Belajar Sekarang</a>
+          <?php } ?>
+
         </div>
       </div>
     </div>
@@ -217,7 +242,7 @@
   <!-- Start Card Produk -->
   <div class="container container-product mx-4 mx-md-5 mt-5">
     <div class="row text-center mx-4 mx-md-5">
-      <h1 class="">Program Kelas Terbaik <span> DigiSkill?</span></h1>
+      <h1 class="" id="kelas_terbaik">Program Kelas Terbaik <span> DigiSkill?</span></h1>
       <p>
         DigiSKill menyediakan kelas pilihan terbaik untuk meningkakan keahlian
         anda
@@ -259,6 +284,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-lg-4 col-md-6">
         <div class="card">
           <div class="img-box">
@@ -364,8 +390,7 @@
                   </p>
                   <div class="detail d-flex justify-content-between align-items-center mt-4">
                     <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-male-1.svg" alt="avatar-review-1"
-                        class="rounded-circle img-fluid" />
+                      <img src="Assets/avatar-pict/avatar-male-1.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
                       <div class="profile ms-3">
                         <p class="name m-0">Edi Siswanto</p>
                         <p class="status m-0">
@@ -394,8 +419,7 @@
                   </p>
                   <div class="detail d-flex justify-content-between align-items-center mt-4">
                     <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-female-1.svg" alt="avatar-review-1"
-                        class="rounded-circle img-fluid" />
+                      <img src="Assets/avatar-pict/avatar-female-1.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
                       <div class="profile ms-3">
                         <p class="name m-0">Maharani P.</p>
                         <p class="status m-0">
@@ -424,8 +448,7 @@
                   </p>
                   <div class="detail d-flex justify-content-between align-items-center mt-4">
                     <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-male-2.svg" alt="avatar-review-1"
-                        class="rounded-circle img-fluid" />
+                      <img src="Assets/avatar-pict/avatar-male-2.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
                       <div class="profile ms-3">
                         <p class="name m-0">Adam Mahendra</p>
                         <p class="status m-0">
@@ -454,8 +477,7 @@
                   </p>
                   <div class="detail d-flex justify-content-between align-items-center mt-4">
                     <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-male-3.svg" alt="avatar-review-1"
-                        class="rounded-circle img-fluid" />
+                      <img src="Assets/avatar-pict/avatar-male-3.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
                       <div class="profile ms-3">
                         <p class="name m-0">Levi Ackerman</p>
                         <p class="status m-0">
@@ -484,8 +506,7 @@
                   </p>
                   <div class="detail d-flex justify-content-between align-items-center mt-4">
                     <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-female-12.svg" alt="avatar-review-1"
-                        class="rounded-circle img-fluid" />
+                      <img src="Assets/avatar-pict/avatar-female-12.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
                       <div class="profile ms-3">
                         <p class="name m-0">Amalia Sonia</p>
                         <p class="status m-0">
@@ -514,8 +535,7 @@
                   </p>
                   <div class="detail d-flex justify-content-between align-items-center mt-4">
                     <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-male-8.svg" alt="avatar-review-1"
-                        class="rounded-circle img-fluid" />
+                      <img src="Assets/avatar-pict/avatar-male-8.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
                       <div class="profile ms-3">
                         <p class="name m-0">John F. Kennedic</p>
                         <p class="status m-0">
@@ -546,7 +566,11 @@
         <p>
           Langsung bergabung dengan DigiSkill dan dapatkan banyak manfaatnya
         </p>
-        <div class="btn btn-primary mt-1 btn-lg px-3">Belajar Sekarang</div>
+        <?php if (isset($_SESSION["login"])) { ?>
+          <a href="#kelas_terbaik" class="btn btn-primary mt-1 btn-lg px-3">Belajar Sekarang</a>
+        <?php } else { ?>
+          <a href="page/login.php" class="btn btn-primary mt-1 btn-lg px-3">Belajar Sekarang</a>
+        <?php } ?>
       </div>
       <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center">
         <img src="Assets/Hero 3.svg" alt="Hero-3" class="img w-75 d-flex justify-content-center" />
@@ -641,16 +665,12 @@
   <!-- ------------------------------------------------------------ -->
 
   <!-- Jquery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="script/script.js"></script>
 
   <!-- Script JS -->
-  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

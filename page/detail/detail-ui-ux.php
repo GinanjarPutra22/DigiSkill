@@ -7,13 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
-  <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <!-- Modal -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Icon Title -->
@@ -31,12 +26,10 @@
   <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
     <div class="container">
       <a class="navbar-brand" href="../../index.php">
-        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
-          class="d-inline-block align-text-top">
+        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
         DigiSkill
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -61,26 +54,12 @@
             <a class="nav-link" href="../about-us.php">About Us</a>
           </li>
           <li class="nav-item dropdown me-4">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
-                class="rounded-circle"
-                height="22"
-                alt="Portrait of a Woman"
-                loading="lazy"
-              />
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="Portrait of a Woman" loading="lazy" />
             </a>
             <ul class="dropdown-menu me-4">
               <li>
-                <a class="dropdown-item" href="../profile/profile.php"
-                  >My profile</a
-                >
+                <a class="dropdown-item" href="../profile/profile.php">My profile</a>
               </li>
               <hr />
               <li>
@@ -109,7 +88,7 @@
         </p>
 
         </p>
-        <button type="button" class="btn btn-primary" style="font-weight: bold;" >
+        <button type="button" class="btn btn-primary" style="font-weight: bold;">
           Belajar Sekarang
         </button>
       </div>
@@ -121,7 +100,7 @@
     </div>
     <!-- ------End Hero UIUX------- -->
 
-    
+
 
 
     <!-- ------Start Row Main Detail Kelas------- -->
@@ -166,35 +145,35 @@
         <!-- End Sidebar Detail Program UIUX -->
 
         <!-- The Modal -->
-          <div class="modal" id="myModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <button type="button" class="btn-close right" data-bs-dismiss="modal"></button>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                  <div class="container">
-                    <div class="text-center">
-                      <h3>Memilih Kelas UI/UX Design</h3>
+        <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <button type="button" class="btn-close right" data-bs-dismiss="modal"></button>
+              </div>
+              <!-- Modal body -->
+              <div class="modal-body">
+                <div class="container">
+                  <div class="text-center">
+                    <h3>Memilih Kelas UI/UX Design</h3>
                     <img src="../../Assets/done-logo.svg" alt="done-logo.svg" class="img img-fluid rounded p-5">
                     <a href="../profile/kelas-saya.php">
                       <button type="submit" class="btn btn-primary btn-lg col-10 mb-2">
                         Selanjutnya
                       </button>
                     </a>
-                    </div>
                   </div>
                 </div>
-                <!-- Modal footer -->
-                <!-- <div class="modal-footer">
+              </div>
+              <!-- Modal footer -->
+              <!-- <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div> -->
-              </div>
             </div>
           </div>
-          <!-- End The Modal -->
+        </div>
+        <!-- End The Modal -->
 
         <!-- Start Main Content -->
         <div class="col-lg-8 ">
@@ -254,13 +233,11 @@
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                       Pengenalan UI/UX Design
                     </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       <ul>
                         <li> Apa itu UI/UX Design? </li>
@@ -272,13 +249,11 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       Tools UI/UX Design
                     </button>
                   </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       <ul>
                         <li> Basic Tools Figma </li>
@@ -291,13 +266,11 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                       Design Proses (Design Thinking)
                     </button>
                   </h2>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample">
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       <ul>
                         <li> Problem </li>
@@ -309,13 +282,11 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                       Figma and Testing
                     </button>
                   </h2>
-                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                    data-bs-parent="#accordionExample">
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       <ul>
                         <li> Implementasi </li>
@@ -385,8 +356,7 @@
                         <div class="detail d-flex justify-content-between align-items-end mt-4">
                           <div class="profile ms-0 ">
                             <div class="user  ">
-                              <img src="../../Assets/avatar-pict/avatar-female-1.svg  " alt="avatar-review-1"
-                                class="rounded-circle img-fluid mb-1">
+                              <img src="../../Assets/avatar-pict/avatar-female-1.svg  " alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                               <p class="name m-0">Amalia Sonia</p>
                               <p class="status m-0 lh-sm">UI/UX Designer di Petrokimia</p>
@@ -416,8 +386,7 @@
                         <div class="detail d-flex justify-content-between align-items-end mt-4">
                           <div class="profile ms-0 ">
                             <div class="user  ">
-                              <img src="../../Assets/avatar-pict/avatar-male-1.svg" alt="avatar-review-1"
-                                class="rounded-circle img-fluid mb-1">
+                              <img src="../../Assets/avatar-pict/avatar-male-1.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                               <p class="name m-0">Febrian Putra</p>
                               <p class="status m-0 lh-sm">UI/UX Designer di PT.Alakabar</p>
@@ -447,8 +416,7 @@
                         <div class="detail d-flex justify-content-between align-items-end mt-4">
                           <div class="profile ms-0 ">
                             <div class="user  ">
-                              <img src="../../Assets/avatar-pict/avatar-female-2.svg" alt="avatar-review-1"
-                                class="rounded-circle img-fluid mb-1">
+                              <img src="../../Assets/avatar-pict/avatar-female-2.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                               <p class="name m-0">Faradisa Saputri</p>
                               <p class="status m-0 lh-sm">UI/UX Designer di PT.SukaSuka</p>
@@ -479,8 +447,7 @@
                         <div class="detail d-flex justify-content-between align-items-end mt-4">
                           <div class="profile ms-0 ">
                             <div class="user  ">
-                              <img src="../../Assets/avatar-pict/avatar-male-2.svg" alt="avatar-review-1"
-                                class="rounded-circle img-fluid mb-1">
+                              <img src="../../Assets/avatar-pict/avatar-male-2.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                               <p class="name m-0">Adi Prabowo</p>
                               <p class="status m-0 lh-sm">UI/UX Designer di Kemenhan</p>
@@ -510,8 +477,7 @@
                         <div class="detail d-flex justify-content-between align-items-end mt-4">
                           <div class="profile ms-0 ">
                             <div class="user  ">
-                              <img src="../../Assets/avatar-pict/avatar-female-3.svg" alt="avatar-review-1"
-                                class="rounded-circle img-fluid mb-1">
+                              <img src="../../Assets/avatar-pict/avatar-female-3.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                               <p class="name m-0">Puan Saputri</p>
                               <p class="status m-0 lh-sm">UI/UX Designer di PT.Depe Ergo</p>
@@ -542,8 +508,7 @@
                         <div class="detail d-flex justify-content-between align-items-end mt-4">
                           <div class="profile ms-0 ">
                             <div class="user  ">
-                              <img src="../../Assets/avatar-review-1.svg" alt="avatar-review-1"
-                                class="rounded-circle img-fluid mb-1">
+                              <img src="../../Assets/avatar-review-1.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                               <p class="name m-0">Fardy Saputra</p>
                               <p class="status m-0 lh-sm">UI/UX Designer di PT.PKK</p>
@@ -669,15 +634,13 @@
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
-  
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-   
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="../../script/script.js"></script>
