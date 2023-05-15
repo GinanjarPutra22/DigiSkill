@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Users</title>
+  <title>Tools</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
@@ -88,14 +88,13 @@
           <br />
           <div class="p-4 shadow-4 rounded-3 sidebar">
             <div class="">
-              <h5 class="text-center">Users</h5>
+              <h5 class="text-center">Materi</h5>
               <hr />
 
 
               <div class="d-grid gap-2">
                 <a href="users.php" class="d-grid gap-2">
-                  <button class="btn btn-primary disabled" type="button"> <span><i class='bx bx-user'></i></span>
-                    Users</button>
+                  <button class="btn btn-primary " type="button"> <span><i class='bx bx-user'></i></span> Users</button>
                 </a>
 
                 <a href="kelas.php" class="d-grid gap-2">
@@ -109,17 +108,15 @@
                 </a>
 
                 <a href="tools.php" class="d-grid gap-2">
-                  <button class="btn btn-primary " type="button"> <span><i class='bx bx-terminal'></i></span>
+                  <button class="btn btn-primary  " type="button"> <span><i class='bx bx-terminal'></i></span>
                     Tools</button>
                 </a>
 
                 <a href="materi.php" class="d-grid gap-2">
-                  <button class="btn btn-primary " type="button"> <span><i class='bx bx-book-bookmark'></i></span>
+                  <button class="btn btn-primary disabled" type="button"> <span><i
+                        class='bx bx-book-bookmark'></i></span>
                     Materi</button>
                 </a>
-
-
-
               </div>
 
 
@@ -129,64 +126,79 @@
       </div>
       <!-- End Sidebar -->
 
+
       <!-- Start Main Content -->
 
       <div class="col-lg-8 mt-5">
-        <div class="row add-class">
+        <div class="row add-class  d-md-flex text-md-end mb-lg-4 mb-sm-4">
+          <div class="col">
 
-        </div>
+            <a href="add-materi.php ">
+              <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Materi</button>
+            </a>
 
-        <div class="row -table">
+            <!-- Tabel -->
+            <div class="row -table mt-4">
 
-          <div class="table" style="overflow-x:auto;">
+              <div class="table" style="overflow-x:auto;">
+                <table class="table table-striped table-hover align-middle">
+                  <tr>
+                    <th>ID</th>
+                    <th>Nama Kelas</th>
+                    <th>Judul</th>
+                    <th>Link</th>
+                    <th>Deskripsi</th>
+                    <th>Tindakan</th>
 
+                  </tr>
+                  <tr>
+                    <td>1 </td>
+                    <td>
+                      UI/UX Design
+                    </td>
+                    <td>
+                      Pengenalan UI/UX
+                    </td>
+                    <td>
+                      <i>
+                        <a href="https://youtu.be/_PQavIv_fbY">Lihat Materi</a>
+                      </i>
+                    </td>
 
-            <table class="table table-striped table-hover">
-              <tr>
-                <th>ID</th>
-                <th>Profil</th>
-                <th>Kelas</th>
-                <th>Waktu Begabung</th>
-                <th>Tugas</th>
-              </tr>
-              <tr>
-                <td>1 </td>
-                <td>
-                  <img src="../../Assets/avatar-pict/avatar-male-2.svg" alt="avatar-review-1"
-                    class="rounded-circle img-fluid w-25" />
-                </td>
-                <td>UI/UX Design</td>
-                <td>13 Mei 2023</td>
-                <td>
+                    <td>
+                      UI UX adalah kepanjangan dari User Interface (UI) dan User Experience (UX) yang sangat penting
+                      dalam
+                      pengembangan produk-produk digital seperti aplikasi dan website.
+                    </td>
+                    <td>
 
-                  <button type="button" class="btn btn-primary btn-sm">Lihat</button>
+                      <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                      <button type="button" class="btn btn-danger btn-sm">Hapus</button>
 
-                </td>
-              </tr>
-              <tr>
-                <td>2 </td>
-                <td> <img src="../../Assets/avatar-pict/avatar-male-2.svg" alt="avatar-review-1"
-                    class="rounded-circle img-fluid w-25" />
-                </td>
-                <td>Front End Development</td>
-                <td>14 Mei 2023</td>
-                <td>
+                    </td>
+                  </tr>
+                  <tr>
 
-                  <button type="button" class="btn btn-primary btn-sm">Lihat</button>
+                  </tr>
+                </table>
+              </div>
+            </div>
 
-                </td>
-              </tr>
-            </table>
+            <!-- End Tabel -->
+
           </div>
         </div>
-        <!-- End Main Content -->
       </div>
-      <!-- ------End Row Main Detail Kelas------- -->
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"></script>
+
+      <!-- End Main Content -->
+    </div>
+    <!-- ------End Row Main Detail Kelas------- -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
