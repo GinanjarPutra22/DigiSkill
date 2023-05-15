@@ -61,7 +61,7 @@ $penilaian = query("SELECT * FROM data_kelas");
               foreach ($kelas as $row) :
               ?>
                 <li>
-                  <a class="dropdown-item" href="page/detail/detail.php?id<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
+                  <a class="dropdown-item" href="page/detail/detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
                 </li>
               <?php endforeach ?>
             </ul>
