@@ -168,18 +168,10 @@ var_dump($detail);
                         <!-- Start Main Contenct Tentang Program UIUX -->
                         <div class="tentang-program mb-5" id="tentang-program">
                             <h6> Tentang Program </h6>
-                            <h4> Dapatkan Kelas Gratis <span> UI/UX Design</h4></span>
-
-                            <p> Bersama DigiSkill anda bisa mendaftar kelas UI/UX Design dengan gratis tanpa dipunggut biaya
-                                sedikitpun.</p>
-
-                            <p> Bidang UI/UX sangat diminati oleh dunia industri belakangan ini. UI/UX dapat membantu menciptakan
-                                website
-                                atau aplikasi yang memenuhi kebutuhan user dan meminimalisir ketidaknyamanan user dalam menggunakan
-                                suatu website ataupun aplikasi mobile. </p>
-                            <p> Dengan arahan mentor, kali ini kita akan belajar bagaimana cara membuat portfolio website dengan
-                                memanfaatkan animasi UI serta memastikan kualitas interface dan experience project berjalan baik
-                                menggunakan tools Figma. </p>
+                            <h4> Dapatkan Kelas Gratis <span> <?= $detail["nama_kelas"] ?></h4></span>
+                            <p> Bersama DigiSkill anda bisa mendaftar kelas <?= $detail["nama_kelas"] ?> dengan gratis tanpa dipunggut biaya sedikitpun.</p>
+                            <p> <?= $detail["detail_program"] ?> </p>
+                            <p>Dengan arahan mentor, kali ini kita akan belajar bagaimana langkah awal dalam memulai sebagai <?= $detail["nama_kelas"] ?> yang baik dan benar, serta dengan cara yang mudah dipahami oleh pemula.</p>
                         </div>
                         <!-- End Main Contenct Tentang Program UIUX -->
 
