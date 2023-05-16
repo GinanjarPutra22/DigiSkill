@@ -1,16 +1,28 @@
 <?php
-require '../../db/function.php';
+require '../../../db/function.php';
 
+$id = $_GET["id"];
+
+$kelas = query("SELECT * FROM kelas WHERE id_kelas = '$id'")[0];
+
+// var_dump($kelas);
+// die;
 if (isset($_POST["submit"])) {
-    if (tmbhkls($_POST) > 0) {
+    // var_dump($_POST);
+    // var_dump($_FILES);
+    // die;
+    if (editkelas($_POST) > 0) {
         echo "<script>
-              alert('user baru berhasil ditambahkan');    
-        </script>";
-        header("location: kelas.php");
+        alert ('Data berhasil Diubah');
+        document.location.href = '../kelas.php';
+         </script>";
     } else {
-        echo mysqli_error($conn);
+        echo "<script>
+        alert ('Data Gagal Diubah');
+        document.location.href = '../kelas.php';
+        </script>";
     }
-}
+};
 ?>
 
 <!doctype html>
@@ -39,10 +51,10 @@ if (isset($_POST["submit"])) {
         <div class="col-12">
             <div class="row content d-flex justify-content-center">
                 <div class="col-lg-8">
-                    <a href="kelas.php" class="d-flex justify-content-end">
-                        <img src="../../Assets/x-circle.svg" alt="" class="h-50" />
+                    <a href="../kelas.php" class="d-flex justify-content-end">
+                        <img src="../../../Assets/x-circle.svg" alt="" class="h-50" />
                     </a>
-                    <h3 class="text-center mt-3">Buat Kelas Baru</h3>
+                    <h3 class="text-center mt-3">Edit Kelas</h3>
                 </div>
 
                 <!-- from -->
@@ -50,13 +62,15 @@ if (isset($_POST["submit"])) {
                 <div class="col-8 my-4">
                     <form action="" method="post" enctype="multipart/form-data">
                         <h4>Informasi Awal Kelas</h4>
+                        <input type="hidden" class="form-control" id="judul" name="id_kelas" value="<?= $kelas['id_kelas'] ?>">
+                        <input type="hidden" class="form-control" id="judul" name="foto_lama" value="<?= $kelas['gambar_kelas'] ?>">
                         <div class="mb-3">
                             <label for="judul" class="form-label">Judul</label>
-                            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan nama kelas">
+                            <input type="text" class="form-control" id="judul" name="judul" value="<?= $kelas['nama_kelas'] ?>">
                         </div>
                         <div class="mb-3">
                             <label for="detail" class="form-label">Detail Awal</label>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="Masukan sedikit detail awal kelas">
+                            <input type="text" class="form-control" id="detail" name="detail" value="<?= $kelas['detail_awal'] ?>">
                         </div>
                         <div class="mb-3">
                             <h6>Thumbnail</h6>
@@ -67,14 +81,14 @@ if (isset($_POST["submit"])) {
                         </div>
                         <div class="mb-3">
                             <label for="dtl_kls" class="form-label">Detail Kelas</label>
-                            <input type="text" class="form-control" id="dtl_kls" name="detail_kelas" placeholder="Masukan sedikit detail awal kelas">
+                            <input type="text" class="form-control" id="dtl_kls" name="detail_kelas" value="<?= $kelas['detail_program'] ?>">
                         </div>
                         <div class="mb-3">
                             <label for="kode_kls" class="form-label">Kode Kelas</label>
-                            <input type="text" class="form-control" id="kode_kls" name="kode_kelas" placeholder="Masukan kode kelas">
+                            <input type="text" class="form-control" id="kode_kls" name="kode_kelas" value="<?= $kelas['kode_materi'] ?>" readonly>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-lg" name="submit">Buat Kelas</button>
+                        <button type="submit" class="btn btn-primary btn-lg" name="submit">Edit Kelas</button>
                     </form>
                 </div>
 

@@ -1,14 +1,21 @@
 <?php
-require '../../db/function.php';
+require '../../../db/function.php';
 
+$id = $_GET["id"];
+
+$mentor = query("SELECT * FROM mentor INNER JOIN kelas ON 
+                    mentor.kode_kelas = kelas.kode_materi
+                      WHERE id_mentor = '$id'")[0];
+var_dump($mentor);
 if (isset($_POST["submit"])) {
     // var_dump($_POST);
+    // var_dump($_FILES);
     // die;
-    if (tmbhmntr($_POST) > 0) {
+    if (editmentor($_POST) > 0) {
         echo "<script>
               alert('user baru berhasil ditambahkan');    
         </script>";
-        header("location: mentor.php");
+        header("location: ../mentor.php");
     } else {
         echo mysqli_error($conn);
     }
@@ -21,7 +28,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add Mentor</title>
+    <title>Edit Mentor</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
@@ -42,38 +49,38 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
             <div class="row content d-flex justify-content-center">
                 <div class="col-lg-8">
                     <a href="mentor.php" class="d-flex justify-content-end">
-                        <img src="../../Assets/x-circle.svg" alt="" class="h-50" />
+                        <img src="../../../Assets/x-circle.svg" alt="" class="h-50" />
                     </a>
-                    <h3 class="text-center mt-3">Tambah Mentor</h3>
+                    <h3 class="text-center mt-3">Edit Mentor</h3>
                 </div>
                 <!-- from -->
                 <div class="col-8 my-4">
                     <!-- <h4>Informasi Awal Kelas</h4> -->
                     <form action="" method="post" enctype="multipart/form-data">
+                        <input type="hidden" class="form-control" name="id_mentor" rows="3" value="<?= $mentor['id_mentor'] ?>">
+                        <input type="hidden" class="form-control" name="foto_lama" rows="3" value="<?= $mentor['foto'] ?>">
+
                         <div class="mb-3">
-                            <h6>Pilih Kelas</h6>
+                            <h6>Kelas</h6>
                             <select class="form-select" aria-label="Default select example" name="kode_kelas">
-                                <option selected>Pilih Kelas</option>
-                                <?php foreach ($kelas as $row) : ?>
-                                    <option value="<?= $row["kode_materi"] ?>"><?= $row["nama_kelas"] ?></option>
-                                <?php endforeach ?>
+                                <option value="<?= $mentor["kode_kelas"] ?>" selected><?= $mentor["nama_kelas"] ?></option>
                             </select>
                         </div>
 
 
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Mentor</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan nama mentor">
+                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $mentor['nama_mentor'] ?>">
                         </div>
 
                         <div class="mb-3">
                             <label for="pekerjaan" class="form-label">Pekerjaan Mentor</label>
-                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan " placeholder="Masukan pekerjaan mentor">
+                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan " value="<?= $mentor['pekerjaan'] ?>">
                         </div>
 
                         <div class="mb-3">
-                            <label for="pengalaman" class="form-label">Deskripsi</label>
-                            <textarea class="form-control" id="pengalaman" name="pengalaman" rows="3"></textarea>
+                            <label for="pengalaman" class="form-label">Pengalaman</label>
+                            <textarea class="form-control" id="pengalaman" name="pengalaman" rows="3"><?= $mentor['pengalaman'] ?></textarea>
                         </div>
                         <div class="mb-3">
                             <h6>Foto</h6>
@@ -84,14 +91,14 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
                         </div>
                         <div class="mb-3">
                             <label for="instagram" class="form-label">Instagram</label>
-                            <input class="form-control" id="instagram" name="instagram" rows="3">
+                            <input class="form-control" id="instagram" name="instagram" rows="3" value="<?= $mentor['instagram'] ?>">
                         </div>
                         <div class="mb-3">
                             <label for="linkedin" class="form-label">LinkedIn</label>
-                            <input class="form-control" id="linkedin" name="linkedin" rows="3">
+                            <input class="form-control" id="linkedin" name="linkedin" rows="3" value="<?= $mentor['linkedIn'] ?>">
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-lg" name="submit">Tambah Mentor</button>
+                        <button type="submit" class="btn btn-primary btn-lg" name="submit">Edit Mentor</button>
                     </form>
 
                 </div>

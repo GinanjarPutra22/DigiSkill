@@ -5,12 +5,15 @@ require '../../db/function.php';
 
 $id = $_GET["id"];
 
-$detail = query("SELECT * FROM kelas INNER JOIN mentor ON kelas.id_mentor = mentor.id_mentor WHERE id_kelas= '$id'")[0];
-
+$detail = query("SELECT * FROM kelas  WHERE id_kelas= '$id'")[0];
+var_dump($detail);
 $kode = $detail["kode_materi"];
 
 $tools = query("SELECT * FROM tools WHERE kode_materi= '$kode'");
+var_dump($tools);
 
+$mentor = query("SELECT * FROM mentor WHERE kode_kelas= '$kode'");
+var_dump($mentor);
 
 ?>
 

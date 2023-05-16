@@ -1,21 +1,29 @@
 <?php
-require '../../db/function.php';
+require '../../../db/function.php';
+
+$id = $_GET["id"];
+
+$tools = query("SELECT * FROM tools INNER JOIN kelas ON 
+                    tools.kode_materi = kelas.kode_materi
+                      WHERE id_tools = '$id'")[0];
+var_dump($tools);
 
 if (isset($_POST["submit"])) {
     // var_dump($_POST);
     // var_dump($_FILES);
     // die;
-    if (tmbhmateri($_POST) > 0) {
+    if (edittools($_POST) > 0) {
         echo "<script>
               alert('user baru berhasil ditambahkan');    
         </script>";
-        header("location: materi.php");
+        header("location: ../tools.php");
     } else {
         echo mysqli_error($conn);
     }
 }
 $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -42,42 +50,43 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
         <div class="col-12">
             <div class="row content d-flex justify-content-center">
                 <div class="col-lg-8">
-                    <a href="materi.php" class="d-flex justify-content-end">
-                        <img src="../../Assets/x-circle.svg" alt="" class="h-50" />
+                    <a href="tools.php" class="d-flex justify-content-end">
+                        <img src="../../../Assets/x-circle.svg" alt="" class="h-50" />
                     </a>
-                    <h3 class="text-center mt-3">Tambah Materi</h3>
+                    <h3 class="text-center mt-3">Edit Tools</h3>
                 </div>
                 <!-- from -->
                 <div class="col-8 my-4">
                     <!-- <h4>Informasi Awal Kelas</h4> -->
                     <form action="" method="post" enctype="multipart/form-data">
+                        <input type="hidden" class="form-control" name="id_tools" rows="3" value="<?= $tools['id_tools'] ?>">
+                        <input type="hidden" class="form-control" name="foto_lama" rows="3" value="<?= $tools['gambar_tools'] ?>">
+
                         <div class="mb-3">
-                            <h6>Pilih Kelas</h6>
+                            <h6>Kelas</h6>
                             <select class="form-select" aria-label="Default select example" name="kode_kelas">
-                                <option selected>Pilih Kelas</option>
-                                <?php foreach ($kelas as $row) : ?>
-                                    <option value="<?= $row["kode_materi"] ?>"><?= $row["nama_kelas"] ?></option>
-                                <?php endforeach ?>
+                                <option value="<?= $tools["kode_materi"] ?>" selected><?= $tools["nama_kelas"] ?></option>
                             </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="urutan" class="form-label">Urutan Materi</label>
-                            <input type="text" class="form-control" id="urutan" name="urutan" placeholder="Masukan nama mentor">
-                        </div>
-                        <div class="mb-3">
-                            <label for="judul" class="form-label">Judul Materi</label>
-                            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan nama mentor">
-                        </div>
-                        <div class="mb-3">
-                            <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Masukan pekerjaan mentor">
                         </div>
 
                         <div class="mb-3">
-                            <label for="link_materi" class="form-label">Link</label>
-                            <textarea class="form-control" id="link_materi" rows="3" name="link_materi"></textarea>
+                            <h6>Icon Tools</h6>
+                            <div class="input-group ">
+                                <input type="file" class="form-control" id="icon" name="foto">
+                                <label class="input-group-text" for="icon">Upload</label>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg" name="submit">Tambah Materi</button>
+
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama Tools</label>
+                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $tools["nama_tools"] ?>">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="link" class="form-label">Link</label>
+                            <textarea class="form-control" id="link" rows="3" name="link"><?= $tools["link_tools"] ?></textarea>
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-primary btn-lg">Edit Tools</button>
                     </form>
                 </div>
 

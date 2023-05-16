@@ -26,7 +26,11 @@ if (isset($_POST["masuk"])) {
       $_SESSION["login"] = true; // menyimpan data sesssion login untuk semua halaman
       $_SESSION["id_login"] = $row["id_login"];
 
-      header("location: ../index.php");
+      if ($row["id_login"] === "11") {
+        header("location: admin/users.php");
+      } else {
+        header("location: ../index.php");
+      }
       exit;
     }
   }

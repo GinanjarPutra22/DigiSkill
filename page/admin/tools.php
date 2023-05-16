@@ -1,3 +1,11 @@
+<?php
+require '../../db/function.php';
+
+$tools = query("SELECT tools.id_tools,tools.gambar_tools, tools.nama_tools, tools.link_tools,
+              kelas.nama_kelas
+             FROM tools INNER JOIN kelas ON tools.kode_materi = kelas.kode_materi ");
+var_dump($tools);
+?>
 <!doctype html>
 <html lang="en">
 
@@ -6,8 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tools</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <!-- Icon Title -->
   <link rel="icon" href="../Assets/logo-icon.svg" type="image/x-icon" />
@@ -24,12 +31,10 @@
   <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
     <div class="container">
       <a class="navbar-brand" href="../../index.php">
-        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
-          class="d-inline-block align-text-top" />
+        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
         DigiSkill | Dashboard
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -61,8 +66,7 @@
           </li>
           <li class="nav-item dropdown me-4">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../../Assets/avatar-pict/avatar-male-6.svg" class="rounded-circle" height="28"
-                alt="Portrait of a Woman" loading="lazy" />
+              <img src="../../Assets/avatar-pict/avatar-male-6.svg" class="rounded-circle" height="28" alt="Portrait of a Woman" loading="lazy" />
             </a>
             <ul class="dropdown-menu me-4">
               <li>
@@ -150,34 +154,25 @@
                     <th>Tindakan</th>
 
                   </tr>
-                  <tr>
-                    <td>1 </td>
-                    <td>
-                      UI/UX Design
-                    </td>
-                    <td>
-                      <img src="../../Assets/figma.svg" alt="avatar-review-1" class="rounded-circle img-fluid w-25" />
-                    </td>
-                    <td>
-                      Figma
-                    </td>
+                  <?php foreach ($tools as $row) : ?>
+                    <tr>
+                      <td><?= $row["id_tools"] ?></td>
+                      <td><?= $row["nama_kelas"] ?></td>
+                      <td>
+                        <img src="../../Assets/<?= $row["gambar_tools"] ?>" alt="avatar-review-1" class="rounded-circle img-fluid w-25" />
+                      </td>
+                      <td><?= $row["nama_tools"] ?></td>
+                      <td><i><a href="<?= $row["link_tools"] ?>">Download</a></i></td>
+                      <td>
+                        <a href="edit/edit-tools.php?id=<?= $row["id_tools"] ?>" type="button" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="hapus/hapus-tools.php?id=<?= $row["id_tools"] ?>" type="button" class="btn btn-danger btn-sm">Hapus</a>
+                      </td>
+                    <?php endforeach ?>
+                    </tr>
 
-                    <td>
-                      <i>
-                        <a
-                          href="https://www.bing.com/ck/a?!&&p=b51b587a5a637b91JmltdHM9MTY4NDEwODgwMCZpZ3VpZD0yN2NiNzgzYS1kMzQ4LTYwNTItMGI3OC02OTQ3ZDI0ODYxYjImaW5zaWQ9NTE4NA&ptn=3&hsh=3&fclid=27cb783a-d348-6052-0b78-6947d24861b2&psq=figma&u=a1aHR0cHM6Ly93d3cuZmlnbWEuY29tLw&ntb=1">Download</a>
-                      </i>
-                    </td>
-                    <td>
+                    <tr>
 
-                      <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                      <button type="button" class="btn btn-danger btn-sm">Hapus</button>
-
-                    </td>
-                  </tr>
-                  <tr>
-
-                  </tr>
+                    </tr>
                 </table>
               </div>
             </div>
@@ -194,9 +189,7 @@
     <!-- ------End Row Main Detail Kelas------- -->
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>
