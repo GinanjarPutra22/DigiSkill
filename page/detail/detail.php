@@ -122,7 +122,7 @@ if (isset($_POST["submit"])) {
     <div class="container">
 
         <!-- ------Start Row Main Detail Kelas------- -->
-        <div class="my-5">
+        <div class="mt-2">
             <div class="row grid gap-3 ">
 
                 <!-- Start Sidebar Detail Program UIUX -->

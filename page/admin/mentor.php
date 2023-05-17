@@ -13,7 +13,8 @@ var_dump($mentor);
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mentor</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <!-- Icon Title -->
   <link rel="icon" href="../Assets/logo-icon.svg" type="image/x-icon" />
@@ -30,10 +31,12 @@ var_dump($mentor);
   <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
     <div class="container">
       <a class="navbar-brand" href="../../index.php">
-        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
+          class="d-inline-block align-text-top" />
         DigiSkill | Dashboard
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -65,7 +68,8 @@ var_dump($mentor);
           </li>
           <li class="nav-item dropdown me-4">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../../Assets/avatar-pict/avatar-male-6.svg" class="rounded-circle" height="28" alt="Portrait of a Woman" loading="lazy" />
+              <img src="../../Assets/avatar-pict/avatar-male-6.svg" class="rounded-circle" height="28"
+                alt="Portrait of a Woman" loading="lazy" />
             </a>
             <ul class="dropdown-menu me-4">
               <li>
@@ -153,20 +157,32 @@ var_dump($mentor);
                     <th>Tindakan</th>
 
                   </tr>
-                  <?php foreach ($mentor as $row) : ?>
+                  <?php foreach ($mentor as $row): ?>
                     <tr>
-                      <td><?= $row["id_mentor"] ?></td>
                       <td>
-                        <img src="../../Assets/<?= $row["foto"] ?>" alt="avatar-review-1" class="rounded-circle img-fluid w-50" />
+                        <?= $row["id_mentor"] ?>
                       </td>
-                      <td><?= $row["nama_mentor"] ?></td>
-                      <td><?= $row["pekerjaan"] ?></td>
+                      <td>
+                        <img src="../../Assets/<?= $row["foto"] ?>" alt="avatar-review-1"
+                          class="rounded-circle img-fluid w-50" />
+                      </td>
+                      <td>
+                        <?= $row["nama_mentor"] ?>
+                      </td>
+                      <td>
+                        <?= $row["pekerjaan"] ?>
+                      </td>
                       <td>
                         <?= substr($row['pengalaman'], 0, 150) . '....' ?>
                       </td>
                       <td>
-                        <a href="edit/edit-mentor.php?id=<?= $row["id_mentor"] ?>" type="button" class="btn btn-primary btn-sm">Edit</a>
-                        <a href="hapus/hapus-mentor.php?id=<?= $row["id_mentor"] ?>" type="button" class="btn btn-danger btn-sm">Hapus</a>
+                        <div class="d-flex">
+                          <a href="edit/edit-mentor.php?id=<?= $row["id_mentor"] ?>" type="button"
+                            class="btn btn-primary btn-sm mx-2">Edit</a>
+                          <a href="hapus/hapus-mentor.php?id=<?= $row["id_mentor"] ?>" type="button"
+                            class="btn btn-danger btn-sm mx-2">Hapus</a>
+
+                        </div>
                       </td>
                     </tr>
                   <?php endforeach ?>
@@ -186,7 +202,9 @@ var_dump($mentor);
     <!-- ------End Row Main Detail Kelas------- -->
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -21,7 +21,8 @@ if (isset($_POST["submit"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Users</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <!-- Icon Title -->
@@ -52,11 +53,13 @@ if (isset($_POST["submit"])) {
                         <h4>Informasi Awal Kelas</h4>
                         <div class="mb-3">
                             <label for="judul" class="form-label">Judul</label>
-                            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan nama kelas">
+                            <input type="text" class="form-control" id="judul" name="judul"
+                                placeholder="Masukan nama kelas">
                         </div>
                         <div class="mb-3">
                             <label for="detail" class="form-label">Detail Awal</label>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="Masukan sedikit detail awal kelas">
+                            <input type="text" class="form-control" id="detail" name="detail"
+                                placeholder="Masukan sedikit detail awal kelas">
                         </div>
                         <div class="mb-3">
                             <h6>Thumbnail</h6>
@@ -67,11 +70,13 @@ if (isset($_POST["submit"])) {
                         </div>
                         <div class="mb-3">
                             <label for="dtl_kls" class="form-label">Detail Kelas</label>
-                            <input type="text" class="form-control" id="dtl_kls" name="detail_kelas" placeholder="Masukan sedikit detail awal kelas">
+                            <textarea type="text" class="form-control" id="dtl_kls" name="detail_kelas"
+                                placeholder="Masukan sedikit detail awal kelas"> </textarea>
                         </div>
                         <div class="mb-3">
                             <label for="kode_kls" class="form-label">Kode Kelas</label>
-                            <input type="text" class="form-control" id="kode_kls" name="kode_kelas" placeholder="Masukan kode kelas">
+                            <input type="text" class="form-control" id="kode_kls" name="kode_kelas"
+                                placeholder="Masukan kode kelas">
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-lg" name="submit">Buat Kelas</button>
@@ -84,7 +89,9 @@ if (isset($_POST["submit"])) {
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

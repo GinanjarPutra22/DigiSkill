@@ -3,8 +3,8 @@ require '../../db/function.php';
 
 $materi = query("SELECT materi.id_materi,materi.judul_materi, materi.link_materi, materi.deskripsi_materi,
               kelas.nama_kelas
-             FROM materi INNER JOIN kelas ON materi.kode_materi = kelas.kode_materi             
-             ");
+            FROM materi INNER JOIN kelas ON materi.kode_materi = kelas.kode_materi             
+            ");
 var_dump($materi);
 ?>
 <!doctype html>
@@ -153,7 +153,7 @@ var_dump($materi);
                 <table class="table table-striped table-hover align-middle">
                   <tr>
                     <th>ID</th>
-                    <th>Nama Kelas</th>
+                    <th class="d-flex">Nama Kelas</th>
                     <th>Judul</th>
                     <th>Link</th>
                     <th>Deskripsi</th>
@@ -162,7 +162,7 @@ var_dump($materi);
                   </tr>
                   <?php foreach ($materi as $row): ?>
                     <tr>
-                      <td>
+                      <td class="text-center">
                         <?= $row["id_materi"] ?>
                       </td>
                       <td>
@@ -176,10 +176,13 @@ var_dump($materi);
                         <?= substr($row['deskripsi_materi'], 0, 150) . '....' ?>
                       </td>
                       <td>
-                        <a href="edit/edit-materi.php?id=<?= $row["id_materi"] ?>" type="button"
-                          class="btn btn-primary btn-sm">Edit</a>
-                        <a href="hapus/hapus-materi.php?id=<?= $row["id_materi"] ?>" type="button"
-                          class="btn btn-danger btn-sm">Hapus</a>
+                        <div class="d-flex">
+                          <a href="edit/edit-materi.php?id=<?= $row["id_materi"] ?>" type="button"
+                            class="btn btn-primary btn-sm mx-1">Edit</a>
+                          <a href="hapus/hapus-materi.php?id=<?= $row["id_materi"] ?>" type="button"
+                            class="btn btn-danger btn-sm mx-1">Hapus</a>
+
+                        </div>
                       </td>
                     </tr>
                   <?php endforeach ?>
