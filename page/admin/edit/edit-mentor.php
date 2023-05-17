@@ -75,7 +75,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
 
                         <div class="mb-3">
                             <label for="pekerjaan" class="form-label">Pekerjaan Mentor</label>
-                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan " value="<?= $mentor['pekerjaan'] ?>">
+                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="<?= $mentor['pekerjaan'] ?>">
                         </div>
 
                         <div class="mb-3">
