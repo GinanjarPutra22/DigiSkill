@@ -254,9 +254,9 @@ $penilaian = query("SELECT * FROM data_kelas");
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card">
             <div class="img-box">
-              <img src="Assets/product-1.svg" alt="" class="img-fluid" />
+              <img src="Assets/<?= $row["gambar_kelas"] ?>" alt="" class="img-fluid" />
               <div class="bg-img px-4">
-                <div class="info">
+                <!-- <div class="info">
                   <p class="member m-0">1.232 Siswa Terdaftar</p>
                   <div class="rate">
                     <i class="bx bxs-star"></i>
@@ -265,14 +265,13 @@ $penilaian = query("SELECT * FROM data_kelas");
                     <i class="bx bxs-star"></i>
                     <i class="bx bxs-star"></i>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
 
             <div class="product-caption mt-4">
               <h3 class="product-name">
-                Belajar UI/UX Design dengan Figma untuk pengembangan design
-                website
+                <?= $row["detail_awal"] ?>
               </h3>
               <div href="#" class="badge px-3 py-2"> <?= $row["nama_kelas"] ?></div>
               <div class="product-btn mt-5 d-flex justify-content-between align-items-center">

@@ -204,8 +204,24 @@ function uploadasst()
     move_uploaded_file($tmpname, 'D:/Aplikasi/xampp/htdocs/DigiSkill/Assets/' . $namafilebaru);
 
     return $namafilebaru; // untuk diproses dalam function tambah sebagai nama file yang disimpan
-
 }
+///////////////// Function masuk kelas
+function mskkelas($data)
+{
+    global $conn;
+
+    $id_kelas = mysqli_real_escape_string($conn, $data["id_kelas"]);
+    $id_user = mysqli_real_escape_string($conn, $data["id_user"]);
+    $date = date('Y/m/d', time());
+    // var_dump($date);
+    // die;
+    $query = "INSERT INTO data_kelas VALUES('','$id_kelas','$id_user','$date','','')";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
 
 ////////////////function Kelas////////////////////////////
 function tmbhkls($data)

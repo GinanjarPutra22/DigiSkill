@@ -8,7 +8,8 @@ $kelas = query("SELECT * FROM kelas");
 $id = $_SESSION["id_login"];
 
 $kelas_saya = query("SELECT * FROM data_kelas INNER JOIN kelas
-ON data_kelas.id_data_kelas = kelas.id_kelas WHERE id_user ='$id'");
+ON data_kelas.id_kelas = kelas.id_kelas WHERE id_user ='$id'");
+var_dump($kelas_saya);
 
 ?>
 <!DOCTYPE html>
@@ -130,9 +131,9 @@ ON data_kelas.id_data_kelas = kelas.id_kelas WHERE id_user ='$id'");
               <div class="col-lg-5 col-md-6 mb-4">
                 <div class="card">
                   <div class="img-box">
-                    <img src="../../Assets/product-1.svg" alt="" class="img-fluid" />
+                    <img src="../../Assets/<?= $row["gambar_kelas"] ?>" alt="" class="img-fluid" />
                     <div class="bg-img px-4">
-                      <div class="info">
+                      <!-- <div class="info">
                         <p class="member m-0">1.232 Siswa Terdaftar</p>
                         <div class="rate">
                           <i class="bx bxs-star"></i>
@@ -141,14 +142,13 @@ ON data_kelas.id_data_kelas = kelas.id_kelas WHERE id_user ='$id'");
                           <i class="bx bxs-star"></i>
                           <i class="bx bxs-star"></i>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
 
                   <div class="product-caption mt-4">
                     <h3 class="product-name">
-                      Belajar UI/UX Design dengan Figma untuk pengembangan
-                      design website
+                      <?= $row["detail_awal"] ?>
                     </h3>
                     <div href="#" class="badge px-3 py-2"><?= $row["nama_kelas"] ?></div>
                     <div class="product-btn mt-5 d-flex justify-content-between align-items-center">
