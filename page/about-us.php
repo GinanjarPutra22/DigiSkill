@@ -4,6 +4,11 @@ session_start();
 require '../db/function.php';
 
 $kelas = query("SELECT * FROM kelas");
+if (isset($_SESSION["login"])) {
+    $id_user = $_SESSION['id_login'];
+    // var_dump($data_kelas);
+    $profile = query("SELECT * FROM login WHERE id_login = '$id_user'")[0];
+}
 
 ?>
 <!DOCTYPE html>
@@ -52,7 +57,7 @@ $kelas = query("SELECT * FROM kelas");
                             foreach ($kelas as $row) :
                             ?>
                                 <li>
-                                    <a class="dropdown-item" href="detail/detail.php?id<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
+                                    <a class="dropdown-item" href="detail/detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
                                 </li>
                             <?php endforeach ?>
                         </ul>
@@ -64,7 +69,7 @@ $kelas = query("SELECT * FROM kelas");
                     if (isset($_SESSION["login"])) { ?>
                         <li class="nav-item dropdown me-4">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+                                <img src="../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
                             </a>
                             <ul class="dropdown-menu me-4">
                                 <li>
