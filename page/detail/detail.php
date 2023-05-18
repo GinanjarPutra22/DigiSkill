@@ -9,8 +9,10 @@ if (isset($_SESSION["login"])) {
     $id_user = $_SESSION['id_login'];
     $data_kelas = mysqli_query($conn, "SELECT * FROM data_kelas WHERE (id_kelas ='$id') AND (id_user = '$id_user')");
     // var_dump($data_kelas);
+    $profile = query("SELECT * FROM login WHERE id_login = '$id_user'")[0];
 }
 
+$kelasnv = query("SELECT * FROM kelas ");
 
 $kelas = query("SELECT * FROM kelas  WHERE id_kelas= '$id'")[0];
 // var_dump($kelas);
@@ -28,9 +30,7 @@ $materi = query("SELECT id_materi,judul_materi,deskripsi_materi FROM materi WHER
 if (isset($_POST["submit"])) {
 
     if (mskkelas($_POST) > 0) {
-        echo "<script>
-              alert('user baru berhasil ditambahkan');    
-        </script>";
+        header("Location: ../profile/kelas-saya.php");
     } else {
         echo mysqli_error($conn);
     }
@@ -83,9 +83,13 @@ if (isset($_POST["submit"])) {
                             Course
                         </a>
                         <ul class="dropdown-menu me-4">
-                            <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
-                            <li><a class="dropdown-item" href="detail-front-end.php">Front-End-Development</a></li>
-                            <li><a class="dropdown-item" href="detail-back-end.php">Back-End-Development</a></li>
+                            <?php
+                            foreach ($kelasnv as $row) :
+                            ?>
+                                <li>
+                                    <a class="dropdown-item" href="detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
+                                </li>
+                            <?php endforeach ?>
                         </ul>
                     </li>
                     <!-- <li class="nav-item me-4">
@@ -94,20 +98,28 @@ if (isset($_POST["submit"])) {
                     <li class="nav-item me-4">
                         <a class="nav-link" href="../about-us.php">About Us</a>
                     </li>
-                    <li class="nav-item dropdown me-4">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="Portrait of a Woman" loading="lazy" />
+                    <?php
+                    if (isset($_SESSION["login"])) { ?>
+                        <li class="nav-item dropdown me-4">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+                            </a>
+                            <ul class="dropdown-menu me-4">
+                                <li>
+                                    <a class="dropdown-item" href="../profile/profile.php">My profile</a>
+                                </li>
+                                <hr />
+                                <li>
+                                    <a class="dropdown-item" href="../logout.php">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    <?php } else { ?>
+                        <a href="../login.php" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
+                            Masuk
                         </a>
-                        <ul class="dropdown-menu me-4">
-                            <li>
-                                <a class="dropdown-item" href="../profile/profile.php">My profile</a>
-                            </li>
-                            <hr />
-                            <li>
-                                <a class="dropdown-item" href="../../index.php">Logout</a>
-                            </li>
-                        </ul>
-                    </li>
+                        <a href="../regist.php" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
+                    <?php } ?>
                 </ul>
 
 
@@ -117,7 +129,6 @@ if (isset($_POST["submit"])) {
     <!-- End Navbar -->
 
     <div class="container">
-
         <!-- ------Start Row Main Detail Kelas------- -->
         <div class="mt-2">
             <div class="row grid gap-3 ">
@@ -160,7 +171,7 @@ if (isset($_POST["submit"])) {
                                         <form action="" method="post">
                                             <input type="hidden" class="form-control" name="id_kelas" rows="3" value="<?= $id ?>">
                                             <input type="hidden" class="form-control" name="id_user" rows="3" value="<?= $_SESSION["id_login"] ?>">
-                                            <button type="submit" class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;" name="submit">
+                                            <button type="submit" class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;" name="submit" onclick="return confirm('Apakah Anda Yakin?')">
                                                 Belajar Sekarang
                                             </button>
                                         </form>

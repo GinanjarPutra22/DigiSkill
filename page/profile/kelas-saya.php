@@ -5,11 +5,16 @@ require '../../db/function.php';
 
 $kelas = query("SELECT * FROM kelas");
 
-$id = $_SESSION["id_login"];
+if (isset($_SESSION["login"])) {
+  $id_user = $_SESSION['id_login'];
+  // $data_kelas = mysqli_query($conn, "SELECT * FROM data_kelas WHERE (id_kelas ='$id') AND (id_user = '$id_user')");
+  // var_dump($data_kelas);
+  $profile = query("SELECT * FROM login WHERE id_login = '$id_user'")[0];
+  $kelas_saya = query("SELECT * FROM data_kelas INNER JOIN kelas
+  ON data_kelas.id_kelas = kelas.id_kelas WHERE id_user ='$id_user'");
+  var_dump($kelas_saya);
+}
 
-$kelas_saya = query("SELECT * FROM data_kelas INNER JOIN kelas
-ON data_kelas.id_kelas = kelas.id_kelas WHERE id_user ='$id'");
-var_dump($kelas_saya);
 
 ?>
 <!DOCTYPE html>
@@ -38,8 +43,8 @@ var_dump($kelas_saya);
   <!-- Start Navbar -->
   <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+      <a class="navbar-brand" href="../../index.php">
+        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
         DigiSkill
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +53,7 @@ var_dump($kelas_saya);
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item me-4">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="../../index.php">Home</a>
           </li>
           <li class="nav-item dropdown me-4">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -59,23 +64,26 @@ var_dump($kelas_saya);
               foreach ($kelas as $row) :
               ?>
                 <li>
-                  <a class="dropdown-item" href="page/detail/detail.php?id<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
+                  <a class="dropdown-item" href="../detail/detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
                 </li>
               <?php endforeach ?>
             </ul>
           </li>
+          <!-- <li class="nav-item me-4">
+                    <a class="nav-link" href="#">Blog</a>
+                </li> -->
           <li class="nav-item me-4">
-            <a class="nav-link" href="page/about-us.php">About Us</a>
+            <a class="nav-link" href="../about-us.php">About Us</a>
           </li>
           <?php
           if (isset($_SESSION["login"])) { ?>
             <li class="nav-item dropdown me-4">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
               </a>
               <ul class="dropdown-menu me-4">
                 <li>
-                  <a class="dropdown-item" href="profile.php">My profile</a>
+                  <a class="dropdown-item" href="../profile/profile.php">My profile</a>
                 </li>
                 <hr />
                 <li>
@@ -84,13 +92,14 @@ var_dump($kelas_saya);
               </ul>
             </li>
           <?php } else { ?>
-            <a href="page/login.php" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
+            <a href="../login.php" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
               Masuk
             </a>
-            <a href="page/regist.php" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
+            <a href="../regist.php" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
           <?php } ?>
-
         </ul>
+
+
       </div>
     </div>
   </nav>
@@ -153,7 +162,7 @@ var_dump($kelas_saya);
                     <div href="#" class="badge px-3 py-2"><?= $row["nama_kelas"] ?></div>
                     <div class="product-btn mt-5 d-flex justify-content-between align-items-center">
                       <div class="info-video">6 Video</div>
-                      <a href="../detail/detail.php?id=<?= $row["id_kelas"] ?>"><button type="button" class="btn btn-primary btn-sm">
+                      <a href="../materi/materi.php?id=<?= $row["kode_materi"] ?>"><button type="button" class="btn btn-primary btn-sm">
                           Lihat Kelas
                         </button>
                       </a>
