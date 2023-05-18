@@ -1,9 +1,16 @@
 <?php
+session_start();
 require '../../db/function.php';
+
+if (isset($_SESSION["login"])) {
+  $id_user = $_SESSION['id_login'];
+  $profile = query("SELECT * FROM login WHERE id_login = '$id_user'")[0];
+}
+$kelas = query("SELECT * FROM kelas");
 
 $mentor = query("SELECT mentor.id_mentor,mentor.foto,mentor.nama_mentor,mentor.pekerjaan,mentor.pengalaman
                   FROM mentor");
-var_dump($mentor);
+// var_dump($mentor);
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,8 +39,8 @@ var_dump($mentor);
     <div class="container">
       <a class="navbar-brand" href="../../index.php">
         <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
-          class="d-inline-block align-text-top" />
-        DigiSkill | Dashboard
+          class="d-inline-block align-text-top">
+        DigiSkill
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,15 +56,13 @@ var_dump($mentor);
               Course
             </a>
             <ul class="dropdown-menu me-4">
-              <li>
-                <a class="dropdown-item" href="../detail/detail-ui-ux.php">UI/UX Design</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="../detail/detail-front-end.php">Front-End-Development</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="../detail/detail-back-end.php">Back-End-Development</a>
-              </li>
+              <?php
+              foreach ($kelas as $row):
+                ?>
+                <li>
+                  <a class="dropdown-item" href="../detail/detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
+                </li>
+              <?php endforeach ?>
             </ul>
           </li>
           <!-- <li class="nav-item me-4">
@@ -66,22 +71,36 @@ var_dump($mentor);
           <li class="nav-item me-4">
             <a class="nav-link" href="../about-us.php">About Us</a>
           </li>
-          <li class="nav-item dropdown me-4">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../../Assets/avatar-pict/avatar-male-6.svg" class="rounded-circle" height="28"
-                alt="Portrait of a Woman" loading="lazy" />
+          <?php
+          if (isset($_SESSION["login"])) { ?>
+            <li class="nav-item dropdown me-4">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto"
+                  loading="lazy" />
+              </a>
+
+              <ul class="dropdown-menu me-4">
+                <li>
+                  <a class="dropdown-item" href="../profile/profile.php">My profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../profile/kelas-saya.php">Kelas Saya</a>
+                </li>
+                <hr />
+                <li>
+                  <a class="dropdown-item" href="../logout.php">Logout</a>
+                </li>
+              </ul>
+            </li>
+          <?php } else { ?>
+            <a href="../login.php" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
+              Masuk
             </a>
-            <ul class="dropdown-menu me-4">
-              <li>
-                <a class="dropdown-item" href="../profile/profile.php">My profile</a>
-              </li>
-              <hr />
-              <li>
-                <a class="dropdown-item" href="../../index.php">Logout</a>
-              </li>
-            </ul>
-          </li>
+            <a href="../regist.php" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
+          <?php } ?>
         </ul>
+
+
       </div>
     </div>
   </nav>
@@ -164,7 +183,7 @@ var_dump($mentor);
                       </td>
                       <td>
                         <img src="../../Assets/<?= $row["foto"] ?>" alt="avatar-review-1"
-                          class="rounded img-fluid w-50" />
+                          class="rounded-circle img-fluid w-50" />
                       </td>
                       <td>
                         <?= $row["nama_mentor"] ?>

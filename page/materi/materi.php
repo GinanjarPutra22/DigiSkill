@@ -4,7 +4,8 @@ require '../../db/function.php';
 $id = $_GET["id"];
 
 $materi = query("SELECT * FROM materi WHERE kode_materi ='$id'");
-var_dump($materi);
+// var_dump($materi);
+$kelas = query("SELECT * FROM kelas ");
 ?>
 
 <!DOCTYPE html>
@@ -76,6 +77,9 @@ var_dump($materi);
                             <ul class="dropdown-menu me-4">
                                 <li>
                                     <a class="dropdown-item" href="../profile/profile.php">My profile</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="../profile/kelas-saya.php">Kelas Saya</a>
                                 </li>
                                 <hr />
                                 <li>

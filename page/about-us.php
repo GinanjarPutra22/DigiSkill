@@ -72,8 +72,12 @@ if (isset($_SESSION["login"])) {
                                 <img src="../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
                             </a>
                             <ul class="dropdown-menu me-4">
+
                                 <li>
                                     <a class="dropdown-item" href="profile/profile.php">My profile</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="profile/kelas-saya.php">Kelas Saya</a>
                                 </li>
                                 <hr />
                                 <li>

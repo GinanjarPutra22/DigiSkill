@@ -85,6 +85,9 @@ if (isset($_SESSION["login"])) {
                 <li>
                   <a class="dropdown-item" href="page/profile/profile.php">My profile</a>
                 </li>
+                <li>
+                  <a class="dropdown-item" href="page/profile/kelas-saya.php">Kelas Saya</a>
+                </li>
                 <hr />
                 <li>
                   <a class="dropdown-item" href="page/logout.php">Logout</a>

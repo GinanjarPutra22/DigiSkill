@@ -1,11 +1,18 @@
 <?php
+session_start();
 require '../../db/function.php';
+
+if (isset($_SESSION["login"])) {
+  $id_user = $_SESSION['id_login'];
+  $profile = query("SELECT * FROM login WHERE id_login = '$id_user'")[0];
+}
+$kelas = query("SELECT * FROM kelas");
 
 $materi = query("SELECT materi.id_materi,materi.judul_materi, materi.link_materi, materi.deskripsi_materi,
               kelas.nama_kelas
             FROM materi INNER JOIN kelas ON materi.kode_materi = kelas.kode_materi             
             ");
-var_dump($materi);
+// var_dump($materi);
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,8 +22,7 @@ var_dump($materi);
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tools</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <!-- Icon Title -->
   <link rel="icon" href="../Assets/logo-icon.svg" type="image/x-icon" />
@@ -33,12 +39,10 @@ var_dump($materi);
   <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
     <div class="container">
       <a class="navbar-brand" href="../../index.php">
-        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
-          class="d-inline-block align-text-top" />
-        DigiSkill | Dashboard
+        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        DigiSkill
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -51,15 +55,13 @@ var_dump($materi);
               Course
             </a>
             <ul class="dropdown-menu me-4">
-              <li>
-                <a class="dropdown-item" href="../detail/detail-ui-ux.php">UI/UX Design</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="../detail/detail-front-end.php">Front-End-Development</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="../detail/detail-back-end.php">Back-End-Development</a>
-              </li>
+              <?php
+              foreach ($kelas as $row) :
+              ?>
+                <li>
+                  <a class="dropdown-item" href="../detail/detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
+                </li>
+              <?php endforeach ?>
             </ul>
           </li>
           <!-- <li class="nav-item me-4">
@@ -68,22 +70,35 @@ var_dump($materi);
           <li class="nav-item me-4">
             <a class="nav-link" href="../about-us.php">About Us</a>
           </li>
-          <li class="nav-item dropdown me-4">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../../Assets/avatar-pict/avatar-male-6.svg" class="rounded-circle" height="28"
-                alt="Portrait of a Woman" loading="lazy" />
+          <?php
+          if (isset($_SESSION["login"])) { ?>
+            <li class="nav-item dropdown me-4">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+              </a>
+
+              <ul class="dropdown-menu me-4">
+                <li>
+                  <a class="dropdown-item" href="../profile/profile.php">My profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="../profile/kelas-saya.php">Kelas Saya</a>
+                </li>
+                <hr />
+                <li>
+                  <a class="dropdown-item" href="../logout.php">Logout</a>
+                </li>
+              </ul>
+            </li>
+          <?php } else { ?>
+            <a href="../login.php" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
+              Masuk
             </a>
-            <ul class="dropdown-menu me-4">
-              <li>
-                <a class="dropdown-item" href="../profile/profile.php">My profile</a>
-              </li>
-              <hr />
-              <li>
-                <a class="dropdown-item" href="../../index.php">Logout</a>
-              </li>
-            </ul>
-          </li>
+            <a href="../regist.php" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
+          <?php } ?>
         </ul>
+
+
       </div>
     </div>
   </nav>
@@ -122,8 +137,7 @@ var_dump($materi);
                 </a>
 
                 <a href="materi.php" class="d-grid gap-2">
-                  <button class="btn btn-primary disabled" type="button"> <span><i
-                        class='bx bx-book-bookmark'></i></span>
+                  <button class="btn btn-primary disabled" type="button"> <span><i class='bx bx-book-bookmark'></i></span>
                     Materi</button>
                 </a>
               </div>
@@ -160,7 +174,7 @@ var_dump($materi);
                     <th>Tindakan</th>
 
                   </tr>
-                  <?php foreach ($materi as $row): ?>
+                  <?php foreach ($materi as $row) : ?>
                     <tr>
                       <td class="text-center">
                         <?= $row["id_materi"] ?>
@@ -177,10 +191,8 @@ var_dump($materi);
                       </td>
                       <td>
                         <div class="d-flex">
-                          <a href="edit/edit-materi.php?id=<?= $row["id_materi"] ?>" type="button"
-                            class="btn btn-primary btn-sm mx-1">Edit</a>
-                          <a href="hapus/hapus-materi.php?id=<?= $row["id_materi"] ?>" type="button"
-                            class="btn btn-danger btn-sm mx-1">Hapus</a>
+                          <a href="edit/edit-materi.php?id=<?= $row["id_materi"] ?>" type="button" class="btn btn-primary btn-sm mx-1">Edit</a>
+                          <a href="hapus/hapus-materi.php?id=<?= $row["id_materi"] ?>" type="button" class="btn btn-danger btn-sm mx-1">Hapus</a>
 
                         </div>
                       </td>
@@ -202,9 +214,7 @@ var_dump($materi);
     <!-- ------End Row Main Detail Kelas------- -->
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>
