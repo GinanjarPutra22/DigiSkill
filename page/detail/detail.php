@@ -4,10 +4,13 @@ session_start();
 require '../../db/function.php';
 
 $id = $_GET["id"];
-$id_user = $_SESSION["id_login"];
 
-$data_kelas = mysqli_query($conn, "SELECT * FROM data_kelas WHERE (id_kelas ='$id') AND (id_user = '$id_user')");
-var_dump($data_kelas);
+if (isset($_SESSION["login"])) {
+    $id_user = $_SESSION['id_login'];
+    $data_kelas = mysqli_query($conn, "SELECT * FROM data_kelas WHERE (id_kelas ='$id') AND (id_user = '$id_user')");
+    // var_dump($data_kelas);
+}
+
 
 $kelas = query("SELECT * FROM kelas  WHERE id_kelas= '$id'")[0];
 // var_dump($kelas);
@@ -43,8 +46,7 @@ if (isset($_POST["submit"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <!-- Modal -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -65,12 +67,10 @@ if (isset($_POST["submit"])) {
     <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
         <div class="container">
             <a class="navbar-brand" href="../../index.php">
-                <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
-                    class="d-inline-block align-text-top">
+                <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 DigiSkill
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -79,8 +79,7 @@ if (isset($_POST["submit"])) {
                         <a class="nav-link active" aria-current="page" href="../../index.php">Home</a>
                     </li>
                     <li class="nav-item dropdown me-4">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Course
                         </a>
                         <ul class="dropdown-menu me-4">
@@ -96,10 +95,8 @@ if (isset($_POST["submit"])) {
                         <a class="nav-link" href="../about-us.php">About Us</a>
                     </li>
                     <li class="nav-item dropdown me-4">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle"
-                                height="22" alt="Portrait of a Woman" loading="lazy" />
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="Portrait of a Woman" loading="lazy" />
                         </a>
                         <ul class="dropdown-menu me-4">
                             <li>
@@ -153,25 +150,26 @@ if (isset($_POST["submit"])) {
                                 </div>
                             </div>
                             <div class="sticky-top text-center mt-5">
-                                <?php if (mysqli_fetch_assoc($data_kelas)) { ?>
-                                    <a href="../profile/kelas-saya.php">
-                                        <button class="btn btn-primary px-4 px-3"
-                                            style="font-size: smaller; font-weight: bold;">
-                                            Lihat Kelas Saya</button>
-                                    </a>
-                                <?php } else { ?>
-                                    <form action="" method="post">
-                                        <input type="hidden" class="form-control" name="id_kelas" rows="3"
-                                            value="<?= $id ?>">
-                                        <input type="hidden" class="form-control" name="id_user" rows="3"
-                                            value="<?= $_SESSION["id_login"] ?>">
-                                        <button type="submit" class="btn btn-primary px-4 px-3"
-                                            style="font-size: smaller; font-weight: bold;" name="submit">
+                                <?php if (isset($_SESSION["login"])) {
+                                    if (mysqli_fetch_assoc($data_kelas)) { ?>
+                                        <a href="../profile/kelas-saya.php">
+                                            <button class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;">
+                                                Lihat Kelas Saya</button>
+                                        </a>
+                                    <?php } else { ?>
+                                        <form action="" method="post">
+                                            <input type="hidden" class="form-control" name="id_kelas" rows="3" value="<?= $id ?>">
+                                            <input type="hidden" class="form-control" name="id_user" rows="3" value="<?= $_SESSION["id_login"] ?>">
+                                            <button type="submit" class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;" name="submit">
+                                                Belajar Sekarang
+                                            </button>
+                                        </form>
+                                    <?php }
+                                } else { ?>
+                                    <a href="../login.php"><button type="button" class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;" name="submit">
                                             Belajar Sekarang
-                                        </button>
-                                    </form>
+                                        </button></a>
                                 <?php } ?>
-
                             </div>
                         </div>
                     </div>
@@ -191,8 +189,7 @@ if (isset($_POST["submit"])) {
                                 <div class="container">
                                     <div class="text-center">
                                         <h3>Memilih Kelas UI/UX Design</h3>
-                                        <img src="../../Assets/done-logo.svg" alt="done-logo.svg"
-                                            class="img img-fluid rounded p-5">
+                                        <img src="../../Assets/done-logo.svg" alt="done-logo.svg" class="img img-fluid rounded p-5">
                                         <a href="../profile/kelas-saya.php">
                                             <button type="submit" class="btn btn-primary btn-lg col-10 mb-2">
                                                 Selanjutnya
@@ -241,11 +238,10 @@ if (isset($_POST["submit"])) {
                             <p> Anda akan belajar langsung dari mentor yang ahli dalam bidang
                                 <?= $kelas["nama_kelas"] ?>
                             </p>
-                            <?php foreach ($mentor as $row): ?>
+                            <?php foreach ($mentor as $row) : ?>
                                 <div class="row mb-5">
                                     <div class="col-lg-4">
-                                        <img src="../../Assets/mentor-ui-ux.svg" alt="mentor-ui-ux"
-                                            class="img img-fluid rounded">
+                                        <img src="../../Assets/mentor-ui-ux.svg" alt="mentor-ui-ux" class="img img-fluid rounded">
                                     </div>
                                     <div class="col-lg-8">
                                         <div class="text-mentor">
@@ -260,10 +256,8 @@ if (isset($_POST["submit"])) {
                                             </p>
                                         </div>
                                         <div class="d-flex">
-                                            <a href="https://www.instagram.com/<?= $row["instagram"] ?>"
-                                                target="_blank"><img src="../../Assets/instagram.svg" alt=""></a>
-                                            <a href="https://www.linkedin.com/<?= $row["linkedIn"] ?>" target="_blank"><img
-                                                    src="../../Assets/linkedin.svg" alt=""></a>
+                                            <a href="https://www.instagram.com/<?= $row["instagram"] ?>" target="_blank"><img src="../../Assets/instagram.svg" alt=""></a>
+                                            <a href="https://www.linkedin.com/<?= $row["linkedIn"] ?>" target="_blank"><img src="../../Assets/linkedin.svg" alt=""></a>
                                         </div>
                                     </div>
                                 </div>
@@ -280,19 +274,15 @@ if (isset($_POST["submit"])) {
                                 update dengan
                                 perkembangan, anda akan mempelajari materi dibawah ini </p>
                             <!-- Start Accordion -->
-                            <?php foreach ($materi as $row): ?>
+                            <?php foreach ($materi as $row) : ?>
                                 <div class="accordion" id="accordionExample">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading<?= $row["id_materi"]; ?>">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapse<?= $row["id_materi"]; ?>" aria-expanded="true"
-                                                aria-controls="collapse<?= $row["id_materi"]; ?>">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $row["id_materi"]; ?>" aria-expanded="true" aria-controls="collapse<?= $row["id_materi"]; ?>">
                                                 <?= $row["judul_materi"]; ?>
                                             </button>
                                         </h2>
-                                        <div id="collapse<?= $row["id_materi"]; ?>" class="panel-collapse collapse **in**"
-                                            aria-labelledby="heading<?= $row["id_materi"]; ?>"
-                                            data-bs-parent="#accordionExample">
+                                        <div id="collapse<?= $row["id_materi"]; ?>" class="panel-collapse collapse **in**" aria-labelledby="heading<?= $row["id_materi"]; ?>" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <?= $row["deskripsi_materi"]; ?><br>
                                             </div>
@@ -315,11 +305,9 @@ if (isset($_POST["submit"])) {
                                 </p>
 
                                 <div class="d-flex align-items-center align-self-center">
-                                    <?php foreach ($tools as $row): ?>
+                                    <?php foreach ($tools as $row) : ?>
                                         <div class="d-flex align-items-center me-5">
-                                            <a href="<?= $row["link_tools"] ?>" target="_blank"><img
-                                                    src="../../Assets/<?= $row["gambar_tools"] ?> alt=" figma-pic"
-                                                    class="img h-100"></a>
+                                            <a href="<?= $row["link_tools"] ?>" target="_blank"><img src="../../Assets/<?= $row["gambar_tools"] ?>" class="img h-100"></a>
                                             <p class="ms-2">
                                                 <?= $row["nama_tools"] ?>
                                             </p>
@@ -341,8 +329,7 @@ if (isset($_POST["submit"])) {
                                     <!-- Swiper -->
 
                                     <di class="swiper mySwiperTesti pb-4 pb-sm-5">
-                                        <div class="swiper-wrapper"
-                                            style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
 
                                             <!-- Card Start -->
                                             <div class="swiper-slide card p-2">
@@ -358,13 +345,10 @@ if (isset($_POST["submit"])) {
                                                         Mengikuti kelas UI/UX ini saya sangat mudah memahami materi yang
                                                         diberikan
                                                     </p>
-                                                    <div
-                                                        class="detail d-flex justify-content-between align-items-end mt-4">
+                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
                                                         <div class="profile ms-0 ">
                                                             <div class="user  ">
-                                                                <img src="../../Assets/avatar-pict/avatar-female-1.svg  "
-                                                                    alt="avatar-review-1"
-                                                                    class="rounded-circle img-fluid mb-1">
+                                                                <img src="../../Assets/avatar-pict/avatar-female-1.svg  " alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                                                                 <p class="name m-0">Amalia Sonia</p>
                                                                 <p class="status m-0 lh-sm">UI/UX Designer di Petrokimia
@@ -393,13 +377,10 @@ if (isset($_POST["submit"])) {
                                                         Kelas UIUX gratis ini sangat membantu bagi pemula seperti saya
                                                         yang tidak tahu.
                                                     </p>
-                                                    <div
-                                                        class="detail d-flex justify-content-between align-items-end mt-4">
+                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
                                                         <div class="profile ms-0 ">
                                                             <div class="user  ">
-                                                                <img src="../../Assets/avatar-pict/avatar-male-1.svg"
-                                                                    alt="avatar-review-1"
-                                                                    class="rounded-circle img-fluid mb-1">
+                                                                <img src="../../Assets/avatar-pict/avatar-male-1.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                                                                 <p class="name m-0">Febrian Putra</p>
                                                                 <p class="status m-0 lh-sm">UI/UX Designer di
@@ -428,13 +409,10 @@ if (isset($_POST["submit"])) {
                                                         Saya merasa sangat terbantu dengan materi yang disampaikan dalam
                                                         kelas UIUX ini.
                                                     </p>
-                                                    <div
-                                                        class="detail d-flex justify-content-between align-items-end mt-4">
+                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
                                                         <div class="profile ms-0 ">
                                                             <div class="user  ">
-                                                                <img src="../../Assets/avatar-pict/avatar-female-2.svg"
-                                                                    alt="avatar-review-1"
-                                                                    class="rounded-circle img-fluid mb-1">
+                                                                <img src="../../Assets/avatar-pict/avatar-female-2.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                                                                 <p class="name m-0">Faradisa Saputri</p>
                                                                 <p class="status m-0 lh-sm">UI/UX Designer di
@@ -463,13 +441,10 @@ if (isset($_POST["submit"])) {
                                                         Saya merasa lebih percaya diri untuk mengembangkan skill di
                                                         kelas UIUX ini.
                                                     </p>
-                                                    <div
-                                                        class="detail d-flex justify-content-between align-items-end mt-4">
+                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
                                                         <div class="profile ms-0 ">
                                                             <div class="user  ">
-                                                                <img src="../../Assets/avatar-pict/avatar-male-2.svg"
-                                                                    alt="avatar-review-1"
-                                                                    class="rounded-circle img-fluid mb-1">
+                                                                <img src="../../Assets/avatar-pict/avatar-male-2.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                                                                 <p class="name m-0">Adi Prabowo</p>
                                                                 <p class="status m-0 lh-sm">UI/UX Designer di Kemenhan
@@ -498,13 +473,10 @@ if (isset($_POST["submit"])) {
                                                         Kelas UIUX gratis ini membantu saya untuk memperbaiki portofolio
                                                         desain saya
                                                     </p>
-                                                    <div
-                                                        class="detail d-flex justify-content-between align-items-end mt-4">
+                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
                                                         <div class="profile ms-0 ">
                                                             <div class="user  ">
-                                                                <img src="../../Assets/avatar-pict/avatar-female-3.svg"
-                                                                    alt="avatar-review-1"
-                                                                    class="rounded-circle img-fluid mb-1">
+                                                                <img src="../../Assets/avatar-pict/avatar-female-3.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                                                                 <p class="name m-0">Puan Saputri</p>
                                                                 <p class="status m-0 lh-sm">UI/UX Designer di PT.Depe
@@ -534,13 +506,10 @@ if (isset($_POST["submit"])) {
                                                         Saya sangat terkesan dengan kualitas video pembelajaran dalam
                                                         kelas UIUX gratis ini.
                                                     </p>
-                                                    <div
-                                                        class="detail d-flex justify-content-between align-items-end mt-4">
+                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
                                                         <div class="profile ms-0 ">
                                                             <div class="user  ">
-                                                                <img src="../../Assets/avatar-review-1.svg"
-                                                                    alt="avatar-review-1"
-                                                                    class="rounded-circle img-fluid mb-1">
+                                                                <img src="../../Assets/avatar-review-1.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
 
                                                                 <p class="name m-0">Fardy Saputra</p>
                                                                 <p class="status m-0 lh-sm">UI/UX Designer di PT.PKK</p>
@@ -666,18 +635,12 @@ if (isset($_POST["submit"])) {
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
