@@ -4,7 +4,8 @@ require '../../db/function.php';
 $id = $_GET["id"];
 
 $materi = query("SELECT * FROM materi WHERE kode_materi ='$id'");
-var_dump($materi);
+// var_dump($materi);
+$kelas = query("SELECT * FROM kelas ");
 ?>
 
 <!DOCTYPE html>

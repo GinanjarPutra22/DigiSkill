@@ -12,7 +12,7 @@ if (isset($_SESSION["login"])) {
   $profile = query("SELECT * FROM login WHERE id_login = '$id_user'")[0];
   $kelas_saya = query("SELECT * FROM data_kelas INNER JOIN kelas
   ON data_kelas.id_kelas = kelas.id_kelas WHERE id_user ='$id_user'");
-  var_dump($kelas_saya);
+  // var_dump($kelas_saya);
 }
 
 
