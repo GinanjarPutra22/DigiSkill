@@ -564,3 +564,25 @@ function hapusmateri($id)
 
     return mysqli_affected_rows($conn);
 }
+
+
+////////////////function penilaian////////////////////////////
+function tmbhnilai($data)
+{
+    global $conn;
+    // strtolower() berfungsi untuk membuat huruf menjadi kecil
+    // stripslashes() untuk menghapus karakter backslas
+    $id = mysqli_real_escape_string($conn, $data["id"]);
+    $asal_instansi = mysqli_real_escape_string($conn, $data["asal_instansi"]);
+    $penilaian = mysqli_real_escape_string($conn, $data["penilaian"]);
+
+    // menambahkan kelas baru kedalam database
+    $query = "UPDATE data_kelas SET
+            penilaian = '$penilaian',
+            asal_instansi = '$asal_instansi'
+            WHERE id_data_kelas = $id
+        ";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
