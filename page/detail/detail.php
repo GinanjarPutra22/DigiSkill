@@ -108,6 +108,9 @@ if (isset($_POST["submit"])) {
                                 <li>
                                     <a class="dropdown-item" href="../profile/profile.php">My profile</a>
                                 </li>
+                                <li>
+                                    <a class="dropdown-item" href="../profile/kelas-saya.php">Kelas Saya</a>
+                                </li>
                                 <hr />
                                 <li>
                                     <a class="dropdown-item" href="../logout.php">Logout</a>

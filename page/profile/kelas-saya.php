@@ -85,6 +85,9 @@ if (isset($_SESSION["login"])) {
                 <li>
                   <a class="dropdown-item" href="../profile/profile.php">My profile</a>
                 </li>
+                <li>
+                  <a class="dropdown-item" href="../profile/kelas-saya.php">Kelas Saya</a>
+                </li>
                 <hr />
                 <li>
                   <a class="dropdown-item" href="../logout.php">Logout</a>
@@ -115,7 +118,7 @@ if (isset($_SESSION["login"])) {
             <br />
             <div class="p-4 shadow-4 rounded-3 sidebar">
               <div class="">
-                <h5 class="text-center">Ginanjar</h5>
+                <h5 class="text-center"><?= $profile["nama"] ?></h5>
                 <hr />
                 <div style="font-size: smaller" class="ms-3">
                   <a href="kelas-saya.php">
