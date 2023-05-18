@@ -41,7 +41,7 @@ if (isset($_POST["submit"])) {
             <div class="row content d-flex justify-content-center">
                 <div class="col-lg-8">
                     <a href="kelas.php" class="d-flex justify-content-end">
-                        <img src="../../Assets/x-circle.svg" alt="" class="h-50" />
+                        <button type="button" class="btn-close" aria-label="Close"></button>
                     </a>
                     <h3 class="text-center mt-3">Buat Kelas Baru</h3>
                 </div>

@@ -109,7 +109,7 @@ $kelas = query("SELECT * FROM kelas ");
                 <div class="accordion-item">
                     <?php foreach ($materi as $row) : ?>
                         <h2 class="accordion-header mb-2">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#materi-<?= $row['urutan'] ?>" aria-expanded="true" aria-controls="materi-<?= $row['urutan'] ?>">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#materi-<?= $row['id_materi'] ?>" aria-expanded="true" aria-controls="materi-<?= $row['id_materi'] ?>">
                                 Materi <?= $row['urutan'] ?>
                             </button>
                         </h2>
@@ -124,7 +124,7 @@ $kelas = query("SELECT * FROM kelas ");
             <div class="col-lg-9">
                 <?php foreach ($materi as $row) : ?>
                     <!-- Vid Materi 1 -->
-                    <div id="materi-<?= $row['urutan'] ?>" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+                    <div id="materi-<?= $row['id_materi'] ?>" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="card card-body">
                                 <div class="ratio ratio-16x9">
@@ -133,10 +133,13 @@ $kelas = query("SELECT * FROM kelas ");
                                 </div>
                                 <div class="1. Pengenalan UI/UX py-3"></div>
                                 <div class="d-grid gap-5 d-md-flex justify-content-arround">
-                                    <h2 class="fs-7"><?= $row['urutan'] ?>. <?= $row['judul_materi'] ?></h2>
+                                    <h2 class="fs-7">
+                                        <?= $row['urutan'] ?>.
+                                        <?= $row['judul_materi'] ?>
+                                    </h2>
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-end">
-                                    <a href="#" type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#materi-<?= $row['urutan'] + 1 ?>" aria-expanded="true" aria-controls="materi-<?= $row['urutan'] + 1 ?>">Next</a>
+                                    <a href="#" type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#materi-2" aria-expanded="false" aria-controls="materi-2">Next</a>
                                 </div>
 
                                 <br><br>
