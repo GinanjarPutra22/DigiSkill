@@ -30,9 +30,6 @@ $materi = query("SELECT id_materi,judul_materi,deskripsi_materi FROM materi WHER
 if (isset($_POST["submit"])) {
 
     if (mskkelas($_POST) > 0) {
-        echo "<script>
-              alert('Anda Berhasil Mendaftar');    
-        </script>";
         header("Location: ../profile/kelas-saya.php");
     } else {
         echo mysqli_error($conn);
@@ -174,7 +171,7 @@ if (isset($_POST["submit"])) {
                                         <form action="" method="post">
                                             <input type="hidden" class="form-control" name="id_kelas" rows="3" value="<?= $id ?>">
                                             <input type="hidden" class="form-control" name="id_user" rows="3" value="<?= $_SESSION["id_login"] ?>">
-                                            <button type="submit" class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;" name="submit">
+                                            <button type="submit" class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;" name="submit" onclick="return confirm('Apakah Anda Yakin?')">
                                                 Belajar Sekarang
                                             </button>
                                         </form>
