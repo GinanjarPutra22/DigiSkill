@@ -153,7 +153,7 @@ var_dump($user);
                 <th>Nama</th>
                 <th>Kelas</th>
                 <th>Waktu Begabung</th>
-                <th>Tugas</th>
+
               </tr>
 
               <?php foreach ($user as $row): ?>
@@ -173,9 +173,7 @@ var_dump($user);
                   <td>
                     <?= $row["tgl_pendaftaran"] ?>
                   </td>
-                  <td>
-                    <button type="button" class="btn btn-primary btn-sm">Lihat</button>
-                  </td>
+
                 </tr>
               <?php endforeach ?>
 

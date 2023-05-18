@@ -44,7 +44,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
             <div class="row content d-flex justify-content-center">
                 <div class="col-lg-8">
                     <a href="materi.php" class="d-flex justify-content-end">
-                        <img src="../../Assets/x-circle.svg" alt="" class="h-50" />
+                        <button type="button" class="btn-close" aria-label="Close"></button>
                     </a>
                     <h3 class="text-center mt-3">Tambah Materi</h3>
                 </div>

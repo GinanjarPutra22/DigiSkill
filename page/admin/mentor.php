@@ -164,7 +164,7 @@ var_dump($mentor);
                       </td>
                       <td>
                         <img src="../../Assets/<?= $row["foto"] ?>" alt="avatar-review-1"
-                          class="rounded-circle img-fluid w-50" />
+                          class="rounded img-fluid w-50" />
                       </td>
                       <td>
                         <?= $row["nama_mentor"] ?>

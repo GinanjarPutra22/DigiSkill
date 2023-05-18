@@ -18,7 +18,8 @@ var_dump($materi);
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="../../css/materi.css" />
     <!-- <link rel="stylesheet" href="../../css/main.css"> -->
@@ -30,10 +31,12 @@ var_dump($materi);
     <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
         <div class="container">
             <a class="navbar-brand" href="../../index.php">
-                <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top">
                 DigiSkill
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -42,13 +45,14 @@ var_dump($materi);
                         <a class="nav-link active" aria-current="page" href="../../index.php">Home</a>
                     </li>
                     <li class="nav-item dropdown me-4">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Course
                         </a>
                         <ul class="dropdown-menu me-4">
                             <?php
-                            foreach ($kelas as $row) :
-                            ?>
+                            foreach ($kelas as $row):
+                                ?>
                                 <li>
                                     <a class="dropdown-item" href="../detail/detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
                                 </li>
@@ -64,8 +68,10 @@ var_dump($materi);
                     <?php
                     if (isset($_SESSION["login"])) { ?>
                         <li class="nav-item dropdown me-4">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22"
+                                    alt="Foto" loading="lazy" />
                             </a>
                             <ul class="dropdown-menu me-4">
                                 <li>
@@ -99,9 +105,11 @@ var_dump($materi);
             <div class="col-lg-3 text-center">
                 <!-- Materi 1 -->
                 <div class="accordion-item">
-                    <?php foreach ($materi as $row) : ?>
+                    <?php foreach ($materi as $row): ?>
                         <h2 class="accordion-header mb-2">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#materi-<?= $row['id_materi'] ?>" aria-expanded="true" aria-controls="materi-<?= $row['id_materi'] ?>">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#materi-<?= $row['id_materi'] ?>" aria-expanded="true"
+                                aria-controls="materi-<?= $row['id_materi'] ?>">
                                 Materi <?= $row['urutan'] ?>
                             </button>
                         </h2>
@@ -114,9 +122,10 @@ var_dump($materi);
                 </div>
             </div>
             <div class="col-lg-9">
-                <?php foreach ($materi as $row) : ?>
+                <?php foreach ($materi as $row): ?>
                     <!-- Vid Materi 1 -->
-                    <div id="materi-<?= $row['id_materi'] ?>" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+                    <div id="materi-<?= $row['id_materi'] ?>" class="accordion-collapse collapse "
+                        data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <div class="card card-body">
                                 <div class="ratio ratio-16x9">
@@ -125,10 +134,14 @@ var_dump($materi);
                                 </div>
                                 <div class="1. Pengenalan UI/UX py-3"></div>
                                 <div class="d-grid gap-5 d-md-flex justify-content-arround">
-                                    <h2 class="fs-7"><?= $row['urutan'] ?>. <?= $row['judul_materi'] ?></h2>
+                                    <h2 class="fs-7">
+                                        <?= $row['urutan'] ?>.
+                                        <?= $row['judul_materi'] ?>
+                                    </h2>
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-end">
-                                    <a href="#" type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#materi-2" aria-expanded="false" aria-controls="materi-2">Next</a>
+                                    <a href="#" type="button" class="btn btn-primary" data-bs-toggle="collapse"
+                                        data-bs-target="#materi-2" aria-expanded="false" aria-controls="materi-2">Next</a>
                                 </div>
 
                                 <br><br>
@@ -277,7 +290,9 @@ var_dump($materi);
         </div>
     </footer>
     <!-- End Footer -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
