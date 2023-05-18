@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require '../../db/function.php';
 $id = $_GET["id"];
 
@@ -29,8 +29,8 @@ var_dump($materi);
     <!-- Start Navbar -->
     <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
         <div class="container">
-            <a class="navbar-brand" href="../index.php">
-                <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+            <a class="navbar-brand" href="../../index.php">
+                <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 DigiSkill
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,38 +46,46 @@ var_dump($materi);
                             Course
                         </a>
                         <ul class="dropdown-menu me-4">
-                            <li>
-                                <a class="dropdown-item" href="/page/detail/detail-ui-ux.php">UI/UX Design</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/page/detail/detail-front-end.php">Front-End-Development</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/page/detail/detail-back-end.php">Back-End-Development</a>
-                            </li>
+                            <?php
+                            foreach ($kelas as $row) :
+                            ?>
+                                <li>
+                                    <a class="dropdown-item" href="../detail/detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
+                                </li>
+                            <?php endforeach ?>
                         </ul>
                     </li>
                     <!-- <li class="nav-item me-4">
-                  <a class="nav-link" href="#">Blog</a>
-              </li> -->
+                    <a class="nav-link" href="#">Blog</a>
+                </li> -->
                     <li class="nav-item me-4">
                         <a class="nav-link" href="../about-us.php">About Us</a>
                     </li>
-                    <li class="nav-item dropdown me-4">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="/Assets/avatar-pict/avatar-male-6.svg" class="rounded-circle" height="28" alt="Portrait of a Woman" loading="lazy" />
+                    <?php
+                    if (isset($_SESSION["login"])) { ?>
+                        <li class="nav-item dropdown me-4">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+                            </a>
+                            <ul class="dropdown-menu me-4">
+                                <li>
+                                    <a class="dropdown-item" href="../profile/profile.php">My profile</a>
+                                </li>
+                                <hr />
+                                <li>
+                                    <a class="dropdown-item" href="../logout.php">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    <?php } else { ?>
+                        <a href="../login.php" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
+                            Masuk
                         </a>
-                        <ul class="dropdown-menu me-4">
-                            <li>
-                                <a class="dropdown-item" href="../../page/profile/kelas-saya.php">My profile</a>
-                            </li>
-                            <hr />
-                            <li>
-                                <a class="dropdown-item" href="#">Logout</a>
-                            </li>
-                        </ul>
-                    </li>
+                        <a href="../regist.php" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
+                    <?php } ?>
                 </ul>
+
+
             </div>
         </div>
     </nav>
@@ -98,11 +106,11 @@ var_dump($materi);
                             </button>
                         </h2>
                     <?php endforeach ?>
-                    <h2 class="accordion-header mb-2">
+                    <!-- <h2 class="accordion-header mb-2">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#materi-5" aria-expanded="false" aria-controls="materi-5">
                             Materi 5
                         </button>
-                    </h2>
+                    </h2> -->
                 </div>
             </div>
             <div class="col-lg-9">
@@ -133,7 +141,7 @@ var_dump($materi);
                 <?php endforeach ?>
 
                 <!-- Vid Materi 5 -->
-                <div id="materi-5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <!-- <div id="materi-5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div class="ratio ratio-16x9">
                             <iframe src="https://www.youtube.com/embed/l-6vRjEknC0" class="" allowfullscreen>
@@ -157,7 +165,7 @@ var_dump($materi);
                             aplikasi sebelum aplikasi itu di-develop oleh programmer.
                         </p>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- Modal Tugas -->
             <div class="modal fade" id="Tugas" tabindex="-1" aria-labelledby="TugasLabel" aria-hidden="true">

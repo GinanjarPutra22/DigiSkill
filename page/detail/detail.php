@@ -31,8 +31,9 @@ if (isset($_POST["submit"])) {
 
     if (mskkelas($_POST) > 0) {
         echo "<script>
-              alert('user baru berhasil ditambahkan');    
+              alert('Anda Berhasil Mendaftar');    
         </script>";
+        header("Location: ../profile/kelas-saya.php");
     } else {
         echo mysqli_error($conn);
     }

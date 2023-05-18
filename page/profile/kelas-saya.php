@@ -162,7 +162,7 @@ if (isset($_SESSION["login"])) {
                     <div href="#" class="badge px-3 py-2"><?= $row["nama_kelas"] ?></div>
                     <div class="product-btn mt-5 d-flex justify-content-between align-items-center">
                       <div class="info-video">6 Video</div>
-                      <a href="../detail/detail.php?id=<?= $row["id_kelas"] ?>"><button type="button" class="btn btn-primary btn-sm">
+                      <a href="../materi/materi.php?id=<?= $row["kode_materi"] ?>"><button type="button" class="btn btn-primary btn-sm">
                           Lihat Kelas
                         </button>
                       </a>
