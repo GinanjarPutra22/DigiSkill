@@ -64,12 +64,12 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
                         <div class="mb-3">
                             <label for="urutan" class="form-label">Urutan Materi</label>
                             <input type="text" class="form-control" id="urutan" name="urutan"
-                                placeholder="Masukan nama mentor">
+                                placeholder="Masukan urutan materi">
                         </div>
                         <div class="mb-3">
                             <label for="judul" class="form-label">Judul Materi</label>
                             <input type="text" class="form-control" id="judul" name="judul"
-                                placeholder="Masukan nama mentor">
+                                placeholder="Masukan judul materi">
                         </div>
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
