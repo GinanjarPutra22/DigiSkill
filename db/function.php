@@ -586,3 +586,49 @@ function tmbhnilai($data)
 
     return mysqli_affected_rows($conn);
 }
+
+function cariuser($kelas, $user)
+{
+    $query = "SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pendaftaran,
+                    login.nama,login.foto,
+                    kelas.nama_kelas
+                    FROM data_kelas 
+                INNER JOIN kelas ON data_kelas.id_kelas = kelas.id_kelas
+                INNER JOIN login ON data_kelas.id_user = login.id_login
+                WHERE data_kelas.id_kelas LIKE '%$kelas%' AND
+                login.nama LIKE '%$user%'";
+
+    return query($query); // mengolah kembali hasil ke dalam function query
+
+}
+
+function carimentor($kelas, $mentor)
+{
+    $query = "SELECT mentor.id_mentor,mentor.foto,mentor.nama_mentor,mentor.pekerjaan,mentor.pengalaman, kelas.nama_kelas
+                  FROM mentor INNER JOIN kelas ON mentor.kode_kelas = kelas.kode_materi
+                  WHERE kelas.id_kelas LIKE '%$kelas%' AND
+                  mentor.nama_mentor LIKE '%$mentor%'
+                  ";
+
+    return query($query);
+}
+
+function carimateri($kelas)
+{
+    $query = "SELECT materi.id_materi,materi.judul_materi,materi.urutan, materi.link_materi, materi.deskripsi_materi, kelas.nama_kelas
+                FROM materi INNER JOIN kelas ON materi.kode_materi = kelas.kode_materi      
+                WHERE kelas.id_kelas LIKE '%$kelas%' ORDER BY urutan ASC
+  ";
+    return query($query);
+}
+
+function caritools($kelas)
+{
+    $query = "SELECT tools.id_tools,tools.gambar_tools, tools.nama_tools, tools.link_tools,
+                    kelas.nama_kelas
+                FROM tools INNER JOIN kelas ON tools.kode_materi = kelas.kode_materi
+                WHERE kelas.id_kelas LIKE '%$kelas%' 
+                ";
+
+    return query($query);
+}
