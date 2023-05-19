@@ -155,12 +155,52 @@ $mentor = query("SELECT mentor.id_mentor,mentor.foto,mentor.nama_mentor,mentor.p
       <!-- Start Main Content -->
 
       <div class="col-lg-8 mt-5">
-        <div class="row add-class  d-md-flex text-md-end mb-lg-4 mb-sm-4">
-          <div class="col">
+        <div class="row add-class    mb-lg-4 mb-sm-4">
+          <div class="col-lg-12">
 
-            <a href="tambah/add-mentor.php ">
-              <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Mentor</button>
-            </a>
+
+            <!-- Filter end Btn add -->
+            <div class="row text-md-end mb-3 mb-sm-2">
+              <a href="tambah/add-mentor.php ">
+                <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Mentor</button>
+              </a>
+
+            </div>
+            <div class="row ">
+              <div class="col-lg-6  pe-1">
+                <div class="row d-flex justify-content-start">
+                  <label for="inputState" class="form-label text-start">Filter Kelas</label>
+                  <div class="col-lg-11 d-flex">
+                    <select class="form-select 3 me-lg-2 me-2" aria-label="Default select example">
+                      <option selected>Pilih Kelas</option>
+                      <option value="1">UI/UX Design</option>
+                      <option value="2">Front-End-Development</option>
+                    </select>
+                    <button class="btn btn-primary btn-md d-flex"> <span class="me-2"><i
+                          class='bx bx-filter'></i></span>
+                      Filter</button>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-lg-6  ps-1">
+                <div class="row d-flex justify-content-start">
+                  <label for="inputEmail4" class="form-label">Cari Mentor</label>
+                  <div class="col-lg-11 d-flex justify-content-between">
+
+                    <input type="email" class="form-control me-2" id="inputEmail4" placeholder="Masukan nama mentor">
+
+                    <button class="btn btn-primary btn-md d-flex justify-content-between"> <span class="me-2"><i
+                          class='bx bx-search'></i></span>
+                      Cari</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
 
             <!-- Tabel -->
             <div class="row -table mt-4">

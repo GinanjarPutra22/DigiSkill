@@ -154,8 +154,36 @@ $user = query("SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pend
       <!-- Start Main Content -->
 
       <div class="col-lg-8 mt-5">
-        <div class="row add-class">
+        <div class="row mb-4 ">
+          <div class="col-lg-6  pe-1">
+            <div class="row d-flex justify-content-start">
+              <label for="inputState" class="form-label text-start">Filter Kelas</label>
+              <div class="col-lg-11 d-flex">
+                <select class="form-select 3 me-lg-2 me-2" aria-label="Default select example">
+                  <option selected>Pilih Kelas</option>
+                  <option value="1">UI/UX Design</option>
+                  <option value="2">Front-End-Development</option>
+                </select>
+                <button class="btn btn-primary btn-md d-flex"> <span class="me-2"><i class='bx bx-filter'></i></span>
+                  Filter</button>
+              </div>
+            </div>
 
+          </div>
+
+          <div class="col-lg-6  ps-1">
+            <div class="row d-flex justify-content-start">
+              <label for="inputEmail4" class="form-label">Cari User</label>
+              <div class="col-lg-11 d-flex justify-content-between">
+
+                <input type="email" class="form-control me-2" id="inputEmail4" placeholder="Masukan nama user">
+
+                <button class="btn btn-primary btn-md d-flex justify-content-between"> <span class="me-2"><i
+                      class='bx bx-search'></i></span>
+                  Cari</button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="row -table">
