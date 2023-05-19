@@ -21,7 +21,8 @@ $tools = query("SELECT tools.id_tools,tools.gambar_tools, tools.nama_tools, tool
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tools</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <!-- Icon Title -->
   <link rel="icon" href="../Assets/logo-icon.svg" type="image/x-icon" />
@@ -38,10 +39,12 @@ $tools = query("SELECT tools.id_tools,tools.gambar_tools, tools.nama_tools, tool
   <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
     <div class="container">
       <a class="navbar-brand" href="../../index.php">
-        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
+          class="d-inline-block align-text-top">
         DigiSkill
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -55,8 +58,8 @@ $tools = query("SELECT tools.id_tools,tools.gambar_tools, tools.nama_tools, tool
             </a>
             <ul class="dropdown-menu me-4">
               <?php
-              foreach ($kelas as $row) :
-              ?>
+              foreach ($kelas as $row):
+                ?>
                 <li>
                   <a class="dropdown-item" href="../detail/detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
                 </li>
@@ -73,7 +76,8 @@ $tools = query("SELECT tools.id_tools,tools.gambar_tools, tools.nama_tools, tool
           if (isset($_SESSION["login"])) { ?>
             <li class="nav-item dropdown me-4">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto"
+                  loading="lazy" />
               </a>
 
               <ul class="dropdown-menu me-4">
@@ -155,9 +159,29 @@ $tools = query("SELECT tools.id_tools,tools.gambar_tools, tools.nama_tools, tool
         <div class="row add-class  d-md-flex text-md-end mb-lg-4 mb-sm-4">
           <div class="col">
 
-            <a href="tambah/add-tools.php ">
-              <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Tools</button>
-            </a>
+            <!-- Filter end Btn add -->
+            <div class="row d-flex justify-content-end">
+              <label for="inputState" class="form-label text-start">Filter Kelas</label>
+              <div class="col-lg-6 d-flex">
+                <select class="form-select 3 me-lg-2 me-2" aria-label="Default select example">
+                  <option selected>Pilih Kelas</option>
+                  <option value="1">UI/UX Design</option>
+                  <option value="2">Front-End-Development</option>
+                </select>
+
+                <button class="btn btn-primary btn-md d-flex"> <span class="me-2"><i class='bx bx-filter'></i></span>
+                  Filter</button>
+              </div>
+
+              <div class="col-lg-6 mt-3 mt-lg-0">
+                <a href="tambah/add-tools.php ">
+                  <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Tools</button>
+                </a>
+              </div>
+
+            </div>
+
+
 
             <!-- Tabel -->
             <div class="row -table mt-4">
@@ -165,42 +189,47 @@ $tools = query("SELECT tools.id_tools,tools.gambar_tools, tools.nama_tools, tool
               <div class="table" style="overflow-x:auto;">
                 <table class="table table-striped table-hover align-middle">
                   <tr>
-                    <th>ID</th>
-                    <th>Nama Kelas</th>
-                    <th>Icon</th>
-                    <th>Nama Tools</th>
-                    <th>Link</th>
-                    <th>Tindakan</th>
+                    <th class="text-center" width="100px">ID</th>
+                    <th class="text-start" width="300px">Nama Kelas</th>
+                    <th class="text-center" width="500px">Icon</th>
+                    <th width="300px">Nama Tools</th>
+                    <th class="text-center" width="400px">Link</th>
+                    <th class="text-center" width="300px">Tindakan</th>
 
                   </tr>
-                  <?php foreach ($tools as $row) : ?>
+                  <?php foreach ($tools as $row): ?>
                     <tr>
-                      <td>
+                      <td class="text-center">
                         <?= $row["id_tools"] ?>
                       </td>
-                      <td>
+                      <td class="text-start">
                         <?= $row["nama_kelas"] ?>
                       </td>
-                      <td>
-                        <img src="../../Assets/<?= $row["gambar_tools"] ?>" alt="avatar-review-1" class="rounded w-25" />
+                      <td class="text-center">
+                        <img src="../../Assets/<?= $row["gambar_tools"] ?>" alt="avatar-review-1" class="rounded w-50" />
                       </td>
-                      <td>
+                      <td class="text-center">
                         <?= $row["nama_tools"] ?>
                       </td>
-                      <td><i><a href="<?= $row["link_tools"] ?>">Download</a></i></td>
-                      <td>
+                      <td class="text-center">
+                        <i><a href="<?= $row["link_tools"] ?>">Download</a></i>
+                      </td>
+                      <td class="text-center">
                         <div class="d-flex">
-                          <a href="edit/edit-tools.php?id=<?= $row["id_tools"] ?>" type="button" class="btn btn-primary btn-sm me-2">Edit</a>
-                          <a href="hapus/hapus-tools.php?id=<?= $row["id_tools"] ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin Menghapus data ini?')">Hapus</a>
+                          <a href="edit/edit-tools.php?id=<?= $row["id_tools"] ?>" type="button"
+                            class="btn btn-primary btn-sm me-2">Edit</a>
+                          <a href="hapus/hapus-tools.php?id=<?= $row["id_tools"] ?>" type="button"
+                            class="btn btn-danger btn-sm"
+                            onclick="return confirm('Apakah Anda Yakin Menghapus data ini?')">Hapus</a>
 
                         </div>
                       </td>
                     <?php endforeach ?>
-                    </tr>
+                  </tr>
 
-                    <tr>
+                  <tr>
 
-                    </tr>
+                  </tr>
                 </table>
               </div>
             </div>
@@ -217,7 +246,9 @@ $tools = query("SELECT tools.id_tools,tools.gambar_tools, tools.nama_tools, tool
     <!-- ------End Row Main Detail Kelas------- -->
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

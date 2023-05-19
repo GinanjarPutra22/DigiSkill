@@ -23,7 +23,8 @@ $user = query("SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pend
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Users</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <!-- Icon Title -->
   <link rel="icon" href="../Assets/logo-icon.svg" type="image/x-icon" />
@@ -40,10 +41,12 @@ $user = query("SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pend
   <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
     <div class="container">
       <a class="navbar-brand" href="../../index.php">
-        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
+          class="d-inline-block align-text-top">
         DigiSkill
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -57,8 +60,8 @@ $user = query("SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pend
             </a>
             <ul class="dropdown-menu me-4">
               <?php
-              foreach ($kelas as $row) :
-              ?>
+              foreach ($kelas as $row):
+                ?>
                 <li>
                   <a class="dropdown-item" href="../detail/detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
                 </li>
@@ -75,7 +78,8 @@ $user = query("SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pend
           if (isset($_SESSION["login"])) { ?>
             <li class="nav-item dropdown me-4">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto"
+                  loading="lazy" />
               </a>
 
               <ul class="dropdown-menu me-4">
@@ -162,14 +166,14 @@ $user = query("SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pend
             <table class="table table-striped table-hover">
               <tr class="text-center ">
                 <th class="text-center">ID</th>
-                <th>Profil</th>
-                <th>Nama</th>
-                <th>Kelas</th>
-                <th>Waktu Begabung</th>
+                <th class="text-center" width="100px">Profil</th>
+                <th class="text-start" width="200px">Nama</th>
+                <th class="text-start">Kelas</th>
+                <th class="text-center">Waktu Begabung</th>
 
               </tr>
 
-              <?php foreach ($user as $row) : ?>
+              <?php foreach ($user as $row): ?>
                 <tr class="">
                   <td class="text-center">
                     <?= $row["id_user"] ?>
@@ -183,7 +187,7 @@ $user = query("SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pend
                   <td>
                     <?= $row["nama_kelas"] ?>
                   </td>
-                  <td>
+                  <td class="text-center">
                     <?= $row["tgl_pendaftaran"] ?>
                   </td>
 
@@ -198,7 +202,9 @@ $user = query("SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pend
       <!-- ------End Row Main Detail Kelas------- -->
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>

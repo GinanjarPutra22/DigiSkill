@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
     }
 }
 $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
-?>
+    ?>
 
 <!doctype html>
 <html lang="en">
@@ -35,7 +35,8 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Mentor</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <!-- Icon Title -->
@@ -54,7 +55,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
             <div class="row content d-flex justify-content-center">
                 <div class="col-lg-8">
                     <a href="../tools.php" class="d-flex justify-content-end">
-                        <img src="../../../Assets/x-circle.svg" alt="" class="h-50" />
+                        <button type="button" class="btn-close" aria-label="Close"></button>
                     </a>
                     <h3 class="text-center mt-3">Edit Tools</h3>
                 </div>
@@ -62,13 +63,16 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
                 <div class="col-8 my-4">
                     <!-- <h4>Informasi Awal Kelas</h4> -->
                     <form action="" method="post" enctype="multipart/form-data">
-                        <input type="hidden" class="form-control" name="id_tools" rows="3" value="<?= $tools['id_tools'] ?>">
-                        <input type="hidden" class="form-control" name="foto_lama" rows="3" value="<?= $tools['gambar_tools'] ?>">
+                        <input type="hidden" class="form-control" name="id_tools" rows="3"
+                            value="<?= $tools['id_tools'] ?>">
+                        <input type="hidden" class="form-control" name="foto_lama" rows="3"
+                            value="<?= $tools['gambar_tools'] ?>">
 
                         <div class="mb-3">
                             <h6>Kelas</h6>
                             <select class="form-select" aria-label="Default select example" name="kode_kelas">
-                                <option value="<?= $tools["kode_materi"] ?>" selected><?= $tools["nama_kelas"] ?></option>
+                                <option value="<?= $tools["kode_materi"] ?>" selected><?= $tools["nama_kelas"] ?>
+                                </option>
                             </select>
                         </div>
 
@@ -82,12 +86,14 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
 
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Tools</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $tools["nama_tools"] ?>">
+                            <input type="text" class="form-control" id="nama" name="nama"
+                                value="<?= $tools["nama_tools"] ?>">
                         </div>
 
                         <div class="mb-3">
                             <label for="link" class="form-label">Link</label>
-                            <textarea class="form-control" id="link" rows="3" name="link"><?= $tools["link_tools"] ?></textarea>
+                            <textarea class="form-control" id="link" rows="3"
+                                name="link"><?= $tools["link_tools"] ?></textarea>
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary btn-lg">Edit Tools</button>
                     </form>
@@ -98,7 +104,9 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
