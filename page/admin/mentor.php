@@ -236,7 +236,7 @@ if (isset($_POST["cari"])) {
                     <?= $row["id_mentor"] ?>
                   </td>
                   <td class="text-center">
-                    <img src="../../Assets/<?= $row["foto"] ?>" alt="avatar-review-1" class="rounded img-fluid w-50" />
+                    <img src="../../Assets/<?= $row["foto"] ?>" alt="Profil Mentor" class="rounded img-fluid w-50" />
                   </td>
                   <td class="text-start">
                     <?= $row["nama_mentor"] ?>
