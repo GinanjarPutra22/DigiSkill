@@ -30,11 +30,24 @@ $materi = query("SELECT id_materi,judul_materi,deskripsi_materi FROM materi WHER
 if (isset($_POST["submit"])) {
 
     if (mskkelas($_POST) > 0) {
-        header("Location: ../profile/kelas-saya.php");
+        echo "<script>
+        alert ('Anda Berhasil Memasuki Kelas');
+        document.location.href = '../profile/kelas-saya.php';
+        </script>";
     } else {
-        echo mysqli_error($conn);
+        echo "<script>
+        alert ('Anda Gagal memasuki Kelas');
+        document.location.href = '../../index.php';
+        </script>";
     }
 }
+
+$penilaian = query("SELECT login.nama,login.foto,data_kelas.id_user,data_kelas.penilaian,data_kelas.asal_instansi 
+FROM data_kelas 
+INNER JOIN login 
+ON data_kelas.id_user = login.id_login 
+WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
+// var_dump($penilaian);
 ?>
 
 <!doctype html>
@@ -336,7 +349,7 @@ if (isset($_POST["submit"])) {
                             <!-- Start Testimoni -->
                             <div class="testimoni mb-5" id="testimoni">
                                 <h6> Testimoni </h6>
-                                <h4> Kata Mereka tentang Kelas UI/UX Design DigiSkill </h4>
+                                <h4> Kata Mereka tentang Kelas <?= $kelas["nama_kelas"] ?> DigiSkill </h4>
                             </div>
                             <div class="row">
                                 <div class="col-12 testimoni">
@@ -346,196 +359,31 @@ if (isset($_POST["submit"])) {
                                         <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
 
                                             <!-- Card Start -->
-                                            <div class="swiper-slide card p-2">
-                                                <div class="card-body">
-                                                    <div class="rate">
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                    </div>
-                                                    <p class="body-testi ">
-                                                        Mengikuti kelas UI/UX ini saya sangat mudah memahami materi yang
-                                                        diberikan
-                                                    </p>
-                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
-                                                        <div class="profile ms-0 ">
-                                                            <div class="user  ">
-                                                                <img src="../../Assets/avatar-pict/avatar-female-1.svg  " alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
-
-                                                                <p class="name m-0">Amalia Sonia</p>
-                                                                <p class="status m-0 lh-sm">UI/UX Designer di Petrokimia
-                                                                </p>
+                                            <?php foreach ($penilaian as $row) : ?>
+                                                <div class="swiper-slide card p-2">
+                                                    <div class="card-body">
+                                                        <p class="body-testi mt-3">
+                                                            <?= $row["penilaian"] ?>
+                                                        </p>
+                                                        <div class="detail d-flex justify-content-between align-items-center mt-4">
+                                                            <div class="user d-flex align-items-center">
+                                                                <img src="../../Assets/profile/<?= $row["foto"] ?>" alt="avatar-review-1" class="rounded-circle img-fluid" />
+                                                                <div class="profile ms-3">
+                                                                    <p class="name m-0"><?= $row["nama"] ?></p>
+                                                                    <p class="status m-0">
+                                                                        <?= $row["asal_instansi"] ?>
+                                                                    </p>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="icon-quote">
-                                                            <i class='bx bxs-quote-right'></i>
+                                                            <div class="icon-quote">
+                                                                <i class="bx bxs-quote-right"></i>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            <?php endforeach ?>
                                             <!-- Card End -->
 
-                                            <!-- Card Start -->
-                                            <div class="swiper-slide card p-2">
-                                                <div class="card-body">
-                                                    <div class="rate">
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                    </div>
-                                                    <p class="body-testi ">
-                                                        Kelas UIUX gratis ini sangat membantu bagi pemula seperti saya
-                                                        yang tidak tahu.
-                                                    </p>
-                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
-                                                        <div class="profile ms-0 ">
-                                                            <div class="user  ">
-                                                                <img src="../../Assets/avatar-pict/avatar-male-1.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
-
-                                                                <p class="name m-0">Febrian Putra</p>
-                                                                <p class="status m-0 lh-sm">UI/UX Designer di
-                                                                    PT.Alakabar</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="icon-quote">
-                                                            <i class='bx bxs-quote-right'></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Card End -->
-
-                                            <!-- Card Start -->
-                                            <div class="swiper-slide card p-2">
-                                                <div class="card-body">
-                                                    <div class="rate">
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                    </div>
-                                                    <p class="body-testi ">
-                                                        Saya merasa sangat terbantu dengan materi yang disampaikan dalam
-                                                        kelas UIUX ini.
-                                                    </p>
-                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
-                                                        <div class="profile ms-0 ">
-                                                            <div class="user  ">
-                                                                <img src="../../Assets/avatar-pict/avatar-female-2.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
-
-                                                                <p class="name m-0">Faradisa Saputri</p>
-                                                                <p class="status m-0 lh-sm">UI/UX Designer di
-                                                                    PT.SukaSuka</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="icon-quote">
-                                                            <i class='bx bxs-quote-right'></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Card End -->
-
-                                            <!-- Card Start -->
-                                            <div class="swiper-slide card p-2">
-                                                <div class="card-body">
-                                                    <div class="rate">
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                    </div>
-                                                    <p class="body-testi ">
-                                                        Saya merasa lebih percaya diri untuk mengembangkan skill di
-                                                        kelas UIUX ini.
-                                                    </p>
-                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
-                                                        <div class="profile ms-0 ">
-                                                            <div class="user  ">
-                                                                <img src="../../Assets/avatar-pict/avatar-male-2.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
-
-                                                                <p class="name m-0">Adi Prabowo</p>
-                                                                <p class="status m-0 lh-sm">UI/UX Designer di Kemenhan
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="icon-quote">
-                                                            <i class='bx bxs-quote-right'></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Card End -->
-
-                                            <!-- Card Start -->
-                                            <div class="swiper-slide card p-2">
-                                                <div class="card-body">
-                                                    <div class="rate">
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                    </div>
-                                                    <p class="body-testi ">
-                                                        Kelas UIUX gratis ini membantu saya untuk memperbaiki portofolio
-                                                        desain saya
-                                                    </p>
-                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
-                                                        <div class="profile ms-0 ">
-                                                            <div class="user  ">
-                                                                <img src="../../Assets/avatar-pict/avatar-female-3.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
-
-                                                                <p class="name m-0">Puan Saputri</p>
-                                                                <p class="status m-0 lh-sm">UI/UX Designer di PT.Depe
-                                                                    Ergo</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="icon-quote">
-                                                            <i class='bx bxs-quote-right'></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Card End -->
-
-
-                                            <!-- Card Start -->
-                                            <div class="swiper-slide card p-2">
-                                                <div class="card-body">
-                                                    <div class="rate">
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                        <i class='bx bxs-star'></i>
-                                                    </div>
-                                                    <p class="body-testi ">
-                                                        Saya sangat terkesan dengan kualitas video pembelajaran dalam
-                                                        kelas UIUX gratis ini.
-                                                    </p>
-                                                    <div class="detail d-flex justify-content-between align-items-end mt-4">
-                                                        <div class="profile ms-0 ">
-                                                            <div class="user  ">
-                                                                <img src="../../Assets/avatar-review-1.svg" alt="avatar-review-1" class="rounded-circle img-fluid mb-1">
-
-                                                                <p class="name m-0">Fardy Saputra</p>
-                                                                <p class="status m-0 lh-sm">UI/UX Designer di PT.PKK</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="icon-quote">
-                                                            <i class='bx bxs-quote-right'></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Card End -->
 
 
                                         </div>

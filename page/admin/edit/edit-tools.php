@@ -6,7 +6,7 @@ $id = $_GET["id"];
 $tools = query("SELECT * FROM tools INNER JOIN kelas ON 
                     tools.kode_materi = kelas.kode_materi
                       WHERE id_tools = '$id'")[0];
-var_dump($tools);
+// var_dump($tools);
 
 if (isset($_POST["submit"])) {
     // var_dump($_POST);
@@ -14,11 +14,14 @@ if (isset($_POST["submit"])) {
     // die;
     if (edittools($_POST) > 0) {
         echo "<script>
-              alert('user baru berhasil ditambahkan');    
+        alert ('Data Berhasil Diubah');
+        document.location.href = '../tools.php';
         </script>";
-        header("location: ../tools.php");
     } else {
-        echo mysqli_error($conn);
+        echo "<script>
+        alert ('Data Gagal Diubah');
+        document.location.href = '../tools.php';
+        </script>";
     }
 }
 $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
@@ -50,7 +53,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
         <div class="col-12">
             <div class="row content d-flex justify-content-center">
                 <div class="col-lg-8">
-                    <a href="tools.php" class="d-flex justify-content-end">
+                    <a href="../tools.php" class="d-flex justify-content-end">
                         <img src="../../../Assets/x-circle.svg" alt="" class="h-50" />
                     </a>
                     <h3 class="text-center mt-3">Edit Tools</h3>

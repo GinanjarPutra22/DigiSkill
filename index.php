@@ -3,7 +3,14 @@ session_start();
 require 'db/function.php';
 
 $kelas = query("SELECT * FROM kelas");
-$penilaian = query("SELECT * FROM data_kelas");
+
+$penilaian = query("SELECT login.nama,login.foto,data_kelas.id_user,data_kelas.penilaian,data_kelas.asal_instansi 
+FROM data_kelas 
+INNER JOIN login 
+ON data_kelas.id_user = login.id_login 
+WHERE asal_instansi IS NOT NULL");
+var_dump($penilaian);
+
 
 if (isset($_SESSION["login"])) {
   $id_user = $_SESSION['id_login'];
@@ -307,50 +314,42 @@ if (isset($_SESSION["login"])) {
         <div class="col-lg-8 mx-auto">
           <h2 class="text-center mt-5">
             Apa Kata Mereka Yang Sudah Menyelesaikan Kelas di <span> DigiSkill ? </span>
-
           </h2>
-
         </div>
       </div>
       <div class="row my-5">
         <div class="col-12">
           <!-- Swiper -->
-
           <div class="swiper mySwiperTesti pb-4 pb-sm-5">
             <div class="swiper-wrapper" style="
                   transform: translate3d(0px, 0px, 0px);
                   transition-duration: 0ms;
                 ">
-              <div class="swiper-slide card p-4">
-                <div class="card-body">
-                  <div class="rate">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                  </div>
-                  <p class="body-testi mt-3">
-                    DigiSkill sangat membantu saya, karena tidak ada biaya
-                    untuk kelas ini.
-                  </p>
-                  <div class="detail d-flex justify-content-between align-items-center mt-4">
-                    <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-male-1.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
-                      <div class="profile ms-3">
-                        <p class="name m-0">Edi Siswanto</p>
-                        <p class="status m-0">
-                          College Student di Universitas Tratatau
-                        </p>
+              <?php foreach ($penilaian as $row) : ?>
+                <div class="swiper-slide card p-4">
+                  <div class="card-body">
+                    <p class="body-testi mt-3">
+                      <?= $row["penilaian"] ?>
+                    </p>
+                    <div class="detail d-flex justify-content-between align-items-center mt-4">
+                      <div class="user d-flex align-items-center">
+                        <img src="Assets/profile/<?= $row["foto"] ?>" alt="avatar-review-1" class="rounded-circle img-fluid" />
+                        <div class="profile ms-3">
+                          <p class="name m-0"><?= $row["nama"] ?></p>
+                          <p class="status m-0">
+                            <?= $row["asal_instansi"] ?>
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div class="icon-quote">
-                      <i class="bx bxs-quote-right"></i>
+                      <div class="icon-quote">
+                        <i class="bx bxs-quote-right"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide card p-4">
+              <?php endforeach ?>
+
+              <!-- <div class="swiper-slide card p-4">
                 <div class="card-body">
                   <div class="rate">
                     <i class="bx bxs-star"></i>
@@ -494,7 +493,7 @@ if (isset($_SESSION["login"])) {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="swiper-pagination pt-5 myt-5"></div>
           </div>

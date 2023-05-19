@@ -155,7 +155,7 @@ $tools = query("SELECT tools.id_tools,tools.gambar_tools, tools.nama_tools, tool
         <div class="row add-class  d-md-flex text-md-end mb-lg-4 mb-sm-4">
           <div class="col">
 
-            <a href="add-tools.php ">
+            <a href="tambah/add-tools.php ">
               <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Tools</button>
             </a>
 
@@ -191,7 +191,7 @@ $tools = query("SELECT tools.id_tools,tools.gambar_tools, tools.nama_tools, tool
                       <td>
                         <div class="d-flex">
                           <a href="edit/edit-tools.php?id=<?= $row["id_tools"] ?>" type="button" class="btn btn-primary btn-sm me-2">Edit</a>
-                          <a href="hapus/hapus-tools.php?id=<?= $row["id_tools"] ?>" type="button" class="btn btn-danger btn-sm">Hapus</a>
+                          <a href="hapus/hapus-tools.php?id=<?= $row["id_tools"] ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin Menghapus data ini?')">Hapus</a>
 
                         </div>
                       </td>

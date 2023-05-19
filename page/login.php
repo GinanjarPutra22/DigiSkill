@@ -26,7 +26,7 @@ if (isset($_POST["masuk"])) {
       $_SESSION["login"] = true; // menyimpan data sesssion login untuk semua halaman
       $_SESSION["id_login"] = $row["id_login"];
 
-      if ($row["id_login"] === "15") {
+      if ($row["id_login"] === "16") {
         header("location: admin/users.php");
       } else {
         header("location: ../index.php");

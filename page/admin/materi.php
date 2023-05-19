@@ -156,7 +156,7 @@ $materi = query("SELECT materi.id_materi,materi.judul_materi, materi.link_materi
         <div class="row add-class  d-md-flex text-md-end mb-lg-4 mb-sm-4">
           <div class="col">
 
-            <a href="add-materi.php ">
+            <a href="tambah/add-materi.php ">
               <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Materi</button>
             </a>
 
@@ -192,7 +192,7 @@ $materi = query("SELECT materi.id_materi,materi.judul_materi, materi.link_materi
                       <td>
                         <div class="d-flex">
                           <a href="edit/edit-materi.php?id=<?= $row["id_materi"] ?>" type="button" class="btn btn-primary btn-sm mx-1">Edit</a>
-                          <a href="hapus/hapus-materi.php?id=<?= $row["id_materi"] ?>" type="button" class="btn btn-danger btn-sm mx-1">Hapus</a>
+                          <a href="hapus/hapus-materi.php?id=<?= $row["id_materi"] ?>" type="button" class="btn btn-danger btn-sm mx-1" onclick="return confirm('Apakah Anda Yakin Menghapus data ini?')">Hapus</a>
 
                         </div>
                       </td>

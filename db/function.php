@@ -321,7 +321,7 @@ function mskkelas($data)
     $date = date('Y/m/d', time());
     // var_dump($date);
     // die;
-    $query = "INSERT INTO data_kelas VALUES('','$id_kelas','$id_user','$date','','')";
+    $query = "INSERT INTO data_kelas VALUES('','$id_kelas','$id_user','$date','',NULL,NULL)";
 
     mysqli_query($conn, $query);
 

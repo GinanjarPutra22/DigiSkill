@@ -1,27 +1,17 @@
 <?php
 require '../../../db/function.php';
 
-$id = $_GET["id"];
-
-$materi = query("SELECT * FROM materi INNER JOIN kelas ON 
-                    materi.kode_materi = kelas.kode_materi
-                      WHERE id_materi = '$id'")[0];
-// var_dump($materi);
-
 if (isset($_POST["submit"])) {
     // var_dump($_POST);
     // var_dump($_FILES);
     // die;
-    if (editmateri($_POST) > 0) {
+    if (tmbhmateri($_POST) > 0) {
         echo "<script>
-              alert('Data Berhasil Diubah');  
-              document.location.href = '../materi.php';     
+              alert('user baru berhasil ditambahkan'); 
+              document.location.href = 'materi.php';      
         </script>";
     } else {
-        echo "<script>
-        alert ('Data Gagal Diubah');
-        document.location.href = '../materi.php';
-        </script>";
+        echo mysqli_error($conn);
     }
 }
 $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
@@ -52,8 +42,8 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
         <div class="col-12">
             <div class="row content d-flex justify-content-center">
                 <div class="col-lg-8">
-                    <a href="materi.php" class="d-flex justify-content-end">
-                        <img src="../../../Assets/x-circle.svg" alt="" class="h-50" />
+                    <a href="../materi.php" class="d-flex justify-content-end">
+                        <button type="button" class="btn-close" aria-label="Close"></button>
                     </a>
                     <h3 class="text-center mt-3">Tambah Materi</h3>
                 </div>
@@ -61,35 +51,33 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
                 <div class="col-8 my-4">
                     <!-- <h4>Informasi Awal Kelas</h4> -->
                     <form action="" method="post" enctype="multipart/form-data">
-                        <input type="hidden" class="form-control" name="id_materi" rows="3" value="<?= $materi['id_materi'] ?>">
-
                         <div class="mb-3">
-                            <h6>Kelas</h6>
+                            <h6>Pilih Kelas</h6>
                             <select class="form-select" aria-label="Default select example" name="kode_kelas">
-                                <option value="<?= $materi["kode_materi"] ?>" selected><?= $materi["nama_kelas"] ?>
-                                </option>
+                                <option selected>Pilih Kelas</option>
+                                <?php foreach ($kelas as $row) : ?>
+                                    <option value="<?= $row["kode_materi"] ?>"><?= $row["nama_kelas"] ?></option>
+                                <?php endforeach ?>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="urutan" class="form-label">Urutan Materi</label>
-                            <input type="text" class="form-control" id="urutan" name="urutan" value="<?= $materi["urutan"] ?>">
+                            <input type="text" class="form-control" id="urutan" name="urutan" placeholder="Masukan urutan materi">
                         </div>
                         <div class="mb-3">
                             <label for="judul" class="form-label">Judul Materi</label>
-                            <input type="text" class="form-control" id="judul" name="judul" value="<?= $materi["judul_materi"] ?>">
+                            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan judul materi">
                         </div>
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <textarea type="text" class="form-control" id="deskripsi" rows="3" name="deskripsi" value="<?= $materi["deskripsi_materi"] ?>"> </textarea>
+                            <textarea type="text" class="form-control" id="deskripsi" name="deskripsi"></textarea>
                         </div>
+
                         <div class="mb-3">
                             <label for="link_materi" class="form-label">Link</label>
-                            <input type="text" class="form-control" id="link_materi" name="link_materi" value="<?= $materi["link_materi"] ?>">
-
-                            <!-- <textarea class="form-control" id="link_materi" rows="3"
-                                    name="link_materi"><?= $materi["link_materi"] ?></textarea> -->
+                            <input class="form-control" id="link_materi" rows="3" name="link_materi" placeholder="Masukan link materi video">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg" name="submit">Edit Materi</button>
+                        <button type="submit" class="btn btn-primary btn-lg" name="submit">Tambah Materi</button>
                     </form>
                 </div>
 

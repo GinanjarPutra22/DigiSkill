@@ -6,18 +6,21 @@ $id = $_GET["id"];
 $mentor = query("SELECT * FROM mentor INNER JOIN kelas ON 
                     mentor.kode_kelas = kelas.kode_materi
                       WHERE id_mentor = '$id'")[0];
-var_dump($mentor);
+// var_dump($mentor);
 if (isset($_POST["submit"])) {
     // var_dump($_POST);
     // var_dump($_FILES);
     // die;
     if (editmentor($_POST) > 0) {
         echo "<script>
-              alert('user baru berhasil ditambahkan');    
+        alert ('Data Berhasil Diubah');
+        document.location.href = '../mentor.php';
         </script>";
-        header("location: ../mentor.php");
     } else {
-        echo mysqli_error($conn);
+        echo "<script>
+        alert ('Data Gagal Diubah');
+        document.location.href = '../mentor.php';
+        </script>";
     }
 }
 $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
@@ -48,7 +51,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
         <div class="col-12">
             <div class="row content d-flex justify-content-center">
                 <div class="col-lg-8">
-                    <a href="mentor.php" class="d-flex justify-content-end">
+                    <a href="../mentor.php" class="d-flex justify-content-end">
                         <img src="../../../Assets/x-circle.svg" alt="" class="h-50" />
                     </a>
                     <h3 class="text-center mt-3">Edit Mentor</h3>

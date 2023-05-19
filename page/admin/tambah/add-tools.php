@@ -1,5 +1,5 @@
 <?php
-require '../../db/function.php';
+require '../../../db/function.php';
 
 if (isset($_POST["submit"])) {
     // var_dump($_POST);
@@ -7,15 +7,15 @@ if (isset($_POST["submit"])) {
     // die;
     if (tmbhtools($_POST) > 0) {
         echo "<script>
-              alert('user baru berhasil ditambahkan');    
+              alert('user baru berhasil ditambahkan');  
+              document.location.href = 'tools.php';     
         </script>";
-        header("location: tools.php");
     } else {
         echo mysqli_error($conn);
     }
 }
 $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
-    ?>
+?>
 
 <!doctype html>
 <html lang="en">
@@ -25,8 +25,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Mentor</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <!-- Icon Title -->
@@ -44,7 +43,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
         <div class="col-12">
             <div class="row content d-flex justify-content-center">
                 <div class="col-lg-8">
-                    <a href="tools.php" class="d-flex justify-content-end">
+                    <a href="../tools.php" class="d-flex justify-content-end">
                         <button type="button" class="btn-close" aria-label="Close"></button>
 
                     </a>
@@ -58,7 +57,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
                             <h6>Pilih Kelas</h6>
                             <select class="form-select" aria-label="Default select example" name="kode_kelas">
                                 <option selected>Pilih Kelas</option>
-                                <?php foreach ($kelas as $row): ?>
+                                <?php foreach ($kelas as $row) : ?>
                                     <option value="<?= $row["kode_materi"] ?>"><?= $row["nama_kelas"] ?></option>
                                 <?php endforeach ?>
                             </select>
@@ -74,8 +73,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
 
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Tools</label>
-                            <input type="text" class="form-control" id="nama" name="nama"
-                                placeholder="Masukan pekerjaan mentor">
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan pekerjaan mentor">
                         </div>
 
                         <div class="mb-3">
@@ -91,9 +89,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>

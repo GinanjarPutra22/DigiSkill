@@ -155,7 +155,7 @@ $kelas = query("SELECT id_kelas, nama_kelas FROM kelas");
         <div class="row add-class  d-md-flex text-md-end mb-lg-4 mb-sm-4">
           <div class="col">
 
-            <a href="add-class.php">
+            <a href="tambah/add-class.php">
               <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Kelas</button>
             </a>
 
@@ -184,7 +184,7 @@ $kelas = query("SELECT id_kelas, nama_kelas FROM kelas");
                   </td>
                   <td class="text-center">
                     <a href="edit/edit-class.php?id=<?= $row["id_kelas"] ?>" type="button" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="hapus/hapus-class.php?id=<?= $row["id_kelas"] ?>" type="button" class="btn btn-danger btn-sm">Hapus</a>
+                    <a href="hapus/hapus-class.php?id=<?= $row["id_kelas"] ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda Yakin Menghapus data ini?')">Hapus</a>
 
                   </td>
                 </tr>
