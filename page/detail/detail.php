@@ -68,6 +68,8 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
     <!-- icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../../css/detail.css">
+    <link rel="stylesheet" href="../../css/main.css" />
+
     <title>Detail
         <?= $kelas["nama_kelas"] ?>
     </title>
@@ -268,7 +270,7 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                             <?php foreach ($mentor as $row) : ?>
                                 <div class="row mb-5">
                                     <div class="col-lg-4">
-                                        <img src="../../Assets/mentor-ui-ux.svg" alt="mentor-ui-ux" class="img img-fluid rounded">
+                                        <img src="../../Assets/<?= $row["foto"] ?>" alt="mentor-ui-ux" class="img img-fluid rounded">
                                     </div>
                                     <div class="col-lg-8">
                                         <div class="text-mentor">
@@ -301,8 +303,8 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                 update dengan
                                 perkembangan, anda akan mempelajari materi dibawah ini </p>
                             <!-- Start Accordion -->
-                            <?php foreach ($materi as $row) : ?>
-                                <div class="accordion" id="accordionExample">
+                            <div class="accordion" id="accordionExample">
+                                <?php foreach ($materi as $row) : ?>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading<?= $row["id_materi"]; ?>">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $row["id_materi"]; ?>" aria-expanded="true" aria-controls="collapse<?= $row["id_materi"]; ?>">
@@ -315,9 +317,9 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End Accordion -->
-                                </div>
-                            <?php endforeach ?><br>
+                                <?php endforeach ?><br>
+                                <!-- End Accordion -->
+                            </div>
                             <!-- End Kurikulum Program -->
 
                             <!-- Start Tools UIUX -->

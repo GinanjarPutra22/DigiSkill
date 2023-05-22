@@ -1,11 +1,18 @@
 <?php
+session_start();
+
 require '../../../db/function.php';
+
+if (!isset($_SESSION["login"])) {
+    header("location: ../../login.php");
+    exit;
+}
 
 if (isset($_POST["submit"])) {
     if (tmbhkls($_POST) > 0) {
         echo "<script>
               alert('user baru berhasil ditambahkan'); 
-              document.location.href = 'kelas.php';   
+              document.location.href = '../kelas.php';   
         </script>";
     } else {
         echo mysqli_error($conn);

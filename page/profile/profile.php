@@ -1,6 +1,12 @@
 <?php
 session_start();
+
 require '../../db/function.php';
+
+if (!isset($_SESSION["login"])) {
+  header("location: ../login.php");
+  exit;
+}
 
 $id = $_SESSION["id_login"];
 
@@ -42,6 +48,7 @@ if (isset($_POST["submit"])) {
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="../../css/kelas-profil.css" />
+
   <!-- <link rel="stylesheet" href="../../css/main.css" /> -->
   <title>Profile Akun</title>
 </head>

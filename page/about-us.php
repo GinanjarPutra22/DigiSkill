@@ -29,6 +29,7 @@ if (isset($_SESSION["login"])) {
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="../css/about-us.css" />
+    <link rel="stylesheet" href="../css/main.css" />
     <title>About Us</title>
 </head>
 
@@ -86,10 +87,10 @@ if (isset($_SESSION["login"])) {
                             </ul>
                         </li>
                     <?php } else { ?>
-                        <a href="page/login.php" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
+                        <a href="login.php" class="btn btn-sm btn-outline-primary px-4 mx-lg-2 mb-2 mb-md-0">
                             Masuk
                         </a>
-                        <a href="page/regist.php" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
+                        <a href="regist.php" class="btn btn-sm btn-primary px-4 mx-lg-2">Daftar</a>
                     <?php } ?>
 
                 </ul>

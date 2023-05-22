@@ -1,5 +1,12 @@
 <?php
+session_start();
+
 require '../../../db/function.php';
+
+if (!isset($_SESSION["login"])) {
+    header("location: ../../login.php");
+    exit;
+}
 
 if (isset($_POST["submit"])) {
     // var_dump($_POST);
@@ -8,7 +15,7 @@ if (isset($_POST["submit"])) {
     if (tmbhtools($_POST) > 0) {
         echo "<script>
               alert('user baru berhasil ditambahkan');  
-              document.location.href = 'tools.php';     
+              document.location.href = '../tools.php';     
         </script>";
     } else {
         echo mysqli_error($conn);

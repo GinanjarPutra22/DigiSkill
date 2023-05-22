@@ -3,6 +3,11 @@ session_start();
 
 require '../../db/function.php';
 
+if (!isset($_SESSION["login"])) {
+  header("location: ../login.php");
+  exit;
+}
+
 $kelas = query("SELECT * FROM kelas");
 
 if (isset($_SESSION["login"])) {
