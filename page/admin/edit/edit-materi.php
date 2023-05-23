@@ -60,7 +60,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
             <div class="row content d-flex justify-content-center">
                 <div class="col-lg-8">
                     <a href="../materi.php" class="d-flex justify-content-end">
-                        <img src="../../../Assets/x-circle.svg" alt="" class="h-50" />
+                        <!-- <img src="../../../Assets/x-circle.svg" alt="" class="h-50" /> -->
                         <button type="button" class="btn-close" aria-label="Close"></button>
                     </a>
                     <h3 class="text-center mt-3">Tambah Materi</h3>
@@ -88,7 +88,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
                         </div>
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <textarea type="text" class="form-control" id="deskripsi" rows="3" name="deskripsi" value="<?= $materi["deskripsi_materi"] ?>"> </textarea>
+                            <textarea type="text" class="form-control" id="deskripsi" rows="3" name="deskripsi"><?= $materi["deskripsi_materi"] ?></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="link_materi" class="form-label">Link</label>
