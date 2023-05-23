@@ -184,7 +184,7 @@ if (isset($_POST["cari"])) {
                 </div>
 
                 <div class="col-lg-5 mt-3 mt-lg-0">
-                  <a href="tambah/add-tools.php ">
+                  <a href="tambah/add-tools.php">
                     <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Tools</button>
                   </a>
                 </div>

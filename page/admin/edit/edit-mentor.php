@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
     // die;
     if (editmentor($_POST) > 0) {
         echo "<script>
-        alert ('Data Berhasil Diubah');
+        alert ('Data Mentor Berhasil Diubah');
         document.location.href = '../mentor.php';
         </script>";
     } else {
