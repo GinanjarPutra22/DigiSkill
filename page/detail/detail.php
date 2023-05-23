@@ -185,6 +185,8 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                             <button class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;">
                                                 Lihat Kelas Saya</button>
                                         </a>
+                                    <?php } elseif ($id_user === "20") { ?>
+                                        <!-- Kosong admin tidak boleh join kelas -->
                                     <?php } else { ?>
                                         <form action="" method="post">
                                             <input type="hidden" class="form-control" name="id_kelas" rows="3" value="<?= $id ?>">
