@@ -185,7 +185,7 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                             <button class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;">
                                                 Lihat Kelas Saya</button>
                                         </a>
-                                    <?php } elseif ($_SESSION["login"] === "20") { ?>
+                                    <?php } elseif ($_SESSION["id_login"] === "20") { ?>
 
                                     <? } else { ?>
                                         <form action="" method="post">
