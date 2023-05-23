@@ -2,6 +2,11 @@
 session_start();
 require '../../db/function.php';
 
+if (!isset($_SESSION["login"])) {
+  header("location: ../login.php");
+  exit;
+}
+
 if (isset($_SESSION["login"])) {
   $id_user = $_SESSION['id_login'];
   $profile = query("SELECT * FROM login WHERE id_login = '$id_user'")[0];

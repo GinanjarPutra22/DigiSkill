@@ -1,11 +1,19 @@
 <?php
 session_start();
 require '../../db/function.php';
+
+if (!isset($_SESSION["login"])) {
+  header("location: ../login.php");
+  exit;
+}
+
 if (isset($_SESSION["login"])) {
   $id_user = $_SESSION['id_login'];
   $profile = query("SELECT * FROM login WHERE id_login = '$id_user'")[0];
 }
+
 $kelas = query("SELECT * FROM kelas");
+
 $user = query("SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pendaftaran,
                       login.nama,login.foto,
                       kelas.nama_kelas

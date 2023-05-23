@@ -1,5 +1,13 @@
 <?php
+session_start();
+
 require '../../../db/function.php';
+
+if (!isset($_SESSION["login"])) {
+    header("location: ../../login.php");
+    exit;
+}
+
 
 $id = $_GET["id"];
 
@@ -24,7 +32,7 @@ if (isset($_POST["submit"])) {
     }
 }
 $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
-    ?>
+?>
 <!doctype html>
 <html lang="en">
 
@@ -33,8 +41,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Edit Mentor</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <!-- Icon Title -->
@@ -61,10 +68,8 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
                 <div class="col-8 my-4">
                     <!-- <h4>Informasi Awal Kelas</h4> -->
                     <form action="" method="post" enctype="multipart/form-data">
-                        <input type="hidden" class="form-control" name="id_mentor" rows="3"
-                            value="<?= $mentor['id_mentor'] ?>">
-                        <input type="hidden" class="form-control" name="foto_lama" rows="3"
-                            value="<?= $mentor['foto'] ?>">
+                        <input type="hidden" class="form-control" name="id_mentor" rows="3" value="<?= $mentor['id_mentor'] ?>">
+                        <input type="hidden" class="form-control" name="foto_lama" rows="3" value="<?= $mentor['foto'] ?>">
 
                         <div class="mb-3">
                             <h6>Kelas</h6>
@@ -77,20 +82,17 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
 
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Mentor</label>
-                            <input type="text" class="form-control" id="nama" name="nama"
-                                value="<?= $mentor['nama_mentor'] ?>">
+                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $mentor['nama_mentor'] ?>">
                         </div>
 
                         <div class="mb-3">
                             <label for="pekerjaan" class="form-label">Pekerjaan Mentor</label>
-                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan"
-                                value="<?= $mentor['pekerjaan'] ?>">
+                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="<?= $mentor['pekerjaan'] ?>">
                         </div>
 
                         <div class="mb-3">
                             <label for="pengalaman" class="form-label">Pengalaman</label>
-                            <textarea class="form-control" id="pengalaman" name="pengalaman"
-                                rows="3"><?= $mentor['pengalaman'] ?></textarea>
+                            <textarea class="form-control" id="pengalaman" name="pengalaman" rows="3"><?= $mentor['pengalaman'] ?></textarea>
                         </div>
                         <div class="mb-3">
                             <h6>Foto</h6>
@@ -101,13 +103,11 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
                         </div>
                         <div class="mb-3">
                             <label for="instagram" class="form-label">Instagram</label>
-                            <input class="form-control" id="instagram" name="instagram" rows="3"
-                                value="<?= $mentor['instagram'] ?>">
+                            <input class="form-control" id="instagram" name="instagram" rows="3" value="<?= $mentor['instagram'] ?>">
                         </div>
                         <div class="mb-3">
                             <label for="linkedin" class="form-label">LinkedIn</label>
-                            <input class="form-control" id="linkedin" name="linkedin" rows="3"
-                                value="<?= $mentor['linkedIn'] ?>">
+                            <input class="form-control" id="linkedin" name="linkedin" rows="3" value="<?= $mentor['linkedIn'] ?>">
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-lg" name="submit">Edit Mentor</button>
@@ -120,9 +120,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 </html>

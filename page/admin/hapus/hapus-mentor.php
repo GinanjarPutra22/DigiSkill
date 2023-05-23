@@ -1,7 +1,14 @@
 <?php
+session_start();
+
 require '../../../db/function.php';
 
 $id = $_GET["id"];
+
+if (!isset($_SESSION["login"])) {
+    header("location: ../../login.php");
+    exit;
+}
 
 if (hapusmentor($id) > 0) { // Jika function hapus ber nilai >0 maka sukses <0 gagal
     echo "<script>

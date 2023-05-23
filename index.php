@@ -9,7 +9,7 @@ FROM data_kelas
 INNER JOIN login 
 ON data_kelas.id_user = login.id_login 
 WHERE asal_instansi IS NOT NULL");
-var_dump($penilaian);
+// var_dump($penilaian);
 
 
 if (isset($_SESSION["login"])) {

@@ -1,12 +1,20 @@
 <?php
 session_start();
+
 require '../../db/function.php';
+
+if (!isset($_SESSION["login"])) {
+    header("location: ../login.php");
+    exit;
+}
+
 $id = $_GET["id"];
 
 if (isset($_SESSION["login"])) {
     $id_user = $_SESSION['id_login'];
     $profile = query("SELECT * FROM login WHERE id_login = '$id_user'")[0];
 }
+
 $materi = query("SELECT * FROM materi WHERE kode_materi ='$id'");
 // var_dump($materi);
 $kelas = query("SELECT * FROM kelas ");
