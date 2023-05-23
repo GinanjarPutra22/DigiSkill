@@ -59,7 +59,8 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <!-- Modal -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -82,10 +83,12 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
     <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
         <div class="container">
             <a class="navbar-brand" href="../../index.php">
-                <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top">
                 DigiSkill
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -94,13 +97,14 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                         <a class="nav-link active" aria-current="page" href="../../index.php">Home</a>
                     </li>
                     <li class="nav-item dropdown me-4">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Course
                         </a>
                         <ul class="dropdown-menu me-4">
                             <?php
-                            foreach ($kelasnv as $row) :
-                            ?>
+                            foreach ($kelasnv as $row):
+                                ?>
                                 <li>
                                     <a class="dropdown-item" href="detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
                                 </li>
@@ -116,8 +120,14 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                     <?php
                     if (isset($_SESSION["login"])) { ?>
                         <li class="nav-item dropdown me-4">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+                            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="account d-flex">
+                                    <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle me-3"
+                                        height="32" alt="Foto" loading="lazy" />
+                                    <p class="dropdown-toggle">
+                                        <?= $_SESSION["nama"] ?>
+                                    </p>
+                                </div>
                             </a>
                             <ul class="dropdown-menu me-4">
                                 <li>
@@ -182,22 +192,28 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                 <?php if (isset($_SESSION["login"])) {
                                     if (mysqli_fetch_assoc($data_kelas)) { ?>
                                         <a href="../profile/kelas-saya.php">
-                                            <button class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;">
+                                            <button class="btn btn-primary px-4 px-3"
+                                                style="font-size: smaller; font-weight: bold;">
                                                 Lihat Kelas Saya</button>
                                         </a>
                                     <?php } elseif ($id_user === "20") { ?>
                                         <!-- Kosong admin tidak boleh join kelas -->
                                     <?php } else { ?>
                                         <form action="" method="post">
-                                            <input type="hidden" class="form-control" name="id_kelas" rows="3" value="<?= $id ?>">
-                                            <input type="hidden" class="form-control" name="id_user" rows="3" value="<?= $_SESSION["id_login"] ?>">
-                                            <button type="submit" class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;" name="submit" onclick="return confirm('Apakah Anda Yakin?')">
+                                            <input type="hidden" class="form-control" name="id_kelas" rows="3"
+                                                value="<?= $id ?>">
+                                            <input type="hidden" class="form-control" name="id_user" rows="3"
+                                                value="<?= $_SESSION["id_login"] ?>">
+                                            <button type="submit" class="btn btn-primary px-4 px-3"
+                                                style="font-size: smaller; font-weight: bold;" name="submit"
+                                                onclick="return confirm('Apakah Anda Yakin?')">
                                                 Belajar Sekarang
                                             </button>
                                         </form>
                                     <?php }
                                 } else { ?>
-                                    <a href="../login.php"><button type="button" class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;" name="submit">
+                                    <a href="../login.php"><button type="button" class="btn btn-primary px-4 px-3"
+                                            style="font-size: smaller; font-weight: bold;" name="submit">
                                             Belajar Sekarang
                                         </button></a>
                                 <?php } ?>
@@ -220,7 +236,8 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                 <div class="container">
                                     <div class="text-center">
                                         <h3>Memilih Kelas UI/UX Design</h3>
-                                        <img src="../../Assets/done-logo.svg" alt="done-logo.svg" class="img img-fluid rounded p-5">
+                                        <img src="../../Assets/done-logo.svg" alt="done-logo.svg"
+                                            class="img img-fluid rounded p-5">
                                         <a href="../profile/kelas-saya.php">
                                             <button type="submit" class="btn btn-primary btn-lg col-10 mb-2">
                                                 Selanjutnya
@@ -269,10 +286,11 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                             <p> Anda akan belajar langsung dari mentor yang ahli dalam bidang
                                 <?= $kelas["nama_kelas"] ?>
                             </p>
-                            <?php foreach ($mentor as $row) : ?>
+                            <?php foreach ($mentor as $row): ?>
                                 <div class="row mb-5">
                                     <div class="col-lg-4">
-                                        <img src="../../Assets/<?= $row["foto"] ?>" alt="mentor-ui-ux" class="img img-fluid rounded">
+                                        <img src="../../Assets/<?= $row["foto"] ?>" alt="mentor-ui-ux"
+                                            class="img img-fluid rounded">
                                     </div>
                                     <div class="col-lg-8">
                                         <div class="text-mentor">
@@ -287,8 +305,10 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                             </p>
                                         </div>
                                         <div class="d-flex">
-                                            <a href="https://www.instagram.com/<?= $row["instagram"] ?>" target="_blank"><img src="../../Assets/instagram.svg" alt=""></a>
-                                            <a href="https://www.linkedin.com/<?= $row["linkedIn"] ?>" target="_blank"><img src="../../Assets/linkedin.svg" alt=""></a>
+                                            <a href="https://www.instagram.com/<?= $row["instagram"] ?>"
+                                                target="_blank"><img src="../../Assets/instagram.svg" alt=""></a>
+                                            <a href="https://www.linkedin.com/<?= $row["linkedIn"] ?>" target="_blank"><img
+                                                    src="../../Assets/linkedin.svg" alt=""></a>
                                         </div>
                                     </div>
                                 </div>
@@ -306,14 +326,18 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                 perkembangan, anda akan mempelajari materi dibawah ini </p>
                             <!-- Start Accordion -->
                             <div class="accordion" id="accordionExample">
-                                <?php foreach ($materi as $row) : ?>
+                                <?php foreach ($materi as $row): ?>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading<?= $row["id_materi"]; ?>">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $row["id_materi"]; ?>" aria-expanded="true" aria-controls="collapse<?= $row["id_materi"]; ?>">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapse<?= $row["id_materi"]; ?>" aria-expanded="true"
+                                                aria-controls="collapse<?= $row["id_materi"]; ?>">
                                                 <?= $row["judul_materi"]; ?>
                                             </button>
                                         </h2>
-                                        <div id="collapse<?= $row["id_materi"]; ?>" class="panel-collapse collapse **in**" aria-labelledby="heading<?= $row["id_materi"]; ?>" data-bs-parent="#accordionExample">
+                                        <div id="collapse<?= $row["id_materi"]; ?>" class="panel-collapse collapse **in**"
+                                            aria-labelledby="heading<?= $row["id_materi"]; ?>"
+                                            data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <?= $row["deskripsi_materi"]; ?><br>
                                             </div>
@@ -336,9 +360,10 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                 </p>
 
                                 <div class="d-flex align-items-center align-self-center">
-                                    <?php foreach ($tools as $row) : ?>
+                                    <?php foreach ($tools as $row): ?>
                                         <div class="d-flex align-items-center me-5">
-                                            <a href="<?= $row["link_tools"] ?>" target="_blank"><img src="../../Assets/<?= $row["gambar_tools"] ?>" class="img h-100"></a>
+                                            <a href="<?= $row["link_tools"] ?>" target="_blank"><img
+                                                    src="../../Assets/<?= $row["gambar_tools"] ?>" class="img h-100"></a>
                                             <p class="ms-2">
                                                 <?= $row["nama_tools"] ?>
                                             </p>
@@ -353,27 +378,35 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                             <!-- Start Testimoni -->
                             <div class="testimoni mb-5" id="testimoni">
                                 <h6> Testimoni </h6>
-                                <h4> Kata Mereka tentang Kelas <?= $kelas["nama_kelas"] ?> DigiSkill </h4>
+                                <h4> Kata Mereka tentang Kelas
+                                    <?= $kelas["nama_kelas"] ?> DigiSkill
+                                </h4>
                             </div>
                             <div class="row">
                                 <div class="col-12 testimoni">
                                     <!-- Swiper -->
 
                                     <di class="swiper mySwiperTesti pb-4 pb-sm-5">
-                                        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                        <div class="swiper-wrapper"
+                                            style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
 
                                             <!-- Card Start -->
-                                            <?php foreach ($penilaian as $row) : ?>
+                                            <?php foreach ($penilaian as $row): ?>
                                                 <div class="swiper-slide card p-2">
                                                     <div class="card-body">
                                                         <p class="body-testi mt-3">
                                                             <?= $row["penilaian"] ?>
                                                         </p>
-                                                        <div class="detail d-flex justify-content-between align-items-center mt-4">
+                                                        <div
+                                                            class="detail d-flex justify-content-between align-items-center mt-4">
                                                             <div class="user d-flex align-items-center">
-                                                                <img src="../../Assets/profile/<?= $row["foto"] ?>" alt="avatar-review-1" class="rounded-circle img-fluid" />
+                                                                <img src="../../Assets/profile/<?= $row["foto"] ?>"
+                                                                    alt="avatar-review-1"
+                                                                    class="rounded-circle img-fluid" />
                                                                 <div class="profile ms-3">
-                                                                    <p class="name m-0"><?= $row["nama"] ?></p>
+                                                                    <p class="name m-0">
+                                                                        <?= $row["nama"] ?>
+                                                                    </p>
                                                                     <p class="status m-0">
                                                                         <?= $row["asal_instansi"] ?>
                                                                     </p>
@@ -501,12 +534,18 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

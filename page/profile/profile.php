@@ -26,7 +26,8 @@ if (isset($_POST["submit"])) {
       document.location.href = '../../index.php';
       </script>";
   }
-};
+}
+;
 
 ?>
 <!DOCTYPE html>
@@ -38,7 +39,8 @@ if (isset($_POST["submit"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <!-- Icon Title -->
   <link rel="icon" href="../Assets/logo-icon.svg" type="image/x-icon" />
@@ -56,10 +58,12 @@ if (isset($_POST["submit"])) {
   <nav class="navbar navbar-expand-lg bg-light shadow-sm bg-body rounded">
     <div class="container">
       <a class="navbar-brand" href="../../index.php">
-        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        <img src="../../Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24"
+          class="d-inline-block align-text-top">
         DigiSkill
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -73,25 +77,29 @@ if (isset($_POST["submit"])) {
             </a>
             <ul class="dropdown-menu me-4">
               <?php
-              foreach ($kelas as $row) :
-              ?>
+              foreach ($kelas as $row):
+                ?>
                 <li>
                   <a class="dropdown-item" href="../detail/detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
                 </li>
               <?php endforeach ?>
             </ul>
           </li>
-          <!-- <li class="nav-item me-4">
-                    <a class="nav-link" href="#">Blog</a>
-                </li> -->
+
           <li class="nav-item me-4">
             <a class="nav-link" href="../about-us.php">About Us</a>
           </li>
           <?php
           if (isset($_SESSION["login"])) { ?>
             <li class="nav-item dropdown me-4">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="account d-flex">
+                  <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle me-3" height="32"
+                    alt="Foto" loading="lazy" />
+                  <p class="dropdown-toggle">
+                    <?= $_SESSION["nama"] ?>
+                  </p>
+                </div>
               </a>
 
               <ul class="dropdown-menu me-4">
@@ -130,7 +138,9 @@ if (isset($_POST["submit"])) {
             <br />
             <div class="p-4 shadow-4 rounded-3 sidebar">
               <div class="">
-                <h5 class="text-center"><?= $profile["nama"] ?></h5>
+                <h5 class="text-center">
+                  <?= $profile["nama"] ?>
+                </h5>
                 <hr />
                 <div style="font-size: smaller" class="ms-3">
                   <a href="kelas-saya.php">
@@ -162,7 +172,8 @@ if (isset($_POST["submit"])) {
               </div>
               <div class="mb-3 mt-3">
                 <label for="username" class="form-label">username</label>
-                <input type="text" class="form-control" id="username" name="username" value="<?= $profile["username"]; ?>" />
+                <input type="text" class="form-control" id="username" name="username"
+                  value="<?= $profile["username"]; ?>" />
               </div>
               <div class="mb-3 mt-3">
                 <label for="email" class="form-label">Email</label>
@@ -170,7 +181,8 @@ if (isset($_POST["submit"])) {
               </div>
               <div class="mb-3 mt-3">
                 <label for="no_telp" class="form-label">No Telepon</label>
-                <input type="text" class="form-control" id="no_telp" name="no_telp" value="<?= $profile["nomor_hp"]; ?>" />
+                <input type="text" class="form-control" id="no_telp" name="no_telp"
+                  value="<?= $profile["nomor_hp"]; ?>" />
               </div>
               <div class="mb-3 mt-3">
                 <label for="alamat" class="form-label">Alamat</label>
@@ -180,7 +192,8 @@ if (isset($_POST["submit"])) {
                 <div class="row">
                   <div class="col-sm-6">
                     <label for="Provinsi" class="form-label">Provinsi</label>
-                    <input type="text" class="form-control" id="provinsi" value="<?= $profile["provinsi"]; ?>" name="provinsi" />
+                    <input type="text" class="form-control" id="provinsi" value="<?= $profile["provinsi"]; ?>"
+                      name="provinsi" />
                   </div>
                   <div class="col-sm-6">
                     <label for="Kota" class="form-label">Kota</label>
@@ -190,7 +203,8 @@ if (isset($_POST["submit"])) {
               </div>
               <div class="mb-4">
                 <label for="pwd" class="form-label">Password</label>
-                <input type="password" class="form-control" id="pwd" value="<?= $profile["password"]; ?>" name="password" />
+                <input type="password" class="form-control" id="pwd" value="<?= $profile["password"]; ?>"
+                  name="password" />
               </div>
               <button type="reset" class="btn btn-outline-primary btn-lg col-3">
                 Cancel
@@ -292,12 +306,16 @@ if (isset($_POST["submit"])) {
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="script/script.js"></script>
 
   <!-- Script JS -->
-  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
