@@ -185,9 +185,7 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                             <button class="btn btn-primary px-4 px-3" style="font-size: smaller; font-weight: bold;">
                                                 Lihat Kelas Saya</button>
                                         </a>
-                                    <?php } elseif ($_SESSION["id_login"] === "20") { ?>
-
-                                    <? } else { ?>
+                                    <?php } else { ?>
                                         <form action="" method="post">
                                             <input type="hidden" class="form-control" name="id_kelas" rows="3" value="<?= $id ?>">
                                             <input type="hidden" class="form-control" name="id_user" rows="3" value="<?= $_SESSION["id_login"] ?>">
