@@ -43,13 +43,13 @@ if (isset($_POST["register"])) {
             <a href="#" class="d-flex align-items-center">
               <img src="../Assets/Logo-DigiSkill.svg" alt="Logo" width="40" height="32"
                 class="d-inline-block align-text-center" />
-              <p class="mt-1">DigiSkill</p>
+              <p class="mt-1 fw-bold">DigiSkill</p>
             </a>
 
             <h5 class="mt-3">
               Selamat Datang 👋<i class="fas fa-hand-paper"></i>
             </h5>
-            <h1>Daftar Untuk Belajar Skill Baru</h1>
+            <h3 class="fw-bold">Daftar Untuk Belajar Skill Baru</h3>
             <img class="img-fluid" src="../Assets/Hero 1.svg" alt="" class="justify-content-center" />
           </div>
         </div>
