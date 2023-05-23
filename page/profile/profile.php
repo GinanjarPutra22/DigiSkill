@@ -15,7 +15,6 @@ $kelas = query("SELECT * FROM kelas");
 $profile = query("SELECT * FROM login WHERE id_login = $id")[0];
 
 if (isset($_POST["submit"])) {
-
   if (editprofile($_POST) > 0) {
     echo "<script>
       alert ('Data berhasil Diubah');

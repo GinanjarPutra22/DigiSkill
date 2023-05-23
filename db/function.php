@@ -146,7 +146,7 @@ function editprof()
     $namafilebaru .= $ekstensigambar;
 
     // mengirim kedalam directory 
-    move_uploaded_file($tmpname, '../../../Assets/profile/' . $namafilebaru);
+    move_uploaded_file($tmpname, '../../Assets/profile/' . $namafilebaru);
 
     return $namafilebaru; // untuk diproses dalam function tambah sebagai nama file yang disimpan
 

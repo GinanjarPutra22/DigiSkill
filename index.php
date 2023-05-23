@@ -87,14 +87,21 @@ if (isset($_SESSION["login"])) {
             <li class="nav-item dropdown me-4">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto" loading="lazy" />
+                <p><?= $_SESSION["nama"] ?></p>
               </a>
               <ul class="dropdown-menu me-4">
                 <li>
                   <a class="dropdown-item" href="page/profile/profile.php">My profile</a>
                 </li>
-                <li>
-                  <a class="dropdown-item" href="page/profile/kelas-saya.php">Kelas Saya</a>
-                </li>
+                <?php if ($_SESSION["id_login"] === "20") { ?>
+                  <li>
+                    <a class="dropdown-item" href="page/admin/users.php">Admin Page</a>
+                  </li>
+                <?php } else { ?>
+                  <li>
+                    <a class="dropdown-item" href="page/profile/kelas-saya.php">Kelas Saya</a>
+                  </li>
+                <?php } ?>
                 <hr />
                 <li>
                   <a class="dropdown-item" href="page/logout.php">Logout</a>

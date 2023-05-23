@@ -25,6 +25,7 @@ if (isset($_POST["masuk"])) {
       //set session
       $_SESSION["login"] = true; // menyimpan data sesssion login untuk semua halaman
       $_SESSION["id_login"] = $row["id_login"];
+      $_SESSION["nama"] = $row["nama"];
 
       if ($row["id_login"] === "20") {
         header("location: admin/users.php");
