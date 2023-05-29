@@ -32,7 +32,7 @@ if (isset($_POST["masuk"])) {
       } else {
         header("location: ../index.php");
       }
-      exit;
+      // exit;
     }
   }
   $error = true;
