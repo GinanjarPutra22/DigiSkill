@@ -1,19 +1,11 @@
 <?php
 session_start();
 require '../../db/function.php';
-
-if (!isset($_SESSION["login"])) {
-  header("location: ../login.php");
-  exit;
-}
-
 if (isset($_SESSION["login"])) {
   $id_user = $_SESSION['id_login'];
   $profile = query("SELECT * FROM login WHERE id_login = '$id_user'")[0];
 }
-
 $kelas = query("SELECT * FROM kelas");
-
 $user = query("SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pendaftaran,
                       login.nama,login.foto,
                       kelas.nama_kelas
@@ -90,12 +82,21 @@ if (isset($_POST["cari"])) {
           <?php
           if (isset($_SESSION["login"])) { ?>
             <li class="nav-item dropdown me-4">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle" height="22" alt="Foto"
-                  loading="lazy" />
+              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                <div class="account d-flex">
+                  <img src="../../Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle me-3" height="32"
+                    alt="Pict" loading="lazy" />
+                  <p class="dropdown-toggle">
+                    <?= $_SESSION["nama"] ?>
+                  </p>
+                </div>
+
               </a>
 
-              <ul class="dropdown-menu me-4">
+
+
+              <ul class="dropdown-menu dropstart me-4">
                 <li>
                   <a class="dropdown-item" href="../profile/profile.php">My profile</a>
                 </li>
