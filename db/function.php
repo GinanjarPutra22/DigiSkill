@@ -53,7 +53,7 @@ function registrasi($data)
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // menambahkan user baru kedalam database
-    $query = "INSERT INTO login VALUES('','$nama','$username','$email','$password','','','','','')";
+    $query = "INSERT INTO login VALUES('','$nama','$username','$email','$password','','647430197ece6.png','','','')";
 
     mysqli_query($conn, $query);
 
@@ -82,6 +82,10 @@ function editprofile($data)
         $foto = editprof();
     }
 
+    // hapus dlu lalu simpan data baru
+    // 
+    // 
+
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     $query = "UPDATE login SET
@@ -100,6 +104,7 @@ function editprofile($data)
 
     return mysqli_affected_rows($conn);
 }
+// edit gambar profile
 function editprof()
 {
     $namafile = $_FILES['foto']['name'];

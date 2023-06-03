@@ -5,7 +5,7 @@ require '../../../db/function.php';
 
 $id = $_GET["id"];
 
-if (!isset($_SESSION["login"])) {
+if (!isset($_SESSION["login"]) || $_SESSION["id_login"] !== "20") {
     header("location: ../../login.php");
     exit;
 }
