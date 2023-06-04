@@ -79,13 +79,20 @@ function editprofile($data)
     if ($_FILES['foto']['error'] === 4) {
         $foto = $fotolama;
     } else {
-        $foto = editprof();
+        if ($fotolama === "647430197ece6.png") {
+            $foto = editprof();
+        } else {
+            $tempat = "../../Assets/profile/" . $fotolama;
+            unlink($tempat);
+            $foto = editprof();
+        }
     }
 
     // hapus dlu lalu simpan data baru
     // 
     // 
-
+    // var_dump($tempat);
+    // die;
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     $query = "UPDATE login SET
