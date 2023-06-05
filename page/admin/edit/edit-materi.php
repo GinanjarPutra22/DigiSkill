@@ -39,7 +39,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add Mentor</title>
+    <title>Edit Materi</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
@@ -63,7 +63,7 @@ $kelas = query("SELECT nama_kelas,kode_materi FROM kelas")
                         <!-- <img src="../../../Assets/x-circle.svg" alt="" class="h-50" /> -->
                         <button type="button" class="btn-close" aria-label="Close"></button>
                     </a>
-                    <h3 class="text-center mt-3">Tambah Materi</h3>
+                    <h3 class="text-center mt-3">Edit Materi</h3>
                 </div>
                 <!-- from -->
                 <div class="col-8 my-4">

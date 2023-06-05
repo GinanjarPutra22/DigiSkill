@@ -550,7 +550,7 @@ function edittools($data)
     $kode_kelas = mysqli_real_escape_string($conn, $data["kode_kelas"]);
     $nama = mysqli_real_escape_string($conn, $data["nama"]);
     $fotolama = mysqli_real_escape_string($conn, $data["foto_lama"]);
-    $link_tools = mysqli_real_escape_string($conn, $data["link_tools"]);
+    $link_tools = mysqli_real_escape_string($conn, $data["link"]);
 
 
     //cek apakah user pilih gambar baru atau tidak
