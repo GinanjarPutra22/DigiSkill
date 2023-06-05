@@ -27,7 +27,8 @@ if (isset($_SESSION["login"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DigiSkill</title>
   <!-- Link Boostrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
   <!-- Icon Title -->
   <link rel="icon" href="Assets/logo-icon.svg" type="image/x-icon" />
@@ -57,7 +58,8 @@ if (isset($_SESSION["login"])) {
         <img src="Assets/Logo-DigiSkill.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
         DigiSkill
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -71,8 +73,8 @@ if (isset($_SESSION["login"])) {
             </a>
             <ul class="dropdown-menu me-4">
               <?php
-              foreach ($kelas as $row) :
-              ?>
+              foreach ($kelas as $row):
+                ?>
                 <li>
                   <a class="dropdown-item" href="page/detail/detail.php?id=<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></a>
                 </li>
@@ -87,7 +89,8 @@ if (isset($_SESSION["login"])) {
             <li class="nav-item dropdown me-4">
               <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="account d-flex ">
-                  <img src="Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle me-3 " height="32px" alt="Foto" loading="lazy" />
+                  <img src="Assets/profile/<?= $profile['foto'] ?>" class="rounded-circle me-3 " height="32px" alt="Foto"
+                    loading="lazy" />
                   <p class="   dropdown-toggle">
                     <?= $_SESSION["nama"] ?>
                   </p>
@@ -278,7 +281,7 @@ if (isset($_SESSION["login"])) {
     </div>
 
     <div class="row mt-5">
-      <?php foreach ($kelas as $row) : ?>
+      <?php foreach ($kelas as $row): ?>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card">
             <div class="img-box">
@@ -310,8 +313,11 @@ if (isset($_SESSION["login"])) {
                 $jumlah_materi = query("SELECT count(kode_materi) FROM materi WHERE kode_materi ='$kode_materi'")[0];
                 // var_dump($jumlah_materi);
                 ?>
-                <div class="info-video"><?= $jumlah_materi["count(kode_materi)"] ?> Video</div>
-                <a href="page/detail/detail.php?id=<?= $row["id_kelas"] ?>"><button type="button" class="btn btn-primary btn-sm">
+                <div class="info-video">
+                  <?= $jumlah_materi["count(kode_materi)"] ?> Video
+                </div>
+                <a href="page/detail/detail.php?id=<?= $row["id_kelas"] ?>"><button type="button"
+                    class="btn btn-primary btn-sm">
                     Detail Kelas
                   </button>
                 </a>
@@ -342,7 +348,7 @@ if (isset($_SESSION["login"])) {
                   transform: translate3d(0px, 0px, 0px);
                   transition-duration: 0ms;
                 ">
-              <?php foreach ($penilaian as $row) : ?>
+              <?php foreach ($penilaian as $row): ?>
                 <div class="swiper-slide card p-4">
                   <div class="card-body">
                     <p class="body-testi mt-3">
@@ -350,7 +356,8 @@ if (isset($_SESSION["login"])) {
                     </p>
                     <div class="detail d-flex justify-content-between align-items-center mt-4">
                       <div class="user d-flex align-items-center">
-                        <img src="Assets/profile/<?= $row["foto"] ?>" alt="avatar-review-1" class="rounded-circle img-fluid" />
+                        <img src="Assets/profile/<?= $row["foto"] ?>" alt="avatar-review-1"
+                          class="rounded-circle img-fluid w-25" />
                         <div class="profile ms-3">
                           <p class="name m-0">
                             <?= $row["nama"] ?>
@@ -368,151 +375,7 @@ if (isset($_SESSION["login"])) {
                 </div>
               <?php endforeach ?>
 
-              <!-- <div class="swiper-slide card p-4">
-                <div class="card-body">
-                  <div class="rate">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                  </div>
-                  <p class="body-testi mt-3">
-                    DigiSkill mudah dipahami, usefull bagi pemula seperti saya
-                    yang baru belajar.
-                  </p>
-                  <div class="detail d-flex justify-content-between align-items-center mt-4">
-                    <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-female-1.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
-                      <div class="profile ms-3">
-                        <p class="name m-0">Maharani P.</p>
-                        <p class="status m-0">
-                          Front-End Developer di PT. Banteng
-                        </p>
-                      </div>
-                    </div>
-                    <div class="icon-quote">
-                      <i class="bx bxs-quote-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide card p-4">
-                <div class="card-body">
-                  <div class="rate">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                  </div>
-                  <p class="body-testi mt-3">
-                    Saya baru menginjak dunia coding, DigiSkill sangat
-                    membantu saya.
-                  </p>
-                  <div class="detail d-flex justify-content-between align-items-center mt-4">
-                    <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-male-2.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
-                      <div class="profile ms-3">
-                        <p class="name m-0">Adam Mahendra</p>
-                        <p class="status m-0">
-                          UI/UX Designer di PT. Neo Culture
-                        </p>
-                      </div>
-                    </div>
-                    <div class="icon-quote">
-                      <i class="bx bxs-quote-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide card p-4">
-                <div class="card-body">
-                  <div class="rate">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                  </div>
-                  <p class="body-testi mt-3">
-                    Website ini cocok untuk anak Informatika, membantu tugas
-                    saya.
-                  </p>
-                  <div class="detail d-flex justify-content-between align-items-center mt-4">
-                    <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-male-3.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
-                      <div class="profile ms-3">
-                        <p class="name m-0">Levi Ackerman</p>
-                        <p class="status m-0">
-                          College Student di University of Maria
-                        </p>
-                      </div>
-                    </div>
-                    <div class="icon-quote">
-                      <i class="bx bxs-quote-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide card p-4">
-                <div class="card-body">
-                  <div class="rate">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                  </div>
-                  <p class="body-testi mt-3">
-                    Website yang sangat berguna, dengan kelas yang lengkap dan
-                    biaya gratis.
-                  </p>
-                  <div class="detail d-flex justify-content-between align-items-center mt-4">
-                    <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-female-12.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
-                      <div class="profile ms-3">
-                        <p class="name m-0">Amalia Sonia</p>
-                        <p class="status m-0">
-                          Back-End Developer di PT. Jaya Abadi
-                        </p>
-                      </div>
-                    </div>
-                    <div class="icon-quote">
-                      <i class="bx bxs-quote-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide card p-4">
-                <div class="card-body">
-                  <div class="rate">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                  </div>
-                  <p class="body-testi mt-3">
-                    A very usefull website. Thank you whom made this website.
-                    I feel helped.
-                  </p>
-                  <div class="detail d-flex justify-content-between align-items-center mt-4">
-                    <div class="user d-flex align-items-center">
-                      <img src="Assets/avatar-pict/avatar-male-8.svg" alt="avatar-review-1" class="rounded-circle img-fluid" />
-                      <div class="profile ms-3">
-                        <p class="name m-0">John F. Kennedic</p>
-                        <p class="status m-0">
-                          Collede Student di Harvard University
-                        </p>
-                      </div>
-                    </div>
-                    <div class="icon-quote">
-                      <i class="bx bxs-quote-right"></i>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
+
             </div>
             <div class="swiper-pagination pt-5 myt-5"></div>
           </div>
@@ -629,12 +492,16 @@ if (isset($_SESSION["login"])) {
   <!-- ------------------------------------------------------------ -->
 
   <!-- Jquery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script src="script/script.js"></script>
 
   <!-- Script JS -->
-  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
