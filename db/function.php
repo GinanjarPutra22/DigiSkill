@@ -53,7 +53,7 @@ function registrasi($data)
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // menambahkan user baru kedalam database
-    $query = "INSERT INTO login VALUES('','$nama','$username','$email','$password','','','','','')";
+    $query = "INSERT INTO login VALUES('','$nama','$username','$email','$password','','647430197ece6.png','','','')";
 
     mysqli_query($conn, $query);
 
@@ -79,9 +79,20 @@ function editprofile($data)
     if ($_FILES['foto']['error'] === 4) {
         $foto = $fotolama;
     } else {
-        $foto = editprof();
+        if ($fotolama === "647430197ece6.png") {
+            $foto = editprof();
+        } else {
+            $tempat = "../../Assets/profile/" . $fotolama;
+            unlink($tempat);
+            $foto = editprof();
+        }
     }
 
+    // hapus dlu lalu simpan data baru
+    // 
+    // 
+    // var_dump($tempat);
+    // die;
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     $query = "UPDATE login SET
@@ -100,6 +111,7 @@ function editprofile($data)
 
     return mysqli_affected_rows($conn);
 }
+// edit gambar profile
 function editprof()
 {
     $namafile = $_FILES['foto']['name'];
@@ -154,57 +166,57 @@ function editprof()
 
 
 ////////////////function untuk upload gambar profile yang disimpan ke dalam profile
-function upload()
-{
-    $namafile = $_FILES['foto']['name'];
-    $ukuranfile = $_FILES['foto']['size'];
-    $error = $_FILES['foto']['error'];
-    $tmpname = $_FILES['foto']['tmp_name'];
+// function upload()
+// {
+//     $namafile = $_FILES['foto']['name'];
+//     $ukuranfile = $_FILES['foto']['size'];
+//     $error = $_FILES['foto']['error'];
+//     $tmpname = $_FILES['foto']['tmp_name'];
 
-    // cek apakah ada gambar yang diupload
-    if ($error === 4) {
-        echo "<script>
-        alert ('Pilih Gambar terlebih dahulu');
-        </script>";
-        return false;
-    }
+//     // cek apakah ada gambar yang diupload
+//     if ($error === 4) {
+//         echo "<script>
+//         alert ('Pilih Gambar terlebih dahulu');
+//         </script>";
+//         return false;
+//     }
 
-    // cek yang diupload ekstensinya apkah gambar atau bukan
-    $ekstensigambarValid = ['jpg', 'png', 'jpeg'];
-    $ekstensigambar = explode('.', $namafile); // sebagai pemisah antara nama file dengan ekstensi
-    //  contohnya ferdy.png maka menjadi ['ferdy','png']
-    $ekstensigambar = strtolower(end($ekstensigambar)); // strtolower merubah nama file menjadi lowercase/ huruf kecil
-    // end mengambil explode yang paling akhir
+//     // cek yang diupload ekstensinya apkah gambar atau bukan
+//     $ekstensigambarValid = ['jpg', 'png', 'jpeg'];
+//     $ekstensigambar = explode('.', $namafile); // sebagai pemisah antara nama file dengan ekstensi
+//     //  contohnya ferdy.png maka menjadi ['ferdy','png']
+//     $ekstensigambar = strtolower(end($ekstensigambar)); // strtolower merubah nama file menjadi lowercase/ huruf kecil
+//     // end mengambil explode yang paling akhir
 
-    if (!in_array($ekstensigambar, $ekstensigambarValid)) { // melakukan pengecekan string didalam array
-        // fungsi ini menghasilkan true jika ada false jika tidak
-        echo "<script>
-        alert ('Yang anda upload bukan gambar');
-        </script>";
-        return false;
-    }
+//     if (!in_array($ekstensigambar, $ekstensigambarValid)) { // melakukan pengecekan string didalam array
+//         // fungsi ini menghasilkan true jika ada false jika tidak
+//         echo "<script>
+//         alert ('Yang anda upload bukan gambar');
+//         </script>";
+//         return false;
+//     }
 
-    // cek jika ukurannya terlalu besar
-    if ($ukuranfile > 5000000000) { //dalam bentuk byte
-        echo "<script>
-        alert ('file yang anda upload terlalu besar');
-        </script>";
-        return false;
-    }
+//     // cek jika ukurannya terlalu besar
+//     if ($ukuranfile > 5000000000) { //dalam bentuk byte
+//         echo "<script>
+//         alert ('file yang anda upload terlalu besar');
+//         </script>";
+//         return false;
+//     }
 
-    //lolos pengecekan gambar siap diupload
+//     //lolos pengecekan gambar siap diupload
 
-    // generate nama gambar random baruu
-    $namafilebaru = uniqid();
-    $namafilebaru .= '.';
-    $namafilebaru .= $ekstensigambar;
+//     // generate nama gambar random baruu
+//     $namafilebaru = uniqid();
+//     $namafilebaru .= '.';
+//     $namafilebaru .= $ekstensigambar;
 
-    // mengirim kedalam directory 
-    move_uploaded_file($tmpname, '../../../Assets/profile/' . $namafilebaru);
+//     // mengirim kedalam directory 
+//     move_uploaded_file($tmpname, '../../../Assets/profile/' . $namafilebaru);
 
-    return $namafilebaru; // untuk diproses dalam function tambah sebagai nama file yang disimpan
+//     return $namafilebaru; // untuk diproses dalam function tambah sebagai nama file yang disimpan
 
-}
+// }
 
 ////////////////function untuk upload gambar asset dalam program 
 function uploadasst()
@@ -418,6 +430,8 @@ function editkelas($data)
     if ($_FILES['foto']['error'] === 4) {
         $thumbnail = $fotolama;
     } else {
+        $tempat = "../../../Assets/" . $fotolama;
+        unlink($tempat);
         $thumbnail = edituploadasst();
     }
 
@@ -481,6 +495,8 @@ function editmentor($data)
     if ($_FILES['foto']['error'] === 4) {
         $foto = $fotolama;
     } else {
+        $tempat = "../../../Assets/" . $fotolama;
+        unlink($tempat);
         $foto = edituploadasst();
     }
 
@@ -541,6 +557,8 @@ function edittools($data)
     if ($_FILES['foto']['error'] === 4) {
         $foto = $fotolama;
     } else {
+        $tempat = "../../../Assets/" . $fotolama;
+        unlink($tempat);
         $foto = edituploadasst();
     }
 

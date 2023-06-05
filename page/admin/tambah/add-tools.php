@@ -3,7 +3,7 @@ session_start();
 
 require '../../../db/function.php';
 
-if (!isset($_SESSION["login"])) {
+if (!isset($_SESSION["login"]) || $_SESSION["id_login"] !== "20") {
     header("location: ../../login.php");
     exit;
 }
