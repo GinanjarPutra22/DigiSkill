@@ -172,19 +172,11 @@ if (isset($_POST["cari"])) {
           <a href="tambah/add-mentor.php ">
             <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Mentor</button>
           </a>
-
         </div>
-
-
-        <div class="row add-class    mb-lg-4 mb-sm-4">
+        <div class="row add-class mb-lg-4 mb-sm-4">
           <form action="" method="post">
-
             <div class="col-lg-12">
-
-
               <!-- Filter end Btn add -->
-
-
               <div class="row ">
                 <div class="col-lg-5 ">
                   <div class="row d-flex justify-content-start">
@@ -196,10 +188,8 @@ if (isset($_POST["cari"])) {
                           <option value="<?= $row['id_kelas'] ?>"><?= $row['nama_kelas'] ?></option>
                         <?php endforeach ?>
                       </select>
-
                     </div>
                   </div>
-
                 </div>
                 <div class="col-lg-7 ustify-content-start mt-2 mt-lg-0 ">
                   <div class="row d-flex justify-content-start">

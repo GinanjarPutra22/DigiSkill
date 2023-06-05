@@ -169,12 +169,17 @@ if (isset($_POST["cari"])) {
       <!-- Start Main Content -->
 
       <div class="col-lg-8 mt-5">
+        <div class="row text-md-end mb-3 mb-sm-2">
+          <a href="tambah/add-tools.php ">
+            <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Tools</button>
+          </a>
+        </div>
         <div class="row add-class  d-md-flex text-md-end mb-lg-4 mb-sm-4">
           <form action="" method="post">
             <div class="col">
 
               <!-- Filter end Btn add -->
-              <div class="row d-flex justify-content-end">
+              <div class="row d-flex justify-content">
                 <label for="inputState" class="form-label text-start">Filter Kelas</label>
                 <div class="col-lg-7 d-flex">
                   <select class="form-select 3 me-lg-2 me-2" aria-label="Default select example" name="kelas">
@@ -189,13 +194,6 @@ if (isset($_POST["cari"])) {
                   <!-- Btn refresh -->
                   <button class="btn btn-primary btn-md d-flex ms-2"> <span class=""><i class='bx bx-refresh'></i></span>
                 </div>
-
-                <div class="col-lg-5 mt-3 mt-lg-0">
-                  <a href="tambah/add-tools.php">
-                    <button class="btn btn-primary btn-md"><span><i class='bx bx-plus'></i></span> Tambah Tools</button>
-                  </a>
-                </div>
-
               </div>
           </form>
         </div>
