@@ -27,12 +27,18 @@ if (isset($_POST["masuk"])) {
       $_SESSION["id_login"] = $row["id_login"];
       $_SESSION["nama"] = $row["nama"];
 
+
       if ($row["id_login"] != "20") {
         header("location: ../index.php");
       } else {
         header("location: admin/users.php");
       }
       exit;
+    } else {
+      echo "<script>
+            alert('Salah Password');
+            document.location.href = 'login.php';    
+      </script>";
     }
   }
   $error = true;
