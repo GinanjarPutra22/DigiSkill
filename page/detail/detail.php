@@ -305,9 +305,9 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                             </p>
                                         </div>
                                         <div class="d-flex">
-                                            <a href="https://www.instagram.com/<?= $row["instagram"] ?>"
-                                                target="_blank"><img src="../../Assets/instagram.svg" alt=""></a>
-                                            <a href="https://www.linkedin.com/<?= $row["linkedIn"] ?>" target="_blank"><img
+                                            <a href="<?= $row["instagram"] ?>" target="_blank"><img
+                                                    src="../../Assets/instagram.svg" alt=""></a>
+                                            <a href="<?= $row["linkedIn"] ?>" target="_blank"><img
                                                     src="../../Assets/linkedin.svg" alt=""></a>
                                         </div>
                                     </div>

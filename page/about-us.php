@@ -191,16 +191,15 @@ if (isset($_SESSION["login"])) {
                             <p class="">UI/UX Designer dan Front-End Developer</p>
                         </div>
                         <div class="sosmed mt-lg-0 d-flex mx-auto">
-                            <a href="# " class="me-2">
+                            <a href="https://youtube.com/@GinanjarPutra22" target="_blank" class="me-2">
                                 <i class="bx bxl-youtube"></i>
                             </a>
-                            <a href="#" class="me-2">
+                            <a href="https://www.linkedin.com/in/ginanjarputra22" target="_blank" class="me-2">
                                 <i class="bx bxl-linkedin"></i>
                             </a>
-                            <a href="#" class="me-2">
-                                <i class="bx bxl-facebook"></i>
-                            </a>
-                            <a href="#" class="me-2">
+
+                            <a href="https://instagram.com/ginanjar.putra_?igshid=MmJiY2I4NDBkZg==" target="_blank"
+                                class="me-2">
                                 <i class="bx bxl-instagram"></i>
                             </a>
                         </div>
@@ -214,16 +213,15 @@ if (isset($_SESSION["login"])) {
                             <p class="">Front-End Developer dan Back-End Developer</p>
                         </div>
                         <div class="sosmed mt-lg-0 d-flex mx-auto">
-                            <a href="# " class="me-2">
+                            <a href="#" target="_blank" class="me-2">
                                 <i class="bx bxl-youtube"></i>
                             </a>
-                            <a href="#" class="me-2">
+                            <a href="#" target="_blank" class="me-2">
                                 <i class="bx bxl-linkedin"></i>
                             </a>
-                            <a href="#" class="me-2">
-                                <i class="bx bxl-facebook"></i>
-                            </a>
-                            <a href="#" class="me-2">
+
+                            <a href="https://instagram.com/ferdys30?igshid=MmJiY2I4NDBkZg==" target="_blank"
+                                class="me-2">
                                 <i class="bx bxl-instagram"></i>
                             </a>
                         </div>
@@ -239,16 +237,15 @@ if (isset($_SESSION["login"])) {
                             </p>
                         </div>
                         <div class="sosmed mt-lg-0 d-flex mx-auto">
-                            <a href="# " class="me-2">
+                            <a href="#" target="_blank" class="me-2">
                                 <i class="bx bxl-youtube"></i>
                             </a>
-                            <a href="#" class="me-2">
+                            <a href="#" target="_blank" class="me-2">
                                 <i class="bx bxl-linkedin"></i>
                             </a>
-                            <a href="#" class="me-2">
-                                <i class="bx bxl-facebook"></i>
-                            </a>
-                            <a href="#" class="me-2">
+
+                            <a href="https://instagram.com/watanacce?igshid=MmJiY2I4NDBkZg==" target="_blank"
+                                class="me-2">
                                 <i class="bx bxl-instagram"></i>
                             </a>
                         </div>
@@ -262,16 +259,16 @@ if (isset($_SESSION["login"])) {
                             <p class="">System Analyst dan Front-End Developer</p>
                         </div>
                         <div class="sosmed mt-lg-0 d-flex mx-auto">
-                            <a href="# " class="me-2">
+                            <a href="#" target="_blank" class="me-2">
                                 <i class="bx bxl-youtube"></i>
                             </a>
-                            <a href="#" class="me-2">
+                            <a href="https://instagram.com/farsaj.123?igshid=MmJiY2I4NDBkZg==" target="_blank"
+                                class="me-2">
                                 <i class="bx bxl-linkedin"></i>
                             </a>
-                            <a href="#" class="me-2">
-                                <i class="bx bxl-facebook"></i>
-                            </a>
-                            <a href="#" class="me-2">
+
+                            <a href="https://instagram.com/farsaj.123?igshid=MmJiY2I4NDBkZg==" target="_blank"
+                                class="me-2">
                                 <i class="bx bxl-instagram"></i>
                             </a>
                         </div>
@@ -287,7 +284,7 @@ if (isset($_SESSION["login"])) {
         <div class="container pt-5">
             <div class="row mb-3 d-flex align-items-center">
                 <a class="navbar-brand fs-4 fw-semibold d-flex align-items-center me-3" href="/index.php">
-                    <img src="../../Assets/logo-white.svg" class="d-inline-block align-text-top h-75" />
+                    <img src="../Assets/logo-white.svg" class="d-inline-block align-text-top h-75" />
                     DigiSkill
                 </a>
             </div>
