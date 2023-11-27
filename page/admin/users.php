@@ -21,6 +21,10 @@ $user = query("SELECT data_kelas.id_kelas,data_kelas.id_user,data_kelas.tgl_pend
               INNER JOIN kelas ON data_kelas.id_kelas = kelas.id_kelas
               INNER JOIN login ON data_kelas.id_user = login.id_login");
 
+$totaluser = query("SELECT kelas.nama_kelas, count(data_kelas.id_kelas) as total FROM kelas
+                      LEFT JOIN data_kelas ON data_kelas.id_kelas = kelas.id_kelas GROUP BY kelas.id_kelas");
+                      // var_dump($totaluser);die;
+
 if (isset($_POST["cari"])) {
   // var_dump($_POST);
   // die;
@@ -169,9 +173,18 @@ if (isset($_POST["cari"])) {
       </div>
       <!-- End Sidebar -->
 
-      <!-- Start Main Content -->
-
+      <!-- Start Main Content -->      
       <div class="col-lg-8 mt-5">
+      <div class="row">
+        <?php foreach ($totaluser as $row) : ?>
+          <div class="card m-2" style="width: 22.5rem;">
+              <div class="card-body">
+                <h5 class="card-title"><?= $row['nama_kelas']?></h5>
+                <p class="card-text"><?= $row['total']?> Terdaftar</p>
+              </div>
+            </div>
+          <?php endforeach ?>
+      </div>
         <form action="" method="post">
           <div class="row mb-4 ">
             <div class="col-lg-5  ">
