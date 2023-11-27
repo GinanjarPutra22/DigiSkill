@@ -305,9 +305,9 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                             </p>
                                         </div>
                                         <div class="d-flex">
-                                            <a href="https://www.instagram.com/<?= $row["instagram"] ?>"
-                                                target="_blank"><img src="../../Assets/instagram.svg" alt=""></a>
-                                            <a href="https://www.linkedin.com/<?= $row["linkedIn"] ?>" target="_blank"><img
+                                            <a href="<?= $row["instagram"] ?>" target="_blank"><img
+                                                    src="../../Assets/instagram.svg" alt=""></a>
+                                            <a href="<?= $row["linkedIn"] ?>" target="_blank"><img
                                                     src="../../Assets/linkedin.svg" alt=""></a>
                                         </div>
                                     </div>
@@ -363,7 +363,7 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                     <?php foreach ($tools as $row): ?>
                                         <div class="d-flex align-items-center me-5">
                                             <a href="<?= $row["link_tools"] ?>" target="_blank"><img
-                                                    src="../../Assets/<?= $row["gambar_tools"] ?>" class="img h-100"></a>
+                                                    src="../../Assets/<?= $row["gambar_tools"] ?>" class="img w-75"></a>
                                             <p class="ms-2">
                                                 <?= $row["nama_tools"] ?>
                                             </p>
@@ -402,7 +402,7 @@ WHERE id_kelas = '$id' AND asal_instansi IS NOT NULL ");
                                                             <div class="user d-flex align-items-center">
                                                                 <img src="../../Assets/profile/<?= $row["foto"] ?>"
                                                                     alt="avatar-review-1"
-                                                                    class="rounded-circle img-fluid" />
+                                                                    class="rounded-circle img-fluid w-25" />
                                                                 <div class="profile ms-3">
                                                                     <p class="name m-0">
                                                                         <?= $row["nama"] ?>
